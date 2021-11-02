@@ -134,8 +134,8 @@ Result: 2
 ```
 
 ### Ex 8. Carpet Calculator
-Write a program that calculates the total price for a carpet installation job.  The program prompts the user to
-enter the price of the capert per square feet, the prompts the user to enter the width and length of all 
+Write a Java program that calculates the total price for a carpet installation job.  The program prompts the user to
+enter the price of the carpet per square feet, then prompts the user to enter the width and length of all 
 the rooms.  When the user enters "done", the program returns the total price of the carpet installation job.
 
 Examples
