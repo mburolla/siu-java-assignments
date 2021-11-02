@@ -138,12 +138,29 @@ Write a program that calculates the total price for a carpet installation job.  
 enter the price of the capert per square feet, the prompts the user to enter the width and length of all 
 the rooms.  When the user enters "done", the program returns the total price of the carpet installation job.
 
-Example
+Examples
+```
+Enter price per square feet: 3.00
+Enter room dimensions (width x height): 10 x 10
+Enter room dimensions (width x height): done
+Total cost: $300.00
 ```
 
+```
+Enter price per square feet: 4.00
+Enter room dimensions (width x height): 10 x 10
+Enter room dimensions (width x height): 10 x 10
+Enter room dimensions (width x height): done
+Total cost: $800.00
+```
+```
+Enter price per square feet: 5.00
+Enter room dimensions (width x height): 10 x 20
+Enter room dimensions (width x height): 20 x 10
+Enter room dimensions (width x height): done
+Total cost: $2,000.00
 
 ```
-
 
 ### Ex 9.  TODO
 

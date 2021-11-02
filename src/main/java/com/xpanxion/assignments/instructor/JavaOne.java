@@ -205,8 +205,7 @@ public class JavaOne {
         }
 
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
-        String moneyString = formatter.format(retval);
-        System.out.println("Total cost: " + moneyString);
+        System.out.println("Total cost: " + formatter.format(retval));
     }
 
     /**
