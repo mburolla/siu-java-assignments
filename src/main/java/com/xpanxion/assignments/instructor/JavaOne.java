@@ -2,13 +2,13 @@ package com.xpanxion.assignments.instructor;
 
 import java.util.*;
 
-public class Instructor {
+public class JavaOne {
 
     //
     // Constructor
     //
 
-    Instructor() {}
+    JavaOne() {}
 
     //
     // Methods
@@ -156,9 +156,20 @@ public class Instructor {
         System.out.println(outString);
     }
 
+    public void ex8() {
+
+    }
+
+    public void ex9() {
+
+    }
+
+    public void ex10() {
+
+    }
+
+
     //
     // Private helper methods
     //
-
-
 }

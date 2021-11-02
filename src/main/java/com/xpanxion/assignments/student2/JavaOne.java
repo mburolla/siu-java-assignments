@@ -1,17 +1,15 @@
 package com.xpanxion.assignments.student2;
 
-import java.util.Scanner;
-
-public class Student {
+public class JavaOne {
 
     //
-    // Constructor
+    // Constructors
     //
 
-    Student() {}
+    JavaOne() {}
 
     //
-    // Methods
+    // Public methods
     //
 
     public void ex1() {

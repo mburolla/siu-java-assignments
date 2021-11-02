@@ -4,7 +4,7 @@
     <module name="java-assignments" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.xpanxion.assignments.student1.*" />
+        <option name="PATTERN" value="com.xpanxion.assignments.student2.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

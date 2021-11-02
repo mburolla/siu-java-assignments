@@ -133,3 +133,10 @@ Enter operation (add, sub, mul, div): div
 Result: 2
 ```
 
+### Ex 8.  TODO
+
+
+### Ex 9.  TODO
+
+
+### Ex 10.  TODO
