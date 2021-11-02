@@ -67,8 +67,27 @@ public class Instructor {
         System.out.print("Enter a string: ");
         String inString = scanner.nextLine();
 
+        int middleIndex = inString.length() / 2;
+        String[] parts = { inString.substring(0, middleIndex), inString.substring(middleIndex + 1) };
 
+        if (parts[0].equals(new StringBuilder(parts[1]).reverse().toString())) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
     }
+
+    public void ex5() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String inString = scanner.nextLine();
+
+        System.out.println(inString);
+    }
+
+
+
 
 
 
