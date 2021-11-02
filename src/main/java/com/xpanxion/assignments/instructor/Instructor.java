@@ -43,18 +43,18 @@ public class Instructor {
 
     public void ex3() {
         int result = 0;
-        Scanner scanner = new Scanner(System.in);
+        var scanner = new Scanner(System.in); // Type inference.
 
         System.out.print("Enter first number: ");
-        int operand1 = scanner.nextInt();
+        var operand1 = scanner.nextInt();
         scanner.nextLine();
 
         System.out.print("Enter second number: ");
-        int operand2 = scanner.nextInt();
+        var operand2 = scanner.nextInt();
         scanner.nextLine();
 
         System.out.print("Enter operation (add, sub, mul, div): ");
-        String operation = scanner.nextLine();
+        var operation = scanner.nextLine();
 
         switch (operation) {
             case "add" -> {
@@ -71,7 +71,7 @@ public class Instructor {
             }
         }
 
-        String outString = String.format("Result: %s", result);
+        var outString = String.format("Result: %s", result);
         System.out.println(outString);
     }
 
