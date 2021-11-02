@@ -1,7 +1,6 @@
 package com.xpanxion.assignments.instructor;
 
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Instructor {
 
@@ -79,34 +78,34 @@ public class Instructor {
 
     public void ex5() {
         Scanner scanner = new Scanner(System.in);
+        List<String> vowelList = Arrays.asList("a", "e", "i", "o", "u", "y");
+        int vowelCount = 0;
+        int consonantCount = 0;
 
-        System.out.print("Enter a string: ");
-        String inString = scanner.nextLine();
+        while (true) {
+            System.out.print("Enter a string: ");
+            var inString = scanner.nextLine().toLowerCase(Locale.ROOT);
+            if (inString.equals("quit")) {
+                break;
+            }
 
-        System.out.println(inString);
+            for (int i = 0; i < inString.length(); i++) {
+                var character = inString.charAt(i);
+                var charString = Character.toString(character);
+                if (vowelList.contains(charString)) {
+                    vowelCount++;
+                } else if (Character.isLetter(character)){
+                    consonantCount++;
+                }
+            }
+            System.out.println("Number of vowels: " + vowelCount);
+            System.out.println("Number of consonants: " + consonantCount);
+            vowelCount = 0;
+            consonantCount = 0;
+        }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void ex10() {
+    public void ex6() {
         int result = 0;
         Scanner scanner = new Scanner(System.in);
 
@@ -123,7 +122,7 @@ public class Instructor {
         System.out.println(outString);
     }
 
-    public void ex11() {
+    public void ex7() {
         int result = 0;
         var scanner = new Scanner(System.in); // Type inference.
 

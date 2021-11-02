@@ -13,18 +13,22 @@ Process finished with exit code 0
 ```
 
 ### Ex. 2 Count Uppers
-Write a Java program that prompts the user to enter a string and counts the number of upper case letters.
+Write a Java program that prompts the user to enter a string and counts the number of uppercase letters.
 
 Example:
 
 ```
 Enter a string: This is a Test.
 Number of uppercase letters: 2.
+
+Process finished with exit code 0
 ```
 
 ```
 Enter a string: nothing to see here.
 Number of uppercase letters: 0.
+
+Process finished with exit code 0
 ```
 ### Ex. 3 Capitalize Words
 Write a Java program that prompts the user to enter a string and capitalizes every other word, starting with the first word.
@@ -34,10 +38,14 @@ Examples:
 ```
 Enter a string: This is a test.
 THIS is A test. 
+
+Process finished with exit code 0
 ```
 ```
 Enter a string: This is a longer string with more words.
 THIS is A longer STRING with MORE words. 
+
+Process finished with exit code 0
 ```
 
 ### Ex. 4 Classic Palidrome
@@ -49,29 +57,39 @@ Examples:
 ```
 Enter string: radar
 YES
+
+Process finished with exit code 0
 ```
 
 ```
 Enter string: truck
 NO
+
+Process finished with exit code 0
 ```
-HINT: The StringBuilder might be useful.
+HINT: The `StringBuilder` might be useful.
 
 
-### Ex. 5
+### Ex. 5 Consonant and Vowel Count
+Write a Java program that prompts the user to enter a string and returns the number of vowels and constants.  The program loops forever until "quit" is entered.  The program does not count whitespace and punctuation.
 
+Example:
+```
+Enter a string: test
+Number of vowels: 1
+Number of consonants: 3
+Enter a string: TEST
+Number of vowels: 1
+Number of consonants: 3
+Enter a string: This is a test.
+Number of vowels: 4
+Number of consonants: 7
+Enter a string: quit
 
+Process finished with exit code 0
+```
 
-
-
-
-
-
-
-
-
-
-### Ex.  Add Only Calculator
+### Ex 6.  Add Only Calculator
 Write a Java program that prompts the user for two Integers and adds them.
 
 Example:
@@ -82,7 +100,7 @@ Enter second number: 2
 Result: 3
 ```
 
-### Ex.  Full Calculator
+### Ex 7.  Full Calculator
 Write a Java program that prompts the user for two Integers and an operation and returns the result.
 
 Examples:
