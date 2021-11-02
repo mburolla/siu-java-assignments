@@ -2,8 +2,8 @@ package com.xpanxion.assignments.instructor;
 
 public class Main {
     public static void main(String[] args) {
-        JavaOne javaOne = new JavaOne();
-        javaOne.ex1();
+//        JavaOne javaOne = new JavaOne();
+//        javaOne.ex1();
 //        javaOne.ex2();
 //        javaOne.ex3();
 //        javaOne.ex4();
@@ -13,5 +13,9 @@ public class Main {
 //        javaOne.ex8();
 //        javaOne.ex9();
 //        javaOne.ex10();
+
+        JavaTwo javaTwo = new JavaTwo();
+        javaTwo.ex1();
+
     }
 }
