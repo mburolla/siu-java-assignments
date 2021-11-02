@@ -1,7 +1,7 @@
 package com.xpanxion.assignments.instructor;
 
-import java.text.NumberFormat;
 import java.util.*;
+import java.text.NumberFormat;
 
 public class JavaOne {
 
@@ -209,7 +209,7 @@ public class JavaOne {
     }
 
     /**
-     * Number guessing game
+     * Random Number Game
      */
     public void ex9() {
         final int UPPER_LIMIT = 5;
@@ -233,16 +233,25 @@ public class JavaOne {
     }
 
     /**
-     *
+     * Diagon Alley
      */
     public void ex10() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a string: ");
         String inString = scanner.nextLine();
 
-        System.out.println(inString);
+        var stringTokenzier = new StringTokenizer(inString);
+        int numSpaces = 1;
+        while (stringTokenzier.hasMoreTokens()) {
+            var word = stringTokenzier.nextToken();
+            for (int i = 0; i < word.length(); i++) {
+                var stringChar = word.charAt(i);
+                System.out.println(String.format("%" + numSpaces + "s", stringChar));
+                numSpaces++;
+            }
+            numSpaces = 1;
+        }
     }
-
 
     //
     // Private helper methods

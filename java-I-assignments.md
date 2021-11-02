@@ -162,7 +162,7 @@ Total cost: $2,000.00
 
 ```
 
-### Ex 9.  Random Number Game
+### Ex 9. Random Number Game
 Write a Java program that generates a random number between 1 through 5.  The program prompts the user to 
 guess the number.  The program loops forever until the number is guessed.
 
@@ -178,4 +178,23 @@ Enter a number: 4
 You guessed it!!!
 ```
 
-### Ex 10.  TODO
+### Ex 10.  Diagon Alley
+Write a Java Program that prompts the user to a enter a string and prints every word diagonally to the console.
+
+Example:
+```
+Enter a string: this is a test
+t
+ h
+  i
+   s
+i
+ s
+a
+t
+ e
+  s
+   t
+
+Process finished with exit code 0
+```
