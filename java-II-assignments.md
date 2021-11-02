@@ -3,8 +3,8 @@
 ### Ex 1. Person list
 Write a Java program that prompts the user to enter a list of people.  The program contains a list
 of people of type Person.  The user input is used to create a Person object which is added
-to the list of people.  When the user types "done" the list of people is displayed
-on the console.
+to the list of people.  The program runs forever until the user types "done" at which the list of 
+people is displayed on the console.
 
 Example:
 ```

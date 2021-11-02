@@ -6,9 +6,9 @@ public class Person {
     // Data Members
     //
 
-    private int id;
-    private String firstName;
-    private String lastName;
+    private final int id;
+    private final String firstName;
+    private final String lastName;
 
     //
     // Constructors
@@ -19,14 +19,6 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    //
-    // Accessors
-    //
-
-    //
-    // Public Methods
-    //
 
     //
     // Overrides
@@ -40,8 +32,4 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
-
-    //
-    // Private Methods
-    //
 }
