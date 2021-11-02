@@ -12,7 +12,7 @@ public class JavaOne {
     JavaOne() {}
 
     //
-    // Methods
+    // Public Methods
     //
 
     /**
@@ -252,8 +252,4 @@ public class JavaOne {
             numSpaces = 1;
         }
     }
-
-    //
-    // Private helper methods
-    //
 }
