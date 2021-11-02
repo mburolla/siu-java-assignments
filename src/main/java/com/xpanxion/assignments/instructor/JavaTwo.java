@@ -62,10 +62,10 @@ public class JavaTwo {
     }
 
     /**
-     *
+     * Invoices and Products.
      */
     public void ex3() {
-
+        // Invoice has a list of products.
     }
 
     /**
