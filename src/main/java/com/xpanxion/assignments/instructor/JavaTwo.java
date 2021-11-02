@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.instructor;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -36,10 +37,28 @@ public class JavaTwo {
     }
 
     /**
-     *
+     * Person HashMap
      */
     public void ex2() {
+        var hashMap = new HashMap<Integer, Person>();
 
+        var p1 = new Person(1, "Peter", "Jones");
+        var p2 = new Person(2, "John", "Smith");
+        var p3 = new Person(3, "Mary", "Jane");
+
+        hashMap.put(1, p1);
+        hashMap.put(2, p2);
+        hashMap.put(3, p3);
+
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter Person ID: ");
+            var inString = scanner.nextLine();
+            if (inString.equals("done")) {
+                break;
+            }
+            System.out.println(hashMap.get(Integer.parseInt(inString)));
+        }
     }
 
     /**

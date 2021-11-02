@@ -19,7 +19,28 @@ Process finished with exit code 0
 ```
 HINT: Implement the `toString()` method on the `Person` class.
 
-### Ex 2. TODO
+### Ex 2. Person Hash Map
+Write a Java program that creates a HashMap whose key is an `Integer` and whose value is a `Person`.
+The prompt prompts the user to enter a person id, and looks up the `Person` object from the `HashMap`.
+
+The program contains the following data:
+- 1, Peter Jones
+- 2, John Smith
+- 3, Mary Jane
+
+Example:
+```
+Enter Person ID: 1
+Person{id=1, firstName='Peter', lastName='Jones'}
+Enter Person ID: 2
+Person{id=2, firstName='John', lastName='Smith'}
+Enter Person ID: 3
+Person{id=3, firstName='Mary', lastName='Jane'}
+Enter Person ID: done
+
+Process finished with exit code 0
+
+```
 
 ### Ex 3. TODO
 
