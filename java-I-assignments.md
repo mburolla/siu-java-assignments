@@ -89,7 +89,7 @@ Enter a string: quit
 Process finished with exit code 0
 ```
 
-### Ex 6.  Add Only Calculator
+### Ex 6. Add Only Calculator
 Write a Java program that prompts the user for two Integers and adds them.
 
 Example:
@@ -100,7 +100,7 @@ Enter second number: 2
 Result: 3
 ```
 
-### Ex 7.  Full Calculator
+### Ex 7. Full Calculator
 Write a Java program that prompts the user for two Integers and an operation and returns the result.
 
 Examples:
@@ -133,7 +133,16 @@ Enter operation (add, sub, mul, div): div
 Result: 2
 ```
 
-### Ex 8.  TODO
+### Ex 8. Carpet Calculator
+Write a program that calculates the total price for a carpet installation job.  The program prompts the user to
+enter the price of the capert per square feet, the prompts the user to enter the width and length of all 
+the rooms.  When the user enters "done", the program returns the total price of the carpet installation job.
+
+Example
+```
+
+
+```
 
 
 ### Ex 9.  TODO

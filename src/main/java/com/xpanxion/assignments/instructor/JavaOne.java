@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.instructor;
 
+import java.text.NumberFormat;
 import java.util.*;
 
 public class JavaOne {
@@ -14,6 +15,9 @@ public class JavaOne {
     // Methods
     //
 
+    /**
+     * Uppercase Name
+     */
     public void ex1() {
         Scanner scanner = new Scanner(System.in);
 
@@ -24,6 +28,9 @@ public class JavaOne {
         System.out.println(outString);
     }
 
+    /**
+     * Count Uppers
+     */
     public void ex2() {
         Scanner scanner = new Scanner(System.in);
 
@@ -39,6 +46,9 @@ public class JavaOne {
         System.out.println(String.format("Number of uppercase letters: %s.", numUpperCaseLetters));
     }
 
+    /**
+     * Capitalize Words
+     */
     public void ex3() {
         Scanner scanner = new Scanner(System.in);
 
@@ -60,6 +70,9 @@ public class JavaOne {
         System.out.println(outString);
     }
 
+    /**
+     * Classic Palidrome
+     */
     public void ex4() {
         Scanner scanner = new Scanner(System.in);
 
@@ -76,6 +89,9 @@ public class JavaOne {
         }
     }
 
+    /**
+     * Consonant and Vowel Count
+     */
     public void ex5() {
         Scanner scanner = new Scanner(System.in);
         List<String> vowelList = Arrays.asList("a", "e", "i", "o", "u", "y");
@@ -105,6 +121,9 @@ public class JavaOne {
         }
     }
 
+    /**
+     * Add Only Calculator
+     */
     public void ex6() {
         int result = 0;
         Scanner scanner = new Scanner(System.in);
@@ -122,6 +141,9 @@ public class JavaOne {
         System.out.println(outString);
     }
 
+    /**
+     * Full Calculator
+     */
     public void ex7() {
         int result = 0;
         var scanner = new Scanner(System.in); // Type inference.
@@ -156,16 +178,57 @@ public class JavaOne {
         System.out.println(outString);
     }
 
+    /**
+     * Carpet Calculator
+     */
     public void ex8() {
+        Scanner scanner = new Scanner(System.in);
+        float retval = 0.0F;
+        System.out.print("Enter price per square feet: ");
+        var pricePerSqrFeet = scanner.nextFloat();
+        scanner.nextLine();
 
+        // Get all the rooms.
+        while (true) {
+            System.out.print("Enter room dimensions (width x height): ");
+            String inString = scanner.nextLine();
+
+            if (inString.equals("done")) {
+                break;
+            } else  {
+                var stringTokenizer = new StringTokenizer(inString);
+                var width =  Float.parseFloat(stringTokenizer.nextToken());
+                stringTokenizer.nextToken(); // skip the x
+                var height = Float.parseFloat(stringTokenizer.nextToken());
+                retval += ((width * height) * pricePerSqrFeet);
+            }
+        }
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String moneyString = formatter.format(retval);
+        System.out.println("Total cost: " + moneyString);
     }
 
+    /**
+     *
+     */
     public void ex9() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inString = scanner.nextLine();
 
+        System.out.println(inString);
     }
 
+    /**
+     *
+     */
     public void ex10() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inString = scanner.nextLine();
 
+        System.out.println(inString);
     }
 
 
