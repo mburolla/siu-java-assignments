@@ -10,6 +10,8 @@ Example:
 ```
 Enter your name: John Smith
 Your name in upper case is: JOHN SMITH.
+
+Process finished with exit code 0
 ```
 
 ## Ex. 2
