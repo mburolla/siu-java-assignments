@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.instructor;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Instructor {
 
@@ -25,6 +26,68 @@ public class Instructor {
     }
 
     public void ex2() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String inString = scanner.nextLine();
+
+        int numUpperCaseLetters = 0;
+        for (int i = 0; i < inString.length(); i++) {
+            if (Character.isUpperCase(inString.charAt(i))) {
+                numUpperCaseLetters++;
+            }
+        }
+        System.out.println(String.format("Number of uppercase letters: %s.", numUpperCaseLetters));
+    }
+
+    public void ex3() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String inString = scanner.nextLine();
+
+        var st = new StringTokenizer(inString);
+        int wordCount = 0;
+        var outString = "";
+        while (st.hasMoreTokens()) {
+            if (wordCount % 2 == 1) {
+                outString += st.nextToken();
+            } else {
+                outString += st.nextToken().toUpperCase();
+            }
+            outString += " ";
+            wordCount++;
+        }
+        System.out.println(outString);
+    }
+
+    public void ex4() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String inString = scanner.nextLine();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void ex10() {
         int result = 0;
         Scanner scanner = new Scanner(System.in);
 
@@ -41,7 +104,7 @@ public class Instructor {
         System.out.println(outString);
     }
 
-    public void ex3() {
+    public void ex11() {
         int result = 0;
         var scanner = new Scanner(System.in); // Type inference.
 
