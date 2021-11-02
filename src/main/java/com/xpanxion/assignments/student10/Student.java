@@ -23,4 +23,8 @@ public class Student {
     public void ex3() {
         System.out.println("Student 10: ex3.");
     }
+
+    //
+    // Private helper methods
+    //
 }
