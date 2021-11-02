@@ -162,7 +162,20 @@ Total cost: $2,000.00
 
 ```
 
-### Ex 9.  TODO
+### Ex 9.  Random Number Game
+Write a Java program that generates a random number between 1 through 5.  The program prompts the user to 
+guess the number.  The program loops forever until the number is guessed.
 
+Example
+```
+Enter a number: 2
+Try again...
+Enter a number: 1
+Try again...
+Enter a number: 3
+Try again...
+Enter a number: 4
+You guessed it!!!
+```
 
 ### Ex 10.  TODO

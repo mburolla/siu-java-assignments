@@ -209,14 +209,27 @@ public class JavaOne {
     }
 
     /**
-     *
+     * Number guessing game
      */
     public void ex9() {
+        final int UPPER_LIMIT = 5;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String inString = scanner.nextLine();
 
-        System.out.println(inString);
+        var r = new Random();
+        var computedNumber = r.nextInt(UPPER_LIMIT) + 1;
+
+        while (true) {
+            System.out.print("Enter a number: ");
+            var userNumber= scanner.nextInt();
+            scanner.nextLine();
+
+            if (computedNumber == userNumber){
+                System.out.println("You guessed it!!!");
+                break;
+            } else {
+                System.out.println("Try again...");
+            }
+        }
     }
 
     /**
