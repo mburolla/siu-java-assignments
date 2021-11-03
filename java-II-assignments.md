@@ -213,4 +213,23 @@ Person{id=2, firstName='Zoey', lastName='Smith'}
 Process finished with exit code 0
 ```
 
-### Ex. 10 TODO
+### Ex. 10 Cat Queue
+Create a `Cat` class that contains one attribute called name of type String.  Create a 
+queue of type `Cat` that is implemented with a `LinkedList`. 
+
+Write a Java program that adds four cats to the queue:
+- Alice
+- Bob
+- Charlie
+- Dan
+
+After the cats have been added to the queue, create a while loop that prints the contents
+of the queue, removes an item from the queue and pauses every three seconds.
+
+Example:
+```
+[Cat{name='Alice'}, Cat{name='Bob'}, Cat{name='Charlie'}, Cat{name='Dan'}]
+[Cat{name='Bob'}, Cat{name='Charlie'}, Cat{name='Dan'}]
+[Cat{name='Charlie'}, Cat{name='Dan'}]
+[Cat{name='Dan'}]
+```

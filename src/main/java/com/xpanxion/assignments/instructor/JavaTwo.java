@@ -2,6 +2,7 @@ package com.xpanxion.assignments.instructor;
 
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -181,9 +182,19 @@ public class JavaTwo {
     }
 
     /**
-     *
+     * Cat Queue
      */
-    public void ex10() {
+    public void ex10() throws InterruptedException {
+        Queue<Cat> catQueue = new LinkedList<Cat>();
+        catQueue.add(new Cat("Alice"));
+        catQueue.add(new Cat("Bob"));
+        catQueue.add(new Cat("Charlie"));
+        catQueue.add(new Cat("Dan"));
 
+        while (!catQueue.isEmpty()) {
+            System.out.println(catQueue);
+            catQueue.remove();
+            TimeUnit.SECONDS.sleep(3);
+        }
     }
 }
