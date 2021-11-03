@@ -1,10 +1,8 @@
 package com.xpanxion.assignments.instructor;
 
 import java.text.NumberFormat;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class JavaTwo {
 
@@ -133,7 +131,19 @@ public class JavaTwo {
      *
      */
     public void ex7() {
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
+        );
 
+        var newPersonList = personList.stream().map(p -> {
+                return new Person(p.getId(), p.getFirstName(), "xxx");
+            }).collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
     }
 
     /**

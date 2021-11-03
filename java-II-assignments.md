@@ -134,10 +134,36 @@ Process finished with exit code 0
 HINT: The `Calculator` class contains a list of Strings that contains the previously entered
 calculations.
 
-### Ex. 7 TODO
+### Ex. 7 Redact Last Name
+Given the following code:
 
-### Ex. 8 TODO
+```
+var personList = Arrays.asList(
+        new Person(1, "Peter", "Jones"),
+        new Person(2, "John", "Smith"),
+        new Person(3, "Sue", "Anderson")
+);
 
-### Ex. 9 TODO
+// TODO: YOUR CODE HERE...
+
+for (Person p : newPersonList) {
+    System.out.println(p);
+}
+```
+Write a Java program that uses `stream().map()` to replace the last name of the people in the list.
+
+Output:
+```
+Person{id=1, firstName='Peter', lastName='xxx'}
+Person{id=2, firstName='John', lastName='xxx'}
+Person{id=3, firstName='Sue', lastName='xxx'}
+
+Process finished with exit code 0
+```
+
+### Ex. 8 Sort People
+
+
+### Ex. 9 
 
 ### Ex. 10 TODO

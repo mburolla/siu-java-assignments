@@ -6,9 +6,9 @@ public class Person {
     // Data Members
     //
 
-    private final int id;
-    private final String firstName;
-    private final String lastName;
+    private int id;
+    private String firstName;
+    private String lastName;
 
     //
     // Constructors
@@ -31,5 +31,25 @@ public class Person {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    //
+    // Accessors
+    //
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
