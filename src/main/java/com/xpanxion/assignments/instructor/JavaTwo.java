@@ -99,7 +99,34 @@ public class JavaTwo {
      *
      */
     public void ex6() {
+        var scanner = new Scanner(System.in); // Type inference.
+        var calculator = new Calculator();
 
+        while (true) {
+            System.out.print("Enter first number: ");
+            var operand1 = scanner.nextLine();
+            if (operand1.equals("history")) {
+                break;
+            }
+
+            System.out.print("Enter second number: ");
+            var operand2 = scanner.nextLine();
+            if (operand1.equals("history")) {
+                break;
+            }
+
+            System.out.print("Enter operation (add, sub, mul, div): ");
+            var operation = scanner.nextLine();
+            var result = calculator.calculate(Integer.parseInt(operand1), Integer.parseInt(operand2), operation);
+
+            var outString = String.format("Result: %s", result);
+            System.out.println(outString);
+        }
+
+        // Print history.
+        for(String s: calculator.getHistory()) {
+            System.out.println(s);
+        }
     }
 
     /**
