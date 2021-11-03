@@ -65,11 +65,11 @@ Process finished with exit code 0
 ```
 
 ### Ex 4. Refactor Invoice and Products
-The `Invoice` and `Product` class in Excerise 3 both share a common attribute: id.  Create an 
+The `Invoice` and `Product` classes in Ex. 3 share a common attribute: id.  Create an 
 abstract class called `Base` that contains an attribute called id.  Modifiy the `Invoice` and 
-`Product` class that subclass the `Base` class.  The constructors for the `Invoice` and 
-`Product` classes must be modified to call the `Base` class constructor. 
-The program should produce the same output as displayed in Ex 3.
+`Product` class to subclass the `Base` class.  Modify the constructors for the `Invoice` and 
+`Product` classes to call the `Base` class constructor. The program should produce the same 
+output as observed in Ex 3.
 
 Output:
 ```
@@ -78,9 +78,24 @@ Total cost: $9.00
 Process finished with exit code 0
 ```
 
-### Ex. 5 TODO
+### Ex. 5 Repository Interface
+Create an interface called `DataAccess` that contains a method called `getPerson()`.  Create a
+class called `Repository` that impelments the `DataAccess` interface that returns a person
+object who has an id of 1, and a name of John Doe.
 
+Code:
+```
+var repository = new Repository();
+var p = repository.getPerson();
+System.out.println(p);
+```
 
+Output:
+``` 
+Person{id=1, firstName='John', lastName='Doe'}
+
+Process finished with exit code 0
+```
 
 ### Ex. 6 TODO
 
