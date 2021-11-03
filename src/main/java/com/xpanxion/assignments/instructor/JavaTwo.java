@@ -105,13 +105,13 @@ public class JavaTwo {
         while (true) {
             System.out.print("Enter first number: ");
             var operand1 = scanner.nextLine();
-            if (operand1.equals("history")) {
+            if (operand1.equals("done")) {
                 break;
             }
 
             System.out.print("Enter second number: ");
             var operand2 = scanner.nextLine();
-            if (operand1.equals("history")) {
+            if (operand1.equals("done")) {
                 break;
             }
 

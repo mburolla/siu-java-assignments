@@ -99,9 +99,8 @@ Process finished with exit code 0
 
 ### Ex. 6 OOP Calclator
 Write a Java Program that contains a class called `Calculator`.  This program performs the
-functionality found in Java I Ex. 7, with the additional capabilities:
-- The program loops forever until "done" is entered by the user
-- The program displays the history of all the calculations and terminates when "history" is 
+functionality found in Java I Ex. 7, with the additional capability:
+- The program displays the history of all the calculations and terminates when "done" is 
 entered by the user
 
 Examples:
@@ -110,7 +109,7 @@ Enter first number: 10
 Enter second number: 2
 Enter operation (add, sub, mul, div): sub
 Result: 8
-Enter first number: history
+Enter first number: done
 10 - 2 = 8
 
 Process finished with exit code 0
@@ -125,7 +124,7 @@ Enter first number: 2
 Enter second number: 2
 Enter operation (add, sub, mul, div): mul
 Result: 4
-Enter first number: history
+Enter first number: done
 1 + 2 = 3
 2 * 2 = 4
 
