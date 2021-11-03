@@ -39,12 +39,35 @@ Person{id=3, firstName='Mary', lastName='Jane'}
 Enter Person ID: done
 
 Process finished with exit code 0
-
 ```
 
-### Ex 3. TODO
+### Ex 3. Invoice and Products
+Consider the following relationship: One invoice can contain one to many products. An 
+invoice has an id, and a product has an id, name, and cost. Given these facts, write a 
+Java program that contains an `Invoice` class and a `Product` class,  that contains the 
+following code:
 
-### Ex 4. TODO
+Code:
+```
+var invoice =  new Invoice(1);
+invoice.addProduct(new Product(111,"Mustard", 2.00));
+invoice.addProduct(new Product(222,"Ketchup", 3.00));
+invoice.addProduct(new Product(333,"Franks Hot Sauce", 4.00));
+NumberFormat formatter = NumberFormat.getCurrencyInstance();
+System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
+```
+
+Output:
+```
+Total cost: $9.00
+
+Process finished with exit code 0
+```
+
+### Ex 4. Refactor Invoice and Products
+
+
+
 
 ### Ex 5. TODO
 

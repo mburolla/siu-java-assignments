@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.instructor;
 
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -65,14 +66,24 @@ public class JavaTwo {
      * Invoices and Products.
      */
     public void ex3() {
-        // Invoice has a list of products.
+        var invoice =  new Invoice(1);
+        invoice.addProduct(new Product(111,"Mustard", 2.00));
+        invoice.addProduct(new Product(222,"Ketchup", 3.00));
+        invoice.addProduct(new Product(333,"Franks Hot Sauce", 4.00));
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
     /**
-     *
+     * Refactor Invoice and Products
      */
     public void ex4() {
-
+        var invoice =  new Invoice(1);
+        invoice.addProduct(new Product(111,"Mustard", 2.00));
+        invoice.addProduct(new Product(222,"Ketchup", 3.00));
+        invoice.addProduct(new Product(333,"Franks Hot Sauce", 4.00));
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
     /**
