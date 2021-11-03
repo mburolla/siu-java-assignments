@@ -41,7 +41,7 @@ Enter Person ID: done
 Process finished with exit code 0
 ```
 
-### Ex 3. Invoice and Products
+### Ex. 3 Invoice and Products
 Consider the following relationship: One invoice can contain one to many products. An 
 invoice has an id, and a product has an id, name, and cost. Given these facts, write a 
 Java program that contains an `Invoice` class and a `Product` class,  that contains the 
@@ -65,20 +65,29 @@ Process finished with exit code 0
 ```
 
 ### Ex 4. Refactor Invoice and Products
-The `Invoice` and `Product` class in Excerise 3 both share a common attribute: id.  Create a 
-class called `Base` that contains this this id.  Modifiy the `Invoice` and `Product` class to
-extend the `Base` class to use the id in the `Base` class.
+The `Invoice` and `Product` class in Excerise 3 both share a common attribute: id.  Create an 
+abstract class called `Base` that contains an attribute called id.  Modifiy the `Invoice` and 
+`Product` class that subclass the `Base` class.  The constructors for the `Invoice` and 
+`Product` classes must be modified to call the `Base` class constructor. 
+The program should produce the same output as displayed in Ex 3.
+
+Output:
+```
+Total cost: $9.00
+
+Process finished with exit code 0
+```
+
+### Ex. 5 TODO
 
 
 
-### Ex 5. TODO
+### Ex. 6 TODO
 
-### Ex 6. TODO
+### Ex. 7 TODO
 
-### Ex 7. TODO
+### Ex. 8 TODO
 
-### Ex 8. TODO
+### Ex. 9 TODO
 
-### Ex 9. TODO
-
-### Ex 10. TODO
+### Ex. 10 TODO

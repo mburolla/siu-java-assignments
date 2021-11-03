@@ -89,7 +89,7 @@ Enter a string: quit
 Process finished with exit code 0
 ```
 
-### Ex 6. Add Only Calculator
+### Ex. 6 Add Only Calculator
 Write a Java program that prompts the user for two Integers and adds them.
 
 Example:
@@ -100,7 +100,7 @@ Enter second number: 2
 Result: 3
 ```
 
-### Ex 7. Full Calculator
+### Ex. 7 Full Calculator
 Write a Java program that prompts the user for two Integers and an operation and returns the result.
 
 Examples:
@@ -133,7 +133,7 @@ Enter operation (add, sub, mul, div): div
 Result: 2
 ```
 
-### Ex 8. Carpet Calculator
+### Ex. 8 Carpet Calculator
 Write a Java program that calculates the total price for a carpet installation job.  The program prompts the user to
 enter the price of the carpet per square feet, then prompts the user to enter the width and length of all 
 the rooms.  When the user enters "done", the program returns the total price of the carpet installation job.
@@ -162,7 +162,7 @@ Total cost: $2,000.00
 
 ```
 
-### Ex 9. Random Number Game
+### Ex. 9 Random Number Game
 Write a Java program that generates a random number between 1 through 5.  The program prompts the user to 
 guess the number.  The program loops forever until the number is guessed.
 
@@ -178,7 +178,7 @@ Enter a number: 4
 You guessed it!!!
 ```
 
-### Ex 10.  Diagon Alley
+### Ex. 10 Diagon Alley
 Write a Java Program that prompts the user to a enter a string and prints every word diagonally to the console.
 
 Example:
