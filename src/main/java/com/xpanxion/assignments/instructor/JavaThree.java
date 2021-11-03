@@ -1,5 +1,8 @@
 package com.xpanxion.assignments.instructor;
 
+import java.io.*;
+import java.util.Scanner;
+
 public class JavaThree {
 
     public void ex1() {
@@ -7,7 +10,19 @@ public class JavaThree {
     }
 
     public void ex2() {
-
+        try {
+            String inputLine;
+            var file = new File("input-1.txt");
+            try (Scanner scanner = new Scanner(file)) {
+                while (scanner.hasNextLine()) {
+                    inputLine = scanner.nextLine();
+                    System.out.println(inputLine);
+                }
+            }
+        }
+        catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 
     public void ex3() {

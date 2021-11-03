@@ -2,7 +2,7 @@ package com.xpanxion.assignments.instructor;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-//        JavaOne javaOne = new JavaOne();
+        JavaOne javaOne = new JavaOne();
 //        javaOne.ex1();
 //        javaOne.ex2();
 //        javaOne.ex3();
@@ -24,11 +24,11 @@ public class Main {
 //        javaTwo.ex7();
 //        javaTwo.ex8();
 //        javaTwo.ex9();
-        javaTwo.ex10();
+//        javaTwo.ex10();
 
-//        JavaThree javaThree = new JavaThree();
+        JavaThree javaThree = new JavaThree();
 //        javaThree.ex1();
-//        javaThree.ex2();
+        javaThree.ex2();
 //        javaThree.ex3();
 //        javaThree.ex4();
 //        javaThree.ex5();

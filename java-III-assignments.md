@@ -1,8 +1,9 @@
 # Java III: Exercises
 
-### Ex. 1 TODO
+### Ex. 1 Divide by Zero Exception
 
-### Ex. 2 TODO
+
+### Ex. 2 Read File
 
 ### Ex. 3 TODO
 
