@@ -224,7 +224,8 @@ Write a Java program that adds four cats to the queue:
 - Dan
 
 After the cats have been added to the queue, create a while loop that prints the contents
-of the queue, removes an item from the queue and pauses every three seconds.
+of the queue, removes an item from the queue and pauses for three seconds.  The loop repeats
+until the queue is empty.
 
 Example:
 ```
@@ -232,4 +233,6 @@ Example:
 [Cat{name='Bob'}, Cat{name='Charlie'}, Cat{name='Dan'}]
 [Cat{name='Charlie'}, Cat{name='Dan'}]
 [Cat{name='Dan'}]
+
+Process finished with exit code 0
 ```
