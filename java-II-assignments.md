@@ -162,7 +162,32 @@ Process finished with exit code 0
 ```
 
 ### Ex. 8 Sort People
+Given the following code:
 
+```
+var personList = Arrays.asList(
+        new Person(1, "Charlie", "Jones"),
+        new Person(2, "Zoey", "Smith"),
+        new Person(3, "Adam", "Anderson")
+);
+
+// TODO: Your code here
+
+for (Person p : personList) {
+    System.out.println(p);
+}
+```
+
+Write a Java program that sorts the person list by first name.
+
+Output:
+```
+Person{id=3, firstName='Adam', lastName='Anderson'}
+Person{id=1, firstName='Charlie', lastName='Jones'}
+Person{id=2, firstName='Zoey', lastName='Smith'}
+
+Process finished with exit code 0
+```
 
 ### Ex. 9 
 

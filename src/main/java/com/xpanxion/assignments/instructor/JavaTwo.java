@@ -128,7 +128,7 @@ public class JavaTwo {
     }
 
     /**
-     *
+     * Redact Last Name
      */
     public void ex7() {
         var personList = Arrays.asList(
@@ -147,10 +147,20 @@ public class JavaTwo {
     }
 
     /**
-     *
+     * Sort People
      */
     public void ex8() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
 
+        personList.sort(Comparator.comparing((Person p) -> p.getFirstName()));
+
+        for (Person p : personList) {
+            System.out.println(p);
+        }
     }
 
     /**
