@@ -1,9 +1,9 @@
 # Java II: Exercises
 
 ### Ex 1. Person list
-Write a Java program that prompts the user to enter a list of people. The user input is used to create a Person object which is added
-to the list of people (of type Person).  The program runs forever until the user types "done" at which the list of 
-people is displayed on the console.
+Write a Java program that prompts the user to enter a list of people. This data are used to create `Person` objects which 
+are added to a list of people of type `Person`.  The program runs forever until the user types "done".  When the user
+types "done" the list of people is displayed on the console.
 
 Example:
 ```
@@ -20,10 +20,10 @@ Process finished with exit code 0
 HINT: Implement the `toString()` method on the `Person` class.
 
 ### Ex 2. Person Hash Map
-Write a Java program that creates a HashMap whose key is an `Integer` and whose value is a `Person`.
-The prompt prompts the user to enter a person id, and looks up the `Person` object from the `HashMap`.
+Write a Java program that contains a `HashMap` whose key is an `Integer` and whose value is a `Person`.
+The program prompts the user to enter a person id, and looks up the `Person` object from the `HashMap`.
 
-The program contains the following data:
+The `HashMap` contains the following references to `Person` objects:
 - 1, Peter Jones
 - 2, John Smith
 - 3, Mary Jane
@@ -44,8 +44,8 @@ Process finished with exit code 0
 ### Ex. 3 Invoice and Products
 Consider the following relationship: One invoice can contain one to many products. An 
 invoice has an id, and a product has an id, name, and cost. Given these facts, write a 
-Java program that contains an `Invoice` class and a `Product` class,  that contains the 
-following code:
+Java program that contains an `Invoice` class and a `Product` class.  The program must 
+contain the following code:
 
 Code:
 ```
@@ -98,7 +98,7 @@ Process finished with exit code 0
 ```
 
 ### Ex. 6 OOP Calclator
-Write a Java Program that contains a class called `Calculator`.  This program performs the
+Write a Java program that contains a class called `Calculator`.  This program performs the
 functionality found in Java I Ex. 7, with the additional capability:
 - The program displays the history of all the calculations and terminates when "done" is 
 entered by the user
@@ -122,7 +122,7 @@ Enter operation (add, sub, mul, div): add
 Result: 3
 Enter first number: 2
 Enter second number: 2
-Enter operation (add, sub, mul, div): mul
+Enter operatiosn (add, sub, mul, div): mul
 Result: 4
 Enter first number: done
 1 + 2 = 3
