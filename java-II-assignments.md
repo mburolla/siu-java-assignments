@@ -65,7 +65,9 @@ Process finished with exit code 0
 ```
 
 ### Ex 4. Refactor Invoice and Products
-
+The `Invoice` and `Product` class in Excerise 3 both share a common attribute: id.  Create a 
+class called `Base` that contains this this id.  Modifiy the `Invoice` and `Product` class to
+extend the `Base` class to use the id in the `Base` class.
 
 
 
