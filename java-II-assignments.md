@@ -189,6 +189,28 @@ Person{id=2, firstName='Zoey', lastName='Smith'}
 Process finished with exit code 0
 ```
 
-### Ex. 9 
+### Ex. 9 Filter People
+Given the following code:
+```
+var personList = Arrays.asList(
+        new Person(1, "Charlie", "Jones"),
+        new Person(2, "Zoey", "Smith"),
+        new Person(3, "Adam", "Anderson")
+);
+
+// TODO: Your code here
+
+for (Person p : filteredList) {
+    System.out.println(p);
+}
+```
+Write a Java program that returns only the people whose last name is "Smith".
+
+Output:
+```
+Person{id=2, firstName='Zoey', lastName='Smith'}
+
+Process finished with exit code 0
+```
 
 ### Ex. 10 TODO
