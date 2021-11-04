@@ -42,10 +42,12 @@ Process finished with exit code 0
 ```
 
 ### Ex. 3 Invoice and Products
-Consider the following relationship: One invoice can contain one to many products. An 
-invoice has an id, and a product has an id, name, and cost. Given these facts, write a 
-Java program that contains an `Invoice` class and a `Product` class.  The program must 
-contain the following code:
+Consider the following relationship: One invoice contains one to many products. An 
+invoice has an id, and a product has an id, name, and cost.  Given these facts, write a 
+Java program that contains an `Invoice` class and a `Product` class.  The `Invoice` class
+contains a private list of `Product` objects.  
+
+The Java program must contain the following code:
 
 Code:
 ```
@@ -80,7 +82,7 @@ Process finished with exit code 0
 
 ### Ex. 5 Repository Interface
 Create an interface called `DataAccess` that contains a method called `getPerson()`.  Create a
-class called `Repository` that impelments the `DataAccess` interface that returns a person
+class called `Repository` that impelments the `DataAccess` interface that returns a `Person`
 object who has an id of 1, and a name of John Doe.
 
 Code:
