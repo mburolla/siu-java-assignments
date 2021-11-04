@@ -94,6 +94,7 @@ public class JavaThree {
 
     public void ex7() {
 
+        System.out.println("Hi");
     }
 
     public void ex8() {
