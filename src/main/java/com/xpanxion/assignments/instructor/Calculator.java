@@ -23,7 +23,7 @@ public class Calculator {
     // Methods
     //
 
-    public int calculate(int operand1, int operand2, String operation) {
+    public int calculate(int operand1, int operand2, String operation) throws CalculatorException {
         int retval = 0;
         String strOperation = "";
         switch (operation) {
@@ -40,8 +40,13 @@ public class Calculator {
                 strOperation = "*";
             }
             case "div" -> {
-                retval = operand1 / operand2;
-                strOperation = "/";
+                try {
+                    retval = operand1 / operand2;
+                    strOperation = "/";
+                } catch (ArithmeticException ae) {
+                    var message = String.format("Cannot divide by zero: %s / %s.", operand1, operand2);
+                    throw new CalculatorException(message);
+                }
             }
         }
 

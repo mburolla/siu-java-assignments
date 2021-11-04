@@ -1,9 +1,9 @@
 package com.xpanxion.assignments.instructor;
 
-import java.text.NumberFormat;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.text.NumberFormat;
 import java.util.stream.Collectors;
+import java.util.concurrent.TimeUnit;
 
 public class JavaTwo {
 
@@ -95,9 +95,9 @@ public class JavaTwo {
     }
 
     /**
-     *
+     * OOP Calclator
      */
-    public void ex6() {
+    public void ex6() throws CalculatorException {
         var scanner = new Scanner(System.in); // Type inference.
         var calculator = new Calculator();
 
