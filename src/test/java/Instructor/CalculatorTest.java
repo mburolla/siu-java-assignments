@@ -1,9 +1,9 @@
 package Instructor;
 
-import com.xpanxion.assignments.instructor.CalculatorException;
 import org.junit.jupiter.api.*;
 import com.xpanxion.assignments.instructor.Calculator;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.xpanxion.assignments.instructor.CalculatorException;
 
 public class CalculatorTest {
 

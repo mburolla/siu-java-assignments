@@ -60,7 +60,7 @@ Process finished with exit code 0
 ```
 
 ### Ex. 5 People to File
-Write a Java Program that contains the list of people (below) and writes this data to a file 
+Write a Java program that contains the list of people (below) and writes this data to a file 
 named `output-1.txt`.
 
 People:
@@ -112,8 +112,3 @@ Create a four unit tests that test the `Calculator` class, one for each operatio
 - substract
 - multiply
 - divide
-
-### Ex. 9 TODO
-
-
-### Ex. 10 TODO
