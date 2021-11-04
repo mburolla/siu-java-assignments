@@ -79,11 +79,30 @@ Output file:
 3, Charlie Brown
 ```
 
-### Ex. 6 TODO
+### Ex. 6 Optional Person
+The following code returns a `NullPointerException`:
 
-### Ex. 7 TODO
+Client code:
+```
+var personRepository = new PersonRepository();
+var person = personRepository.getPerson(4);
+System.out.println(person.getFirstName());
+```
 
-### Ex. 8 TODO
+This is because a person with an id of 4 does not exsist in the `PersonRepository`.
+
+Copy the `PersonRepository` from the shared package into your student package, and modify it to 
+return an `Optional` `Person`.
+
+Modify the client code (above) to display the first name of the person on the console only if it 
+is not `null`.
+
+### Ex. 7 Unit Testing
+
+
+
+### Ex. 8 Logging
+
 
 ### Ex. 9 TODO
 

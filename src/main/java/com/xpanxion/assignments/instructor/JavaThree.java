@@ -87,7 +87,9 @@ public class JavaThree {
     }
 
     public void ex6() {
-
+        var personRepository = new PersonRepository();
+        var optPerson = personRepository.getPerson(4);
+        optPerson.ifPresent(p -> System.out.println(p.getFirstName()));
     }
 
     public void ex7() {
