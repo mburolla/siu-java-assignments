@@ -1,7 +1,16 @@
 # Java III: Exercises
 
-### Ex. 1 Divide by Zero Exception
+### Ex. 1 Divide by Zero
+Consider the following line of code:
+```
+var result = 10 / 0;
+```
+Use a `try`/`catch` block to catch this error and write the following to the console:
 
+Output:
+```
+Cannot divide by zero.
+```
 
 ### Ex. 2 Read File
 

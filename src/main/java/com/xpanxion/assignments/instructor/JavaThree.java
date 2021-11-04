@@ -6,7 +6,12 @@ import java.util.Scanner;
 public class JavaThree {
 
     public void ex1() {
-
+        try {
+            var result = 10 / 0;
+        }
+        catch (ArithmeticException ae) {
+            System.out.println("Cannot divide by zero.");
+        }
     }
 
     public void ex2() {
