@@ -97,7 +97,7 @@ return an `Optional` `Person`.
 Modify the client code (above) to display the first name of the person on the console only if it 
 is not `null`.
 
-### Ex. 7 Unit Testing
+### Ex. 7 Unit Testing: Person
 Create a unit test in your student directory (`test/java/student{id}`) that tests that the first 
 name of a Person object is getting created correctly.
 
@@ -106,10 +106,14 @@ Output
 Process finished with exit code 0
 ```
 
-### Ex. 8 Logging
-
-
+### Ex. 8 Unit Testing: Calculator
+Create a four unit tests that test the `Calculator` class, one for each operation:
+- addition
+- substract
+- multiply
+- divide
 
 ### Ex. 9 TODO
+
 
 ### Ex. 10 TODO
