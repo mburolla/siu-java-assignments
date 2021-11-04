@@ -43,7 +43,7 @@ This is line 5 from input-1.txt.
 Process finished with exit code 0
 ```
 
-### Ex. 4 Read File Create People
+### Ex. 4 File to People
 Write a Java program that reads a file named `input-2.txt`.  This file contains data to create
 objects of type `Person`.  The program reads data from this file, creates a list of type `Person` and
 displays the list on the console.
@@ -59,7 +59,25 @@ Person{id=5, firstName='Steve', lastName='Jobs'}
 Process finished with exit code 0
 ```
 
-### Ex. 5 TODO
+### Ex. 5 People to File
+Write a Java Program that contains the list of people (below) and writes this data to a file 
+named `output-1.txt`.
+
+People:
+```
+var peopleList = Arrays.asList(
+        new Person(1, "Alice", "Jones"),
+        new Person(2, "Bob", "Smith"),
+        new Person(3, "Charlie", "Brown")
+);
+```
+
+Output file:
+```
+1, Alice Jones
+2, Bob Smith
+3, Charlie Brown
+```
 
 ### Ex. 6 TODO
 
