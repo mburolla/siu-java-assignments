@@ -12,7 +12,7 @@ Output:
 Cannot divide by zero.
 ```
 
-### Ex. 2 
+### Ex. 2 Calculator Exception
 Create a class called `CalculatorException` that extends the `Exception` class.  Modifiy the `Calculator`
 object created in Java II Ex. 6 to throw a `CalculatorException` when a user attempts to divide by 
 zero.  
