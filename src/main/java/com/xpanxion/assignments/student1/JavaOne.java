@@ -153,6 +153,21 @@ public class JavaOne {
         }
     }
 
+    public void ex6() {
+        //prompt user for first number
+        System.out.print("Enter first number: ");
+        Scanner scanner = new Scanner(System.in);
+        int firstNumber = scanner.nextInt();
+
+        //prompt user for second number
+        System.out.print("Enter second number: ");
+        int secondNumber = scanner.nextInt();
+
+        //add numbers together and return result
+        int result = firstNumber + secondNumber;
+        System.out.println("Result: " + result);
+    }
+
     //
     // Private helper methods
     //
