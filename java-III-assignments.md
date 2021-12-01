@@ -13,7 +13,7 @@ Cannot divide by zero.
 ```
 
 ### Ex. 2 Calculator Exception
-Create a class called `CalculatorException` that extends the `Exception` class.  Modifiy the `Calculator`
+Create a class called `CalculatorException` that extends the `Exception` class.  Modify the `Calculator`
 object created in Java II Ex. 6 to throw a `CalculatorException` when a user attempts to divide by 
 zero.  
 
@@ -23,7 +23,7 @@ var calculator = new Calculator();
 var result = calculator.calculate(10, 0, "div"); // Catch this error.
 ```
 
-Ouput:
+Output:
 ```
 Cannot divide by zero: 10 / 0.
 ```
@@ -89,7 +89,7 @@ var person = personRepository.getPerson(4);
 System.out.println(person.getFirstName());
 ```
 
-This is because a person with an id of 4 does not exsist in the `PersonRepository`.
+This is because a person with an id of 4 does not exist in the `PersonRepository`.
 
 Copy the `PersonRepository` from the shared package into your student package, and modify it to 
 return an `Optional` `Person`.
@@ -109,6 +109,6 @@ Process finished with exit code 0
 ### Ex. 8 Unit Testing: Calculator
 Create a four unit tests that test the `Calculator` class, one for each operation:
 - addition
-- substract
+- subtract
 - multiply
 - divide
