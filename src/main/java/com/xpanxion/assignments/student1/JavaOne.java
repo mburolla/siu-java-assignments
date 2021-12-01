@@ -168,6 +168,43 @@ public class JavaOne {
         System.out.println("Result: " + result);
     }
 
+    public void ex7() {
+        //prompt user for first number
+        System.out.print("Enter first number: ");
+        Scanner scanner = new Scanner(System.in);
+        var firstNumber = scanner.nextInt();
+
+        //prompt user for second number
+        System.out.print("Enter second number: ");
+        var secondNumber = scanner.nextInt();
+
+        //prompt for operation
+        System.out.print("Enter operation (add, sub, mul, div): ");
+        var chosenOperation = scanner.next();
+        //create result variable
+        var result = 0;
+
+        //based on user operation carry out calculation
+        switch(chosenOperation) {
+            case "add":
+                result = firstNumber + secondNumber;
+                break;
+            case "sub":
+                result = firstNumber - secondNumber;
+                break;
+            case "mul":
+                result = firstNumber * secondNumber;
+                break;
+            case "div":
+                result = firstNumber / secondNumber;
+                break;
+            default:
+                System.out.println("Invalid Operand!");
+                break;
+        }
+        System.out.println("Result: " + result);
+    }
+
     //
     // Private helper methods
     //
