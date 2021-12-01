@@ -73,6 +73,22 @@ public class JavaOne {
         System.out.println(finalPhrase);
     }
 
+    public void ex4() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String string = scanner.nextLine();
+        StringBuilder pal = new StringBuilder(string);
+
+        pal.reverse();
+        String rev = pal.toString();
+
+        if (string.equals(rev)) {
+            System.out.println("String is a Palindrome");
+        }else
+            System.out.println("String is not a Palindrome");
+    }
+
     //
     // Private helper methods
     //
