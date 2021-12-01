@@ -17,6 +17,7 @@ public class JavaOne {
     //
 
     public void ex1() {
+        // Test.
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Student 10: ex1.");
