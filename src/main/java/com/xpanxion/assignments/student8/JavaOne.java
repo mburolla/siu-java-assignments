@@ -97,14 +97,36 @@ public class JavaOne {
     }
 
     public void ex6() {
-        System.out.println("Student 8: ex5.");
+        System.out.println("Student 8: ex6.");
         System.out.print("Enter first number: ");
         int a = scanner.nextInt();
         System.out.print("Enter second number: ");
         int b = scanner.nextInt();
         int result = a + b;
-        System.out.println(String.format("Result: %s", result));
+        System.out.printf("Result: %s%n", result);
 
+    }
+
+    public void ex7() {
+        System.out.println("Student 8: ex7.");
+
+        System.out.print("Enter first number: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int b = scanner.nextInt();
+        System.out.print("Enter operation (add, sub, mul, div): ");
+        String operation = scanner.next();
+        int result = 0;
+        if (operation.equals("add"))
+            result = a + b;
+        else if (operation.equals("sub"))
+            result = a - b;
+        else if (operation.equals("mul"))
+            result = a * b;
+        else if (operation.equals("div"))
+            result = a / b;
+
+        System.out.printf("Result: %s", result);
     }
     //
     // Private helper methods
