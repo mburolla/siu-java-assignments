@@ -1,7 +1,6 @@
 package com.xpanxion.assignments.student3;
 
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class JavaOne {
 
@@ -87,6 +86,37 @@ public class JavaOne {
             System.out.println("String is a Palindrome");
         }else
             System.out.println("String is not a Palindrome");
+    }
+
+    public void ex5() {
+        Scanner scanner = new Scanner(System.in);
+
+        int vowelnum = 0;
+        int consnum = 0;
+
+        List<String> vowels = Arrays.asList("a", "e", "i", "o", "u", "y");
+
+        while (true) {
+            System.out.print("Enter a String: ");
+            String string = scanner.nextLine().toLowerCase(Locale.ROOT);
+            if (string.equals("quit"))
+                break;
+
+            for (int i = 0; i < string.length(); i++) {
+                char letter = string.charAt(i);
+                String character = Character.toString(letter);
+                if (vowels.contains(character)) {
+                    vowelnum++;
+                } else if (Character.isLetter(letter)){
+                    consnum++;
+                }
+            }
+            System.out.println("Number of vowels: " + vowelnum);
+            System.out.println("Number of consonants: " + consnum);
+            vowelnum = 0;
+            consnum = 0;
+        }
+
     }
 
     //
