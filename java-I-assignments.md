@@ -48,7 +48,7 @@ THIS is A longer STRING with MORE words.
 Process finished with exit code 0
 ```
 
-### Ex. 4 Classic Palidrome
+### Ex. 4 Classic Palindrome
 A palidrome is a word, phrase, or sequence that reads the same backward as forward (e.g. radar, madam).
 
 Write a Java program that tests if a word is a palidrome or not.
