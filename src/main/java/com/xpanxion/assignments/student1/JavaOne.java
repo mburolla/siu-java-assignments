@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.student1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class JavaOne {
@@ -51,7 +52,27 @@ public class JavaOne {
     }
 
     public void ex3() {
-        System.out.println("Student 1: ex3.");
+        //prompt user for string
+        System.out.print("Enter a string: ");
+
+        //read user input
+        Scanner scanner = new Scanner(System.in);
+        String userString = scanner.nextLine();
+
+        //split string
+        String[] splitUserString = userString.split(" ");
+
+        //loop thru string and replace every other word with its uppercase equivalent
+        for (int i = 0; i < splitUserString.length; i++) {
+            if (i == 0 || i % 2 == 0) {
+                String upperCaseEquiv = splitUserString[i].toUpperCase();
+                splitUserString[i] = upperCaseEquiv;
+            }
+        }
+
+        //return string
+        String joinedString = String.join(" ", splitUserString);
+        System.out.print(joinedString);
     }
 
     //
