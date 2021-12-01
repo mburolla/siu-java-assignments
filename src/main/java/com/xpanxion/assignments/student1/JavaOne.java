@@ -3,6 +3,7 @@ package com.xpanxion.assignments.student1;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class JavaOne {
@@ -103,6 +104,52 @@ public class JavaOne {
             System.out.println("YES!");
         } else {
             System.out.println("NO!");
+        }
+    }
+
+    public void ex5() {
+        //make array of vowels
+        String[] vowels = {"a","e","i","o","u"};
+
+        //create variable for vowelCount
+        //create variable for consonantCount
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        //prompt user for string
+        String userString = "";
+
+        //while input is not equal to 'quit'
+        while(userString != "quit") {
+            System.out.print("Enter a string: ");
+            //read input from user and lower case
+            Scanner scanner = new Scanner(System.in);
+            userString = scanner.nextLine().toLowerCase();
+
+            if (userString.equals("quit"))
+                break;
+
+            String[] userStringSplit = userString.split("");
+
+            //loop through input
+            for (int i = 0; i < userStringSplit.length; i++) {
+                String currentChar = userStringSplit[i];
+                //check if current char is found in vowels array
+                if (Arrays.asList(vowels).indexOf(currentChar) > -1) {
+                    //if so, increment vowelCount
+                    vowelCount++;
+                } else if (!currentChar.equals("") && (currentChar != null) && currentChar.matches("[a-zA-Z]")) {
+                    //if no, increment consonantCount
+                    consonantCount++;
+                }
+            }
+            //return number of vowels and constants
+            System.out.println("Number of vowels: " + vowelCount);
+            System.out.println("Number of consonants: " + consonantCount);
+
+            //reset count values
+            vowelCount = 0;
+            consonantCount = 0;
         }
     }
 
