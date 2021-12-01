@@ -46,8 +46,23 @@ public class JavaOne {
 
     public void ex3() {
         System.out.println("Student 10: ex3.");
-    }
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();
+        String splitSentence[] = sentence.split(" ");
+        int count = 0;
+        for (String word: splitSentence) {
+            count ++;
+            if (count % 2 == 0){
+                System.out.print(word.toUpperCase(Locale.ROOT));
+            }
+            else{
+                System.out.print(word.toLowerCase(Locale.ROOT));
+            }
+            System.out.print(" ");
+        }
+    }
     //
     // Private helper methods
     //
