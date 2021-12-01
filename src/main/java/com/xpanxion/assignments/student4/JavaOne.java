@@ -15,7 +15,7 @@ public class JavaOne {
     // Public methods
     //
 
-    public void ex1() {
+   public void ex1() {
             Scanner scanner=new Scanner(System.in);
             System.out.println("Enter your name :");
             String name=scanner.nextLine().toUpperCase();
@@ -24,8 +24,21 @@ public class JavaOne {
 
 
     public void ex2() {
-        System.out.println("Student 4: ex2.");
+        int upper=0;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the String  ");
+        String str=scan.nextLine();
+        int len =str.length();
+        for(int i=0; i<len; i++){
+            char ch=str.charAt(i);
+            if(ch>='A' && ch<='Z'){
+                upper++;
+            }
+        }
+        System.out.println("number of uppercase letters: "+upper);
     }
+
+
 
     public void ex3() {
         System.out.println("Student 4: ex3.");
