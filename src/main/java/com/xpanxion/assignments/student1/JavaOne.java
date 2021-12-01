@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student1;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -73,6 +75,35 @@ public class JavaOne {
         //return string
         String joinedString = String.join(" ", splitUserString);
         System.out.print(joinedString);
+    }
+
+    public void ex4() {
+        //prompt for string
+        System.out.print("Enter a string: ");
+
+        //read string from user
+        Scanner scanner = new Scanner(System.in);
+        String userInputString = scanner.nextLine();
+        int j = 0;
+
+        //split string into array of chars and save to variable
+        String[] charArray = userInputString.split("");
+        String[] reverseCharArray = new String[charArray.length];
+
+        //loop through user string and compare each letter (in order) to each letter in reverse string array
+        for (int i = charArray.length - 1; i >= 0; i--) {
+            reverseCharArray[j] = charArray[i];
+            j++;
+        }
+
+        String reverseCharArrayJoin = String.join("", reverseCharArray);
+        String charArrayJoin = String.join("", charArray);
+
+        if (reverseCharArrayJoin.equals(charArrayJoin)) {
+            System.out.println("YES!");
+        } else {
+            System.out.println("NO!");
+        }
     }
 
     //
