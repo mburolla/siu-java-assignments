@@ -1,5 +1,8 @@
 package com.xpanxion.assignments.student7;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -67,6 +70,31 @@ public class JavaOne {
         }
 
         System.out.println(newString);
+    }
+
+    public void ex4(){
+        var scanner = new Scanner(System.in);
+
+        System.out.println("Enter a palindrome: ");
+        String userInput = scanner.nextLine();
+        String forwards = "";
+        String backwards = "";
+
+
+        for (int i=0;i<userInput.length();i++) {
+            forwards += userInput.charAt(i);
+        }
+        for (int i=0;i<forwards.length();i++){
+            backwards += userInput.charAt((userInput.length()-1)-i);
+        }
+
+        if (forwards.equals(backwards)) {
+            System.out.println("Input is a palindrome");
+        }
+        else
+            System.out.println("Input is not a palindrome");
+
+
     }
 
     //
