@@ -1,5 +1,9 @@
 package com.xpanxion.assignments.student10;
 
+
+import java.util.Locale;
+import java.util.Scanner;
+
 public class JavaOne {
 
     //
@@ -13,7 +17,13 @@ public class JavaOne {
     //
 
     public void ex1() {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Student 10: ex1.");
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Your name in upper case is: ");
+        System.out.print(name.toUpperCase(Locale.ROOT));
     }
 
     public void ex2() {
