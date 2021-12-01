@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="java-assignments" />
+        <module name="siu-java-assignments" />
       </profile>
     </annotationProcessing>
   </component>
