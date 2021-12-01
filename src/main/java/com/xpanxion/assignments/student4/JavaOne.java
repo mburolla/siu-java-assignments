@@ -24,6 +24,7 @@ public class JavaOne {
 
 
     public void ex2() {
+        // test
         int upper=0;
         Scanner scan=new Scanner(System.in);
         System.out.println("Enter the String  ");
@@ -35,7 +36,7 @@ public class JavaOne {
                 upper++;
             }
         }
-        System.out.println("number of uppercase letters: "+upper);
+        System.out.println("number of uppercase letters : "+upper);
     }
 
 
