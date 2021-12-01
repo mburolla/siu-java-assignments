@@ -1,8 +1,6 @@
 package com.xpanxion.assignments.student8;
 
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class JavaOne {
 
