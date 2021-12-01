@@ -24,7 +24,7 @@ public class JavaOne {
 
 
     public void ex2() {
-        // test
+        // test test
         int upper=0;
         Scanner scan=new Scanner(System.in);
         System.out.println("Enter the String  ");
