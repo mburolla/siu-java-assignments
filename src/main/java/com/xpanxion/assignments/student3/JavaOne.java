@@ -119,6 +119,18 @@ public class JavaOne {
 
     }
 
+    public void ex6() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter a second integer: ");
+        int b = scanner.nextInt();
+
+        System.out.println("Result: " + (a + b));
+    }
+
     //
     // Private helper methods
     //
