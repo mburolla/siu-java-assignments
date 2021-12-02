@@ -16,7 +16,7 @@ public class JavaOne {
     //
 
     public void ex1() {
-        System.out.println("Student 3: ex1.");
+        System.out.println("Student 3: ex1 Uppercase Name");
 
         String name;
 
@@ -29,7 +29,7 @@ public class JavaOne {
     }
 
     public void ex2() {
-        System.out.println("Student 3: ex2.");
+        System.out.println("Student 3: ex2 Count Uppercase Letters");
 
         int upperCase = 0;
         String string;
@@ -50,7 +50,7 @@ public class JavaOne {
     }
 
     public void ex3() {
-        System.out.println("Student 3: ex3.");
+        System.out.println("Student 3: ex3 Capitalize Every Other Word");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -74,6 +74,8 @@ public class JavaOne {
     }
 
     public void ex4() {
+        System.out.println("Student 3: ex4 Palindrome");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a string: ");
@@ -90,6 +92,8 @@ public class JavaOne {
     }
 
     public void ex5() {
+        System.out.println("Student 3: ex 5 Counting Vowels and Consonants");
+
         Scanner scanner = new Scanner(System.in);
 
         int vowelnum = 0;
@@ -121,6 +125,7 @@ public class JavaOne {
     }
 
     public void ex6() {
+        System.out.println("Student 3: ex6 Simple Calculator");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -133,10 +138,11 @@ public class JavaOne {
     }
 
     public void ex7() {
+        System.out.println("Student 3: ex7 Standard Calculator");
 
         Scanner scanner = new Scanner(System.in);
         Scanner op = new Scanner(System.in);
-        int z = 0;
+        int z;
 
         System.out.print("Enter an integer: ");
         int x = scanner.nextInt();
@@ -170,6 +176,7 @@ public class JavaOne {
     }
 
     public void ex8() {
+        System.out.println("Student 3: ex8 Carpet Calculator");
 
         Scanner pricePerFoot = new Scanner(System.in);
         Scanner dimension = new Scanner(System.in);
@@ -199,14 +206,15 @@ public class JavaOne {
     }
 
     static void ex9() {
+        System.out.println("Student 3: ex9 Random Number Game");
 
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int n = 0;
+        int n;
         int max = 5;
         int min = 1;
 
-        int num = random.nextInt(max + min) + min;
+        int num = random.nextInt(max + min);
 
         while (true){
             System.out.print("Enter an integer between 1 and 5: ");
@@ -222,6 +230,8 @@ public class JavaOne {
     }
 
     static void ex10() {
+        System.out.println("Student 3: ex10 Diagonal String");
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a String: ");
         String string = scanner.nextLine();
