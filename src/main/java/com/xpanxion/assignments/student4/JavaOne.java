@@ -93,7 +93,7 @@ public class JavaOne {
         int sum = no1 + no2;
         System.out.print("Sum of these numbers: " + sum);
     }
-
+//test
     public void ex7() {
         String operator;
         Scanner sc = new Scanner(System.in);
