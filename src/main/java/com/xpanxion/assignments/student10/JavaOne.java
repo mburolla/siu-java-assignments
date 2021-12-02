@@ -202,6 +202,28 @@ public class JavaOne {
 
 
     }
+
+    public void ex10() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a sentence: ");
+        String input = scanner.nextLine();
+        String wordList [] = input.split(" ");
+
+        for (int i = 0; i < wordList.length; i++) {
+            String word = wordList[i];
+            StringBuilder sb1 = new StringBuilder("");
+            for (int j = 0; j < word.length(); j++) {
+                StringBuilder sb2 = sb1.append(" ");
+                System.out.println(sb1.toString() + word.charAt(j));
+
+            }
+
+
+        }
+
+
+    }
     //
     // Private helper methods
     //
