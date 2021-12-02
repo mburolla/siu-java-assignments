@@ -205,7 +205,45 @@ public class JavaOne {
         System.out.println("Result: " + result);
     }
 
+    public void ex8() {
+        //prompt user for price of carpet per square feet
+        System.out.print("Enter price per square feet: ");
+        Scanner scanner = new Scanner(System.in);
+
+        double pricePerSquareFeet = scanner.nextDouble();
+        var totalCost = 0.00;
+        var height = "";
+        var width = "";
+
+        //prompt the user to enter the width and length of all rooms
+        while(true) {
+            System.out.print("Enter room dimensions (width x height):");
+            width = scanner.next();
+            if (!isInteger(width)) {
+                break;
+            }
+
+            //read the 'x' character inputted by user
+            var split = scanner.next();
+
+            //get height
+            height = scanner.next();
+            //calculate total cost
+            totalCost += (Integer.parseInt(width) * Integer.parseInt(height)) * pricePerSquareFeet;
+        }
+        //when user enters done, return total price of carpet installation
+        System.out.print("Total cost: $" + totalCost);
+    }
+
     //
     // Private helper methods
     //
+    private static boolean isInteger(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+    }
 }
