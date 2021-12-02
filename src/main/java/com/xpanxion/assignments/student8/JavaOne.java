@@ -1,6 +1,8 @@
 package com.xpanxion.assignments.student8;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class JavaOne {
 
@@ -127,6 +129,55 @@ public class JavaOne {
             result = a / b;
 
         System.out.printf("Result: %s", result);
+    }
+
+    public void ex8() {
+        System.out.println("Student 8: ex8");
+
+
+        System.out.print("Enter price per square feet: ");
+        double price = scanner.nextDouble();
+        double totalDimensions = 0.0;
+
+
+        while(true) {
+            System.out.print("Enter room dimensions (width x height): ");
+            String dimensions = scanner.nextLine();
+
+            if (!dimensions.equals("done")) {
+                StringTokenizer tokens = new StringTokenizer(dimensions);
+                float width = Float.parseFloat(tokens.nextToken());
+                tokens.nextToken();
+                float height = Float.parseFloat(tokens.nextToken());
+                totalDimensions += (width * height);
+            } else {
+                break;
+            }
+        }
+        double totalCost = totalDimensions * price;
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
+
+        System.out.printf("Total cost: %s", formatter.format(totalCost));
+
+    }
+
+    public void ex9() {
+        System.out.println("Student 8: ex.");
+        int rand = (int) Math.round((Math.random() * 5) + 1);
+        int guess = 0;
+
+        while(true) {
+            System.out.print("Enter a number between 1 and 5: ");
+            guess = scanner.nextInt();
+            if (rand == guess) {
+                System.out.println("You guessed it!!!");
+                break;
+            } else {
+                System.out.println("Try again...");
+                continue;
+            }
+        }
     }
     //
     // Private helper methods
