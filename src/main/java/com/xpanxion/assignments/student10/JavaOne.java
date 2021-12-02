@@ -120,9 +120,34 @@ public class JavaOne {
         int num2 = scanner.nextInt();
         int sum = num1 + num2;
         System.out.println("Result: " + sum);
+    }
 
+    public void ex7() {
+        Scanner scanner = new Scanner(System.in);
 
-
+        System.out.println("Student 10: ex7.");
+        System.out.print("Enter a number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter another number: ");
+        int num2 = scanner.nextInt();
+        System.out.print("Enter an operation(add, sub, mul, div): ");
+        String operator = scanner.next();
+        if (operator.equals("add")) {
+            int result = num1 + num2;
+            System.out.println("Result: " + result);
+        }
+        else if (operator.equals("sub")) {
+            int result = num1 - num2;
+            System.out.println("Result: " + result);
+        }
+        else if (operator.equals("mul")) {
+            int result = num1 * num2;
+            System.out.println("Result: " + result);
+        }
+        else {
+            double result = num1/(double)num2;
+            System.out.println("Result: " + result);
+        }
     }
     //
     // Private helper methods
