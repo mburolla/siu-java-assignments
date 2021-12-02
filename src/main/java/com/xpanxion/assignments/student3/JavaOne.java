@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.student3;
 
+import java.text.NumberFormat;
 import java.util.*;
 
 public class JavaOne {
@@ -166,6 +167,35 @@ public class JavaOne {
 
         System.out.println("Result: " + z);
 
+    }
+
+    public void ex8() {
+
+        Scanner pricePerFoot = new Scanner(System.in);
+        Scanner dimension = new Scanner(System.in);
+        double cost = 0.0;
+
+        System.out.print("Enter price per square foot: ");
+        double ppf = pricePerFoot.nextDouble();
+
+        while (true) {
+            System.out.print("Enter room dimensions (width x height): ");
+            String dim = dimension.nextLine();
+
+            if (dim.equals("done"))
+                break;
+            else {
+                StringTokenizer stringTokenizer = new StringTokenizer(dim);
+
+                int width = Integer.parseInt(stringTokenizer.nextToken());
+                stringTokenizer.nextToken();
+                int height = Integer.parseInt(stringTokenizer.nextToken());
+                cost += ((width * height) * ppf);
+            }
+        }
+
+        NumberFormat price = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + price.format(cost));
     }
 
     //
