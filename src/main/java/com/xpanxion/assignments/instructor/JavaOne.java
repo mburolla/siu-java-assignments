@@ -68,6 +68,7 @@ public class JavaOne {
             outString += " ";
             wordCount++;
         }
+
         System.out.println(outString);
     }
 
