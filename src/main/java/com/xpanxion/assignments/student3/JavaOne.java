@@ -131,6 +131,43 @@ public class JavaOne {
         System.out.println("Result: " + (a + b));
     }
 
+    public void ex7() {
+
+        Scanner scanner = new Scanner(System.in);
+        Scanner op = new Scanner(System.in);
+        int z = 0;
+
+        System.out.print("Enter an integer: ");
+        int x = scanner.nextInt();
+        System.out.print("Enter an integer: ");
+        int y = scanner.nextInt();
+
+        while (true){
+
+            System.out.print("Enter an operator: ");
+            String operation = op.next();
+
+            if (operation.equals("*")) {
+                z = x * y;
+                break;
+            } else if (operation.equals("/")) {
+                z = x / y;
+                break;
+            }else if (operation.equals("+")) {
+                z = x + y;
+                break;
+            }else if (operation.equals("-")) {
+                z = x - y;
+                break;
+            }else
+                System.out.println("Please Enter a valid operator");
+
+        }
+
+        System.out.println("Result: " + z);
+
+    }
+
     //
     // Private helper methods
     //
