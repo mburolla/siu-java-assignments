@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student8;
 
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -176,6 +177,24 @@ public class JavaOne {
             } else {
                 System.out.println("Try again...");
                 continue;
+            }
+        }
+    }
+
+    public void ex10() {
+        System.out.println("Student 8 ex10.");
+
+        System.out.print("Enter a string: ");
+        String userStr = scanner.nextLine();
+        String[] userWords = userStr.split(" ");
+
+        System.out.println(Arrays.toString(userWords));
+
+        for (int i = 0; i <= userWords.length - 1; i++) {
+            int spaces = 0;
+            for (int j = 0; j <= userWords[i].length() - 1; j++) {
+                System.out.println(" ".repeat(spaces) + userWords[i].charAt(j));
+                spaces++;
             }
         }
     }
