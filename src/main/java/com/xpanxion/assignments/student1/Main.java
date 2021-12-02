@@ -12,5 +12,6 @@ public class Main {
         javaOne.ex7();
         javaOne.ex8();
         javaOne.ex9();
+        javaOne.ex10();
     }
 }

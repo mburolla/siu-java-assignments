@@ -255,6 +255,27 @@ public class JavaOne {
         }
     }
 
+    public void ex10() {
+        //prompt user for string
+        System.out.print("Enter a string: ");
+        Scanner scanner = new Scanner(System.in);
+        var userString = scanner.nextLine();
+
+        //split string into array of words
+        String[] words = userString.split(" ");
+        //iterate through
+        for (String word : words) {
+            //split array of words into array of chars
+            String[] letters = word.split("");
+            //iterate through
+            for (int i = 0; i < letters.length; i++) {
+                //for every letter add padding in the front and print to console
+                System.out.println(" ".repeat(i) + letters[i]);
+            }
+        }
+
+    }
+
     //
     // Private helper methods
     //
