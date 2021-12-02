@@ -80,6 +80,22 @@ public class JavaOne {
             System.out.println(word + " is not a palindrome");
         }
     }
+    /*
+    public void ex5() {
+        System.out.println("Student 10: ex5.");
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        if (){
+        }
+        else {
+        }
+
+     */
+    }
     //
     // Private helper methods
     //
