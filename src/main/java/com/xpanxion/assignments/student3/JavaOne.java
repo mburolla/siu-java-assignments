@@ -198,6 +198,29 @@ public class JavaOne {
         System.out.println("Total cost: " + price.format(cost));
     }
 
+    static void ex9() {
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int n = 0;
+        int max = 5;
+        int min = 1;
+
+        int num = random.nextInt(max + min) + min;
+
+        while (true){
+            System.out.print("Enter an integer between 1 and 5: ");
+            n = scanner.nextInt();
+
+            if (n == num) {
+                System.out.println("You Guessed It!!!");
+                break;
+            }else
+                System.out.println("Try again.");
+        }
+
+    }
+
     //
     // Private helper methods
     //
