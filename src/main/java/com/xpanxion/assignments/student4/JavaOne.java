@@ -120,6 +120,30 @@ public class JavaOne {
     }
 
         public void ex9() {
+            int answer, guess;
+            int MAX = 5;
+            Scanner in = new Scanner(System.in);
+            Random rand = new Random();
+            boolean correct = false;
+            answer = rand.nextInt(MAX) ;
+            System.out.println("Guess a number between 1 and 5: ");
+            while (!correct) {
+                guess = in.nextInt();
+                if (guess > answer) {
+                    System.out.println("try again");
+                }
+                else if (guess < answer) {
+                    System.out.println("try again");
+                }
+                else {
+                    System.out.println("you guessed it!!");
+                    correct = true;
+                }
+            }
+
+    }
+        public void ex10() {
+
 
     }
 }
