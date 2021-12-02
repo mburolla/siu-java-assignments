@@ -64,6 +64,7 @@ public class JavaOne {
             System.out.print(" ");
         }
     }
+
     public void ex4() {
         System.out.println("Student 10: ex4.");
         Scanner scanner = new Scanner(System.in);
@@ -108,7 +109,23 @@ public class JavaOne {
             word = scanner.nextLine();
         }
     }
+
+    public void ex6() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Student 10: ex6.");
+        System.out.print("Enter a number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter another number: ");
+        int num2 = scanner.nextInt();
+        int sum = num1 + num2;
+        System.out.println("Result: " + sum);
+
+
+
+    }
     //
     // Private helper methods
     //
+
 }
