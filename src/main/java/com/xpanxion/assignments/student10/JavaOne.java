@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student10;
 
 
+import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 import java.lang.StringBuilder;
@@ -148,6 +149,35 @@ public class JavaOne {
             double result = num1/(double)num2;
             System.out.println("Result: " + result);
         }
+    }
+
+    public void ex8() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Student 10: ex8.");
+        int width;
+        int length;
+        double area;
+        double areaTotal = 0.0;
+
+        System.out.print("Enter price per square feet: $");
+        double price = scanner.nextDouble();
+        scanner.nextLine();
+        while (true) {
+            System.out.print("Enter room dimensions (width x length): ");
+            String dimensions = scanner.nextLine();
+            if (dimensions.equals("done")){
+                break;
+            }
+            String splitDimensions[] = dimensions.split(" ");
+            width = Integer.parseInt(splitDimensions[0]);
+            length = Integer.parseInt(splitDimensions[2]);
+            area = width * length;
+            areaTotal = areaTotal + area;
+        }
+
+        double total = areaTotal * price;
+        System.out.println("Total cost: " + NumberFormat.getCurrencyInstance().format(total));
     }
     //
     // Private helper methods
