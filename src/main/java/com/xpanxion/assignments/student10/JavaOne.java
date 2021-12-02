@@ -80,21 +80,33 @@ public class JavaOne {
             System.out.println(word + " is not a palindrome");
         }
     }
-    /*
+
     public void ex5() {
         System.out.println("Student 10: ex5.");
         Scanner scanner = new Scanner(System.in);
-
+        String word = "";
 
         System.out.print("Enter a word: ");
-        String word = scanner.nextLine();
+        word = scanner.nextLine();
+        while(word.equals("quit") != true) {
+            int vowelCount = 0;
+            int consonantCount = 0;
 
-        if (){
+            for (int i=0; i<word.length(); i++) {
+                char character = word.charAt(i);
+                if (Character.isLetter(character)) {
+                    if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u') {
+                        vowelCount++;
+                    } else {
+                        consonantCount++;
+                    }
+                }
+            }
+            System.out.println("Number of vowels: " + vowelCount);
+            System.out.println("Number of consonants: " + consonantCount);
+            System.out.print("Enter a word: ");
+            word = scanner.nextLine();
         }
-        else {
-        }
-
-     */
     }
     //
     // Private helper methods
