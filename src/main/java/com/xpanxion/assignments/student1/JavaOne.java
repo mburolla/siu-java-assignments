@@ -235,6 +235,26 @@ public class JavaOne {
         System.out.print("Total cost: $" + totalCost);
     }
 
+    public void ex9() {
+        //generate random number 1-5
+        int randomNumber = (int) Math.ceil(Math.random() * 5);
+
+        //while user has not guessed number
+        while(true) {
+            //prompt user to guess the number
+            System.out.print("Enter a number: ");
+            Scanner scanner = new Scanner(System.in);
+            int userGuess = scanner.nextInt();
+
+            //if their guess is incorrect, repeat
+            if (userGuess == randomNumber) {
+                System.out.println("You guessed it!!!");
+                break;
+            }
+            System.out.println("Try again...");
+        }
+    }
+
     //
     // Private helper methods
     //
