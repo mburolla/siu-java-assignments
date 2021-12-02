@@ -3,6 +3,7 @@ package com.xpanxion.assignments.student10;
 
 import java.util.Locale;
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class JavaOne {
 
@@ -61,6 +62,22 @@ public class JavaOne {
                 System.out.print(word.toLowerCase(Locale.ROOT));
             }
             System.out.print(" ");
+        }
+    }
+    public void ex4() {
+        System.out.println("Student 10: ex4.");
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+        StringBuilder sb = new StringBuilder(word);
+        sb = sb.reverse();
+        if (word.equals(sb.toString())){
+            System.out.println(word + " is a palindrome");
+        }
+        else {
+            System.out.println(word + " is not a palindrome");
         }
     }
     //
