@@ -139,6 +139,48 @@ public class JavaOne {
 
     }
 
+    public void ex6() {
+        var scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.println("Result: " + (num1 + num2));
+    }
+
+    public void ex7() {
+        var scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Enter Operation(add, sub, div, mul): ");
+
+        String operand1 = scanner.next();
+
+        String operand = operand1.toUpperCase();
+
+        if (operand.equals("ADD")) {
+            System.out.println("Result: " + (num1 + num2));
+        }
+        else if (operand.equals("SUB")) {
+            System.out.println("Result: " + (num1 - num2));
+        }
+        else if (operand.equals("DIV")) {
+            System.out.println("Result: " + (num1 / num2));
+        }
+        else if (operand.equals("MUL")) {
+            System.out.println("Result: " + (num1 * num2));
+        }
+
+    }
+
     //
     // Private helper methods
     //
