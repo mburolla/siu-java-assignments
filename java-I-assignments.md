@@ -12,6 +12,8 @@ Your name in upper case is: JOHN SMITH.
 Process finished with exit code 0
 ```
 
+
+
 ### Ex. 2 Count Uppers
 Write a Java program that prompts the user to enter a string and counts the number of uppercase letters.
 
