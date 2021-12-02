@@ -135,11 +135,11 @@ public class JavaOne {
     public void ex8() {
         System.out.println("Student 8: ex8");
 
+        double totalDimensions = 0.0;
 
         System.out.print("Enter price per square feet: ");
         double price = scanner.nextDouble();
-        double totalDimensions = 0.0;
-
+        scanner.nextLine();
 
         while(true) {
             System.out.print("Enter room dimensions (width x height): ");
