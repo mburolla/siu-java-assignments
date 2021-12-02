@@ -23,7 +23,7 @@ public class JavaOne {
     public void ex1(){
         var sc = new Scanner(System.in);
 
-        System.out.println("====Ex.1====");
+        title(1);
 
         System.out.print("Enter your name: ");
         var name = sc.nextLine();
@@ -34,10 +34,12 @@ public class JavaOne {
 
     public void ex2(){
         var sc = new Scanner(System.in);
+
         var validLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var capsCount = 0;
 
-        System.out.println("\n\n====Ex.2====");
+        title(2);
+
         System.out.print("Enter a string: ");
         var sentence = sc.nextLine();
         for (char letter : sentence.toCharArray()){
@@ -50,7 +52,8 @@ public class JavaOne {
     public void ex3(){
         var sc = new Scanner(System.in);
         var upperLower = new StringBuilder();
-        System.out.println("\n\n====Ex.3====");
+
+        title(3);
 
         System.out.print("Enter a string: ");
         String words[] = sc.nextLine().split(" ");
@@ -65,7 +68,8 @@ public class JavaOne {
     public void ex4(){
         var sc = new Scanner(System.in);
         var reverseString = new StringBuilder();
-        System.out.println("\n\n====Ex.4====");
+
+        title(4);
 
         System.out.print("Enter string: ");
         var inputString = sc.nextLine().toLowerCase();
@@ -84,7 +88,9 @@ public class JavaOne {
         var consonants = "bcdfghjklmnpqrstvwxyz";
         int vowelCount;
         int consCount;
-        System.out.println("\n\n====Ex.5====");
+
+        title(5);
+
         while(true) {
             vowelCount = 0;
             consCount = 0;
@@ -103,7 +109,9 @@ public class JavaOne {
 
     public void ex6(){
         var sc = new Scanner(System.in);
-        System.out.println("\n\n====Ex.6====");
+
+        title(6);
+
         System.out.print("Enter first number: ");
         var num1 = Integer.parseInt(sc.nextLine());
         System.out.print("Enter second number: ");
@@ -113,7 +121,9 @@ public class JavaOne {
     }
     public void ex7(){
         var sc = new Scanner(System.in);
-        System.out.println("\n\n====Ex.7====");
+
+        title(7);
+
         System.out.print("Enter first number: ");
         var num1 = Integer.parseInt(sc.nextLine());
         System.out.print("Enter second number: ");
@@ -138,7 +148,8 @@ public class JavaOne {
         double cost;
         var formatter = NumberFormat.getCurrencyInstance();
 
-        System.out.println("\n\n====Ex.8====");
+        title(8);
+
         System.out.print("Enter price per square feet: ");
         price = Double.parseDouble(sc.nextLine());
 
@@ -155,7 +166,7 @@ public class JavaOne {
             while (inputs.hasMoreElements()) {
                 tokens.add(inputs.nextToken());
             }
-            // var inputs = userInput.split(" ");
+
             if (tokens.size() != 2) {
                 System.out.println("input is not properly formatted.");
                 continue;
@@ -174,7 +185,8 @@ public class JavaOne {
         int maxNumber = 5;
         int minNumber = 1;
 
-        System.out.println("\n\n====Ex.9====");
+        title(9);
+
         int random = (int) (Math.random()*(maxNumber-minNumber)) + minNumber;
         int guess;
         while (true) {
@@ -193,12 +205,14 @@ public class JavaOne {
 
     public void ex10(){
         var sc = new Scanner(System.in);
-        System.out.println("\n\n====Ex.10====");
+
+        title(10);
+
         System.out.print("Enter a string: ");
         String userInput = sc.nextLine();
 
         ArrayList<String> tokens = new ArrayList<>();
-        StringTokenizer inputs = new StringTokenizer(userInput, " X ");
+        StringTokenizer inputs = new StringTokenizer(userInput, " ");
         while (inputs.hasMoreElements()) {
             tokens.add(inputs.nextToken());
         }
@@ -216,4 +230,7 @@ public class JavaOne {
     //
     // Private helper methods
     //
+    private void title(int i){
+        System.out.printf("\n=============\n====Ex.%s====\n=============\n", i);
+    }
 }
