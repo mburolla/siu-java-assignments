@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student1;
 
 import org.w3c.dom.ls.LSOutput;
 
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
@@ -212,6 +213,7 @@ public class JavaOne {
 
         double pricePerSquareFeet = scanner.nextDouble();
         var totalCost = 0.00;
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
         var height = "";
         var width = "";
 
@@ -223,7 +225,7 @@ public class JavaOne {
                 break;
             }
 
-            //read the 'x' character inputted by user
+            //read the 'x' character inputted by user and discard
             var split = scanner.next();
 
             //get height
@@ -232,7 +234,7 @@ public class JavaOne {
             totalCost += (Integer.parseInt(width) * Integer.parseInt(height)) * pricePerSquareFeet;
         }
         //when user enters done, return total price of carpet installation
-        System.out.print("Total cost: $" + totalCost);
+        System.out.print("Total cost: " + currency.format(totalCost));
     }
 
     public void ex9() {
