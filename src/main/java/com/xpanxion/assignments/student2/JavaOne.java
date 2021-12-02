@@ -15,7 +15,7 @@ public class JavaOne {
     //
 
     public void ex1() {
-        // test
+        // test test
         System.out.println("Enter your name: ");
         Scanner scannerExample1 = new Scanner(System.in);
         String name = scannerExample1.nextLine();
