@@ -8,7 +8,8 @@ public class JavaOne {
     // Constructors
     //
 
-    JavaOne() {}
+    JavaOne() {
+    }
 
     //
     // Public methods
@@ -27,9 +28,9 @@ public class JavaOne {
         String stringLine2 = scannerExample2.nextLine();
         int upperCaseCount = 0;
 
-        for(int i = 0; i < stringLine2.length(); i++){
+        for (int i = 0; i < stringLine2.length(); i++) {
             char ithLetter = stringLine2.charAt(i);
-            if(Character.isUpperCase(ithLetter)){
+            if (Character.isUpperCase(ithLetter)) {
                 upperCaseCount++;
             }
         }
@@ -41,13 +42,13 @@ public class JavaOne {
         Scanner scannerExample3 = new Scanner(System.in);
         String stringLine3 = scannerExample3.nextLine();
         String[] tokenString = stringLine3.split(" ", 0);
-        for(int i = 0; i < tokenString.length; i++){
-            if(i % 2 == 0){
-                System.out.println(tokenString[i].toUpperCase());
+        for (int i = 0; i < tokenString.length; i++) {
+            if (i % 2 == 0) {
+                System.out.print(tokenString[i].toUpperCase());
+            } else {
+                System.out.print(tokenString[i].toLowerCase());
             }
-            else {
-                System.out.println(tokenString[i].toLowerCase());
-            }
+            System.out.print(" ");
         }
     }
 
@@ -58,9 +59,9 @@ public class JavaOne {
         String palindrome = "Yes";
         int phraseLength = stringLine4.length();
 
-        for(int i = 0; i < phraseLength; i++){
+        for (int i = 0; i < phraseLength; i++) {
             char ithLetter = stringLine4.charAt(i);
-            if(ithLetter != stringLine4.charAt(phraseLength - i - 1)) {
+            if (ithLetter != stringLine4.charAt(phraseLength - i - 1)) {
                 palindrome = "No";
             }
         }
@@ -68,30 +69,31 @@ public class JavaOne {
         System.out.println(palindrome);
     }
 
-    public void ex5() {}
-    while(true){
-        System.out.println("Enter a string: ");
-        Scanner scannerExample5 = new Scanner(System.in);
-        String stringLine5 = scannerExample5.nextLine();
-        int vowelCount = 0;
-        int consonantCount = 0;
+    public void ex5() {
+        while (true) {
+            System.out.println("Enter a string: ");
+            Scanner scannerExample5 = new Scanner(System.in);
+            String stringLine5 = scannerExample5.nextLine();
+            int vowelCount = 0;
+            int consonantCount = 0;
 
-        for(int i = 0; i < stringLine5.length(); i++){
-            char ithLetter = stringLine5.charAt(i);
-            if(ithLetter == 'a' || ithLetter == 'e' || ithLetter == 'i' || ithLetter == 'o' || ithLetter == 'u'){
-                vowelCount++;
+            for (int i = 0; i < stringLine5.length(); i++) {
+                char ithLetter = stringLine5.charAt(i);
+                if (ithLetter == 'a' || ithLetter == 'e' || ithLetter == 'i' || ithLetter == 'o' || ithLetter == 'u') {
+                    vowelCount++;
+                } else if (Character.isLetter(ithLetter)) {
+                    consonantCount++;
+                }
             }
-            else if(Character.isLetter(ithLetter)){
-                consonantCount++;
-            }
-        }
-        System.out.println("Number of vowels: " + vowelCount);
-        System.out.println("Number of consonants: " + consonantCount);
+            System.out.println("Number of vowels: " + vowelCount);
+            System.out.println("Number of consonants: " + consonantCount);
 
-        if(stringLine5.equals("quit")){
-            break;
+            if (stringLine5.equals("quit")) {
+                break;
+            }
         }
     }
+
 
     public void ex6() {
         System.out.println("Enter first number: ");
@@ -116,17 +118,14 @@ public class JavaOne {
         String operator7 = scannerExample7_3.next();
 
         float result = 0;
-        if(operator7.equals("add")){
+        if (operator7.equals("add")) {
             result = firstNum7 + secondNum7;
-        }
-        else if(operator7.equals("sub")){
+        } else if (operator7.equals("sub")) {
             result = firstNum7 - secondNum7;
-        }
-        else if(operator7.equals("mul")){
+        } else if (operator7.equals("mul")) {
             result = firstNum7 * secondNum7;
-        }
-        else if(operator7.equals("div")){
-            result = (float)firstNum7 / (float)secondNum7;
+        } else if (operator7.equals("div")) {
+            result = (float) firstNum7 / (float) secondNum7;
         }
         System.out.println("Result: " + result);
     }
@@ -138,12 +137,12 @@ public class JavaOne {
         int roomArea = 0;
         int totalArea = 0;
 
-        while(true){
+        while (true) {
             System.out.println("Enter room dimensions (width x height): ");
             Scanner scannerExample8_2 = new Scanner(System.in);
             String roomDimensions8 = scannerExample8_2.nextLine();
 
-            if(roomDimensions8.equals("done")){
+            if (roomDimensions8.equals("done")) {
                 break;
             }
 
@@ -155,7 +154,30 @@ public class JavaOne {
     }
 
     public void ex9() {
+        double randomNum = Math.random() * 5;
+        int randomInt = (int) Math.ceil(randomNum);
+        while (true) {
+            System.out.println("Enter a number: ");
+            Scanner scannerExample9 = new Scanner(System.in);
+            int numberGuess = scannerExample9.nextInt();
 
+            if (numberGuess == randomInt) {
+                break;
+            }
+        }
+    }
+
+    public void ex10() {
+        System.out.println("Enter a string: ");
+        Scanner scannerExample10 = new Scanner(System.in);
+        String stringLine10 = scannerExample10.nextLine();
+        String space = " ";
+        String[] wordArray = stringLine10.split(" ", 0);
+        for (int i = 0; i < wordArray.length; i++) {
+            for (int j = 0; j < wordArray[i].length(); j++) {
+                System.out.println(space.repeat(j) + wordArray[i].charAt(j));
+            }
+        }
     }
     //
     // Private helper methods
