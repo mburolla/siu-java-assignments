@@ -97,6 +97,48 @@ public class JavaOne {
 
     }
 
+    public void ex5() {
+        var scanner = new Scanner(System.in);
+        String userInput;
+        int vowels = 0;
+        int consonants = 0;
+
+        do {
+            System.out.print("Enter a string: ");
+            userInput = scanner.nextLine();
+
+            char currentChar = ' ';
+
+            for (int i = 0; i < userInput.length(); i++) {
+                currentChar = userInput.toUpperCase().charAt(i);
+
+
+                switch (currentChar) {
+                    case 'A':
+                    case 'E':
+                    case 'I':
+                    case 'O':
+                    case 'U':
+                        vowels += 1;
+                        consonants -= 1;
+                    default:
+                        if (currentChar == ' ') {
+                            consonants -= 1;
+                        }
+                        consonants += 1;
+
+                }
+
+            }
+            if (!userInput.equals("quit")) {
+             System.out.println("Number of vowels: " + vowels);
+                System.out.println("Number of consonants:" + consonants);
+            }
+        }
+        while (!userInput.equals("quit"));
+
+    }
+
     //
     // Private helper methods
     //
