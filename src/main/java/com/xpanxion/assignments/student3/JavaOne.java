@@ -221,6 +221,25 @@ public class JavaOne {
 
     }
 
+    static void ex10() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a String: ");
+        String string = scanner.nextLine();
+        int spaces = 1;
+
+        StringTokenizer stringTokenizer = new StringTokenizer(string);
+
+        while (stringTokenizer.hasMoreTokens()) {
+            String word = stringTokenizer.nextToken();
+            for (int i =0; i < word.length(); i++) {
+                char letter = word.charAt(i);
+                System.out.println(String.format("%" + spaces + "s", letter));
+                spaces++;
+            }
+            spaces = 1;
+        }
+    }
+
     //
     // Private helper methods
     //
