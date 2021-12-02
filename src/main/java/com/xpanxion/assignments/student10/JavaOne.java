@@ -5,6 +5,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 import java.lang.StringBuilder;
+import java.util.Random;
 
 public class JavaOne {
 
@@ -179,8 +180,36 @@ public class JavaOne {
         double total = areaTotal * price;
         System.out.println("Total cost: " + NumberFormat.getCurrencyInstance().format(total));
     }
+
+    public void ex9() {
+        Scanner scanner = new Scanner(System.in);
+
+        int num = getRandomNumber();
+        int guess;
+
+        while (true) {
+            System.out.println("Guess a number: ");
+            guess = scanner.nextInt();
+            if (guess != num) {
+                System.out.println("Try again....");
+                continue;
+            }
+            else {
+                System.out.println("You guessed it!!!");
+                break;
+            }
+        }
+
+
+    }
     //
     // Private helper methods
     //
+    private int getRandomNumber() {
+        int max = 5;
+        int min = 1;
+        int num = (int)Math.floor(Math.random()*(max-min+1)+min);
+        return num;
+    }
 
 }
