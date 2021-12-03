@@ -12,7 +12,8 @@ public class JavaOne {
     // Constructors
     //
 
-    JavaOne() {}
+    JavaOne() {
+    }
 
     //
     // Public methods
@@ -35,12 +36,12 @@ public class JavaOne {
 
         String randomString = scanner.nextLine();
 
-        for (int i=0; i <randomString.length();i++) {
-         if (randomString.charAt(i) == randomString.toUpperCase().charAt(i)) {
-            totalNumOfCaps++;
+        for (int i = 0; i < randomString.length(); i++) {
+            if (randomString.charAt(i) == randomString.toUpperCase().charAt(i)) {
+                totalNumOfCaps++;
             }
         }
-        System.out.println("Number of uppercase letters: " + (totalNumOfCaps -1));
+        System.out.println("Number of uppercase letters: " + (totalNumOfCaps - 1));
     }
 
     public void ex3() {
@@ -56,12 +57,11 @@ public class JavaOne {
         String newString = "";
 
         while (stringTokenizer.hasMoreTokens()) {
-            if (numOfString%2 == 1) {
+            if (numOfString % 2 == 1) {
                 newString += stringTokenizer.nextToken();
                 newString += " ";
                 numOfString++;
-            }
-            else if (numOfString%2 == 0) {
+            } else if (numOfString % 2 == 0) {
                 newString += stringTokenizer.nextToken().toUpperCase();
                 newString += " ";
                 numOfString++;
@@ -72,7 +72,7 @@ public class JavaOne {
         System.out.println(newString);
     }
 
-    public void ex4(){
+    public void ex4() {
         var scanner = new Scanner(System.in);
 
         System.out.println("Enter a palindrome: ");
@@ -81,17 +81,16 @@ public class JavaOne {
         String backwards = "";
 
 
-        for (int i=0;i<userInput.length();i++) {
+        for (int i = 0; i < userInput.length(); i++) {
             forwards += userInput.charAt(i);
         }
-        for (int i=0;i<forwards.length();i++){
-            backwards += userInput.charAt((userInput.length()-1)-i);
+        for (int i = 0; i < forwards.length(); i++) {
+            backwards += userInput.charAt((userInput.length() - 1) - i);
         }
 
         if (forwards.equals(backwards)) {
             System.out.println("Input is a palindrome");
-        }
-        else
+        } else
             System.out.println("Input is not a palindrome");
 
 
@@ -131,7 +130,7 @@ public class JavaOne {
 
             }
             if (!userInput.equals("quit")) {
-             System.out.println("Number of vowels: " + vowels);
+                System.out.println("Number of vowels: " + vowels);
                 System.out.println("Number of consonants:" + consonants);
             }
         }
@@ -168,21 +167,18 @@ public class JavaOne {
 
         if (operand.equals("ADD")) {
             System.out.println("Result: " + (num1 + num2));
-        }
-        else if (operand.equals("SUB")) {
+        } else if (operand.equals("SUB")) {
             System.out.println("Result: " + (num1 - num2));
-        }
-        else if (operand.equals("DIV")) {
+        } else if (operand.equals("DIV")) {
             System.out.println("Result: " + (num1 / num2));
-        }
-        else if (operand.equals("MUL")) {
+        } else if (operand.equals("MUL")) {
             System.out.println("Result: " + (num1 * num2));
         }
 
     }
 
     public void ex8() {
-    var scanner = new Scanner(System.in);
+        var scanner = new Scanner(System.in);
 
         System.out.print("Enter price per square feet: ");
         float pricePerFoot = scanner.nextFloat();
@@ -193,23 +189,22 @@ public class JavaOne {
         int finalDimensions = 0;
 
 
-
         //Separates width and height value then multiplies them//
-        while(!dimensions.equals("done")) {
+        while (!dimensions.equals("done")) {
 
-             System.out.print("Enter room dimensions (width x height): ");
-             dimensions = scanner.nextLine();
+            System.out.print("Enter room dimensions (width x height): ");
+            dimensions = scanner.nextLine();
 
-             if (dimensions.equals("done")) {
-                 break;
-             }
+            if (dimensions.equals("done")) {
+                break;
+            }
 
-             var tokenizer = new StringTokenizer(dimensions, " ");
+            var tokenizer = new StringTokenizer(dimensions, " ");
 
-             int dimensionsTotal = 1;
-             while (tokenizer.hasMoreTokens()) {
-                 var token = tokenizer.nextToken(); // 10 x 10
-                 if (!token.equals("x")) {
+            int dimensionsTotal = 1;
+            while (tokenizer.hasMoreTokens()) {
+                var token = tokenizer.nextToken(); // 10 x 10
+                if (!token.equals("x")) {
                     int currentToken = Integer.parseInt(token);
                     dimensionsTotal *= currentToken;
                 }
@@ -224,18 +219,28 @@ public class JavaOne {
     }
 
     public void ex9() {
-          var scanner = new Scanner(System.in);
+        var scanner = new Scanner(System.in);
+        double randomDouble = Math.random()*5;
+        int randomInt = (int) randomDouble + 1;
 
         System.out.print("Enter a number: ");
         int userInput = scanner.nextInt();
 
-        double randomInt = Math.random()*10;
-        System.out.println(Math.round(randomInt));
+        while (!(userInput == randomInt)) {
+            System.out.println("Try again...");
+            System.out.print("Enter a number: ");
+            userInput = scanner.nextInt();
+
+        }
+            if (userInput == randomInt) {
+                System.out.println("You guessed it!!!");
+            }
     }
+}
 
 
 
     //
     // Private helper methods
     //
-}
+
