@@ -89,7 +89,7 @@ public class JavaOne {
                  else if (name.charAt(i) >= 'a' && name.charAt(i) <= 'z')
                     co++;
             }
-            if(!name.equals("quit")){ //found it in Mosh video
+            if(!name.equals("quit")){
             System.out.println("Number of vowels: " + vo);
             System.out.println("Number of Constants: " + co);}
         }
@@ -129,8 +129,24 @@ public class JavaOne {
     }
 
         public void ex8() {
+            String dim = "";
+            double cost, area;
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter price per sq feet: ");
+            double price = sc.nextDouble();
+                while (!dim.equals("quit")) {
+                System.out.print("Enter room dimensions width x height: ");
+                dim = sc.next();
+                String[] characters = dim.split("x");
+                int[] ints = Arrays.stream(characters).mapToInt(Integer::parseInt).toArray();
+                area = ints[0] * ints[1];
+                cost = area * price;
+                if(!dim.equals("quit")){
+                    System.out.println("total cost:$" + cost);
+                }
+            }
 
-        }
+       }
 
         public void ex9() {
             int answer, guess;
@@ -156,8 +172,18 @@ public class JavaOne {
 
     }
         public void ex10() {
+            int i;
+            Scanner scan = new Scanner(System.in);
+            System.out.println("enter your word");
+            String word = scan.nextLine();
+            String gap = "";
+            for ( i = 0; i < word.length(); i++) {
+                gap = gap + "  ";
+                System.out.println(gap + word.charAt(i));
+            }
+            }
     }
-}
+
 
 
 
