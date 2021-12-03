@@ -1,9 +1,7 @@
 package com.xpanxion.assignments.student4;
 
-import java.util.Locale;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class JavaOne {
 
@@ -44,7 +42,22 @@ public class JavaOne {
 
 
     public void ex3() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the String  ");
+        String sample = scan.nextLine();
+        StringBuffer updatedString = new StringBuffer();
+        String[] characters = sample.split(" ");
+        for (int i=0; i< characters.length; i++) {
+             String  c = characters[i];
+            if (i % 2 != 0) {
+                c = c.toUpperCase();
+            }
+            updatedString.append(c);
+            updatedString.append(' ');
+        }
+        System.out.println(updatedString);
     }
+
 
 
     public void ex4() {
@@ -117,7 +130,7 @@ public class JavaOne {
 
         public void ex8() {
 
-    }
+        }
 
         public void ex9() {
             int answer, guess;
@@ -143,8 +156,6 @@ public class JavaOne {
 
     }
         public void ex10() {
-
-
     }
 }
 
