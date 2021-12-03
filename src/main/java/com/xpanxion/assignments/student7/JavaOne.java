@@ -181,6 +181,60 @@ public class JavaOne {
 
     }
 
+    public void ex8() {
+    var scanner = new Scanner(System.in);
+
+        System.out.print("Enter price per square feet: ");
+        float pricePerFoot = scanner.nextFloat();
+        scanner.nextLine();
+
+        String dimensions = "";
+        //int dimensionsTotal = 1;
+        int finalDimensions = 0;
+
+
+
+        //Separates width and height value then multiplies them//
+        while(!dimensions.equals("done")) {
+
+             System.out.print("Enter room dimensions (width x height): ");
+             dimensions = scanner.nextLine();
+
+             if (dimensions.equals("done")) {
+                 break;
+             }
+
+             var tokenizer = new StringTokenizer(dimensions, " ");
+
+             int dimensionsTotal = 1;
+             while (tokenizer.hasMoreTokens()) {
+                 var token = tokenizer.nextToken(); // 10 x 10
+                 if (!token.equals("x")) {
+                    int currentToken = Integer.parseInt(token);
+                    dimensionsTotal *= currentToken;
+                }
+            }
+            finalDimensions += dimensionsTotal;
+        }
+
+        double finalCost = finalDimensions * pricePerFoot;
+        String finalCostToString = Double.toString(finalCost);
+
+        System.out.println("Total cost: $" + finalCostToString);
+    }
+
+    public void ex9() {
+          var scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int userInput = scanner.nextInt();
+
+        double randomInt = Math.random()*10;
+        System.out.println(Math.round(randomInt));
+    }
+
+
+
     //
     // Private helper methods
     //
