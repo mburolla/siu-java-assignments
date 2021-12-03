@@ -236,6 +236,26 @@ public class JavaOne {
                 System.out.println("You guessed it!!!");
             }
     }
+
+    public void ex10() {
+        var scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine();
+
+        var tokenizer = new StringTokenizer(userInput, " ");
+
+        while (tokenizer.hasMoreTokens()) {
+            String currentToken = tokenizer.nextToken();
+                String spaces = "";
+            for (int i=0; i<currentToken.length(); i++) {
+                System.out.println(spaces + currentToken.charAt(i));
+                spaces += " ";
+            }
+        }
+
+
+    }
 }
 
 
