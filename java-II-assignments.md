@@ -68,7 +68,7 @@ Process finished with exit code 0
 
 ### Ex 4. Refactor Invoice and Products
 The `Invoice` and `Product` classes in Ex. 3 share a common attribute: id.  Create an 
-abstract class called `Base` that contains an attribute called id.  Modifiy the `Invoice` and 
+abstract class called `Base` that contains an attribute called id.  Modify the `Invoice` and 
 `Product` class to subclass the `Base` class.  Modify the constructors for the `Invoice` and 
 `Product` classes to call the `Base` class constructor. The program should produce the same 
 output as observed in Ex 3.
@@ -82,7 +82,7 @@ Process finished with exit code 0
 
 ### Ex. 5 Repository Interface
 Create an interface called `DataAccess` that contains a method called `getPerson()`.  Create a
-class called `Repository` that impelments the `DataAccess` interface that returns a `Person`
+class called `Repository` that implements the `DataAccess` interface that returns a `Person`
 object who has an id of 1, and a name of John Doe.
 
 Code:
@@ -99,7 +99,7 @@ Person{id=1, firstName='John', lastName='Doe'}
 Process finished with exit code 0
 ```
 
-### Ex. 6 OOP Calclator
+### Ex. 6 OOP Calculator
 Write a Java program that contains a class called `Calculator`.  This program performs the
 functionality found in Java I Ex. 7, with the additional capability:
 - The program displays the history of all the calculations and terminates when "done" is 
