@@ -49,7 +49,8 @@ Process finished with exit code 0
 ```
 
 ### Ex. 4 Classic Palindrome
-A palindrome is a word, phrase, or sequence that reads the same backward as forward (e.g. radar, madam).
+A palidrome is a word, phrase, or sequence that reads the same backward as forward (e.g. radar, madam).
+
 
 Write a Java program that tests if a word is a palindrome or not.
 

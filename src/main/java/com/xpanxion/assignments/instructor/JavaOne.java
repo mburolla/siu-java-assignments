@@ -19,6 +19,7 @@ public class JavaOne {
      * Uppercase Name
      */
     public void ex1() {
+        // Hi me.
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter your name: ");
@@ -67,6 +68,7 @@ public class JavaOne {
             outString += " ";
             wordCount++;
         }
+
         System.out.println(outString);
     }
 
