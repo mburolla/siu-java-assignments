@@ -205,10 +205,8 @@ public class JavaTwo {
 
     /**
      * Tiny Auth
-     * @throws NoSuchAlgorithmException
      */
     public void ex11() {
-
         var hashMap = new HashMap<String, String>();
 
         while (true) {
@@ -227,7 +225,7 @@ public class JavaTwo {
                 if (isPasswordCorrect(hashMap, inputString))
                     System.out.println("OK");
                 else
-                    System.out.println("Incorrect username or password.");
+                    System.out.println("Incorrect username or password");
             }
             if (inputString.equals("done")) {
                 break;
@@ -235,9 +233,55 @@ public class JavaTwo {
         }
     }
 
+    /**
+     * Tiny movie theater
+     */
+    public void ex12() {
+        float totalSales = 0F;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number rows: ");
+        var numRows = scanner.nextByte();
+        System.out.print("Enter number seats: ");
+        var numSeats = scanner.nextByte();
+        scanner.nextLine();
+
+        var theaterSeats = new String[numSeats * numRows];
+        Arrays.fill(theaterSeats, "0");
+
+        displayMovieTheater(theaterSeats, numSeats, numRows, totalSales);
+
+        while (true) {
+            System.out.print("Purchase seat (row, seat): ");
+            var inputString = scanner.nextLine();
+            var inputArray = inputString.split(",");
+            var rowNumber = Integer.parseInt(inputArray[0].replaceAll("\\s+",""));
+            var seatNumber = Integer.parseInt(inputArray[1].replaceAll("\\s+",""));
+            var index = ((rowNumber - 1) * numSeats) + (seatNumber - 1);
+            theaterSeats[index] = "X";
+            totalSales += rowNumber;
+            displayMovieTheater(theaterSeats, numSeats, numRows, totalSales);
+        }
+    }
+
     //
     // Private methods
     //
+
+    private void displayMovieTheater(String[] theaterSeats, Byte numSeats, Byte numRows, float totalSales) {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        var display = ""; // TODO: Use StringBuilder
+        for (int i=0; i < numRows; i++) {
+            for (int k=0; k < numSeats; k++) {
+                var index = k + (i * numSeats);
+                display += theaterSeats[index];
+            }
+            display += "\n";
+        }
+        display += "Total sales: ";
+        display += formatter.format(totalSales);
+        System.out.println(display);
+    }
 
     private void addUser(HashMap<String, String> hashMap, String inputString) {
         var inputArray = inputString.split(",");
