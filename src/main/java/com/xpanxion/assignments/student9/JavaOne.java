@@ -92,7 +92,13 @@ public class JavaOne {
     }
 
     public void ex6() {
-
+        System.out.print("Enter first number > ");
+        var scanner = new Scanner(System.in);
+        var firstNumber = scanner.nextInt();
+        System.out.print("Enter the second number > ");
+        var secondNumber = scanner.nextInt();
+        var result = firstNumber + secondNumber;
+        System.out.printf("Result > %d",result);
     }
 
     //
