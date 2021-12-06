@@ -275,3 +275,40 @@ Action [add|login|done]: done
 Process finished with exit code 0
 ```
 
+### Ex. 12 Movie Theater
+Create a Java program that displays the seats for a movie theater.  The user enters the size of the theater and 
+can purchase tickets for seats in the theater.  The upper top left is row 1, seat 1.  The price of a seat is 
+equal to the row number.
+
+Example:
+```
+Enter number rows: 3
+Enter number seats: 10
+0000000000
+0000000000
+0000000000
+Total sales: $0.00
+Purchase seat (row, seat): 1,1
+X000000000
+0000000000
+0000000000
+Total sales: $1.00
+Purchase seat (row, seat): 1,10
+X00000000X
+0000000000
+0000000000
+Total sales: $2.00
+Purchase seat (row, seat): 2,1
+X00000000X
+X000000000
+0000000000
+Total sales: $4.00
+Purchase seat (row, seat): 3,5
+X00000000X
+X000000000
+0000X00000
+Total sales: $7.00
+Purchase seat (row, seat): done
+
+Process finished with exit code 0
+```

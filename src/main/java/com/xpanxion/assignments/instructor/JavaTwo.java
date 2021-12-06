@@ -254,6 +254,9 @@ public class JavaTwo {
         while (true) {
             System.out.print("Purchase seat (row, seat): ");
             var inputString = scanner.nextLine();
+            if (inputString.equals("done")){
+                break;
+            }
             var inputArray = inputString.split(",");
             var rowNumber = Integer.parseInt(inputArray[0].replaceAll("\\s+",""));
             var seatNumber = Integer.parseInt(inputArray[1].replaceAll("\\s+",""));
