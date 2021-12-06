@@ -101,6 +101,30 @@ public class JavaOne {
         System.out.printf("Result > %d",result);
     }
 
+    public void ex7() {
+        System.out.print("Enter first number > ");
+        var scanner = new Scanner(System.in);
+        var firstNumber = scanner.nextInt();
+        System.out.print("Enter the second number > ");
+        var secondNumber = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter operation > ");
+        var operationString =scanner.nextLine();
+        var result =0;
+        if(operationString.toLowerCase().equals("add")){
+            result = firstNumber + secondNumber;
+        } else if(operationString.toLowerCase().equals("sub")){
+           result = firstNumber - secondNumber;
+        } else if(operationString.toLowerCase().equals("mul")){
+            result = firstNumber * secondNumber;
+        } else if(operationString.toLowerCase().equals("div")){
+            result = firstNumber / secondNumber;
+        } else{
+            System.out.println("Invalid operation");
+        }
+        System.out.printf("Result > %d",result);
+    }
+
     //
     // Private helper methods
     //
