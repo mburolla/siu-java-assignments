@@ -52,6 +52,20 @@ public class JavaOne {
         }
         System.out.println(builder);
     }
+    public void ex4() {
+        System.out.print("Enter String > ");
+        var scanner = new Scanner(System.in);
+        var tempString = scanner.nextLine();
+        var tempReverse = new StringBuilder();
+        for (var index = tempString.length() -1; index >=0; index--){
+            tempReverse.append(tempString.charAt(index));
+        }
+        if(tempReverse.toString().toLowerCase().equals(tempString.toLowerCase())){
+            System.out.println("Yes");
+        } else {
+            System.out.println("NO");
+        }
+    }
 
     //
     // Private helper methods
