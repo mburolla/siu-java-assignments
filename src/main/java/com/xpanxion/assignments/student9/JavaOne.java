@@ -22,7 +22,16 @@ public class JavaOne {
     }
 
     public void ex2() {
-        System.out.println("Student 9: ex2.");
+        System.out.print("Enter a String >");
+        var scanner = new Scanner(System.in);
+        var line = scanner.nextLine();
+        var count =0;
+        for(int index = 0; index < line.length();index++){
+           if(Character.isUpperCase(line.charAt(index))){
+               count++;
+           } // else char is not upper, doNothing()
+        }
+        System.out.printf("Number of uppercase letters : %d",count);
     }
 
     public void ex3() {
