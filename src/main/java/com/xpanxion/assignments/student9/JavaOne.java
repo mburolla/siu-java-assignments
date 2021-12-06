@@ -67,6 +67,30 @@ public class JavaOne {
         }
     }
 
+    public void ex5() {
+
+        while (true) {
+            System.out.print("Enter a String > ");
+            var scanner = new Scanner(System.in);
+            var tempString = scanner.nextLine();
+             if(tempString.equals("quit")){
+                 return;
+             }
+            var vowelCount = 0;
+            var constantsCount = 0;
+        for(var index = 0; index <tempString.length();index++){
+            var tempChar = tempString.charAt(index);
+            if(tempChar == 'a' || tempChar == 'e' || tempChar == 'i' || tempChar == 'o' || tempChar == 'u'){
+                vowelCount++;
+            } else {
+                constantsCount++;
+            }
+            }
+            System.out.printf("Number of vowels : %d%n",vowelCount);
+            System.out.printf("Number of constants : %d%n",constantsCount);
+        }
+    }
+
     //
     // Private helper methods
     //
