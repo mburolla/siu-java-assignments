@@ -173,6 +173,22 @@ public class JavaOne {
 
     }
 
+    public void ex10() {
+        System.out.print("Enter a string > ");
+        var scanner = new Scanner(System.in);
+        var userString = scanner.nextLine();
+        var listOfStrings = new ArrayList<>(Arrays.asList(userString.split(" ")));
+        var userStringWithSpaces = new StringBuilder();
+        for(var temp : listOfStrings){
+          for(var index = 0; index < temp.length();index++){
+              System.out.println(userStringWithSpaces.toString() + temp.charAt(index));
+              userStringWithSpaces.append(" ");
+          }
+          userStringWithSpaces.setLength(0);
+        }
+
+    }
+
     //
     // Private helper methods
     //
