@@ -99,7 +99,6 @@ public class JavaOne {
         var secondNumber = scanner.nextInt();
         var result = firstNumber + secondNumber;
         System.out.printf("Result > %d",result);
-        //test
     }
 
     //
