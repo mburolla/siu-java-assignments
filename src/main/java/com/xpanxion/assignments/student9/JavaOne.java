@@ -158,6 +158,21 @@ public class JavaOne {
         System.out.printf("total cost > %f",result);
     }
 
+    public void ex9() {
+        var randomNumber =  1 + (int)(5 * Math.random());
+        while(true){
+            System.out.print("Enter a number between 1 and 5 > ");
+            var scanner = new Scanner(System.in);
+            if(scanner.nextInt() == randomNumber){
+                System.out.println("You guessed it!");
+                break;
+            }
+            System.out.println("Try again >");
+            scanner.nextLine();
+        }
+
+    }
+
     //
     // Private helper methods
     //
