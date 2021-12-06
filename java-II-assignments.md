@@ -238,3 +238,40 @@ Example:
 
 Process finished with exit code 0
 ```
+
+### Ex. 11 Tiny Auth
+Create a Java program that prompts the user to do one of three actions:
+
+#### Add 
+The program allows a user to enter a username and password.  The password will be hashed using
+the SHA1 algorithm.  The program contains a `HashMap` that stores the username as the key, 
+and the SHA1 password as the value.  This repeats until "done" is entered by the user.
+
+#### Login
+The program looks up the stored password hash from the `HashMap` for the specified user.  
+If the stored password hash is the same as the supplied password (hashed) the program displays "OK".  
+If the hashes are not equal the program displays "Incorrect username or password".
+
+#### Done
+The program exits.
+
+Example:
+```
+Action [add|login|done]: add
+Enter username, password: joe, pwd1
+Action [add|login|done]: add
+Enter username, password: fred, pwd2
+Action [add|login|done]: login
+Enter username, password: joe, pwd1
+OK
+Action [add|login|done]: login
+Enter username, password: joe, wrongpwd
+Incorrect username or password.
+Action [add|login|done]: login
+Enter username, password: sally, nothere
+Incorrect username or password.
+Action [add|login|done]: done
+
+Process finished with exit code 0
+```
+

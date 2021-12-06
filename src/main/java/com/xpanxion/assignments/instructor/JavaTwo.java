@@ -1,5 +1,10 @@
 package com.xpanxion.assignments.instructor;
 
+import jakarta.xml.bind.DatatypeConverter;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.text.NumberFormat;
 import java.util.stream.Collectors;
@@ -196,5 +201,83 @@ public class JavaTwo {
             catQueue.remove();
             TimeUnit.SECONDS.sleep(3);
         }
+    }
+
+    /**
+     * Tiny Auth
+     * @throws NoSuchAlgorithmException
+     */
+    public void ex11() {
+
+        var hashMap = new HashMap<String, String>();
+
+        while (true) {
+            System.out.print("Action [add|login|done]: ");
+            Scanner scanner = new Scanner(System.in);
+            var inputString = scanner.nextLine();
+
+            if (inputString.equals("add")) {
+                System.out.print("Enter username, password: ");
+                inputString = scanner.nextLine();
+                addUser(hashMap, inputString);
+            }
+            if (inputString.equals("login")) {
+                System.out.print("Enter username, password: ");
+                inputString = scanner.nextLine();
+                if (isPasswordCorrect(hashMap, inputString))
+                    System.out.println("OK");
+                else
+                    System.out.println("Incorrect username or password.");
+            }
+            if (inputString.equals("done")) {
+                break;
+            }
+        }
+    }
+
+    //
+    // Private methods
+    //
+
+    private void addUser(HashMap<String, String> hashMap, String inputString) {
+        var inputArray = inputString.split(",");
+        var userName = inputArray[0].replaceAll("\\s+","");
+        var password = inputArray[1].replaceAll("\\s+","");
+
+        var passwordHash = createHash(password);
+        hashMap.put(userName, passwordHash);
+    }
+
+    private boolean isPasswordCorrect(HashMap<String, String> hashMap, String inputString) {
+        var retval = false;
+
+        // Parse input.
+        var inputArray = inputString.split(",");
+        var userName = inputArray[0].replaceAll("\\s+","");
+        var password = inputArray[1].replaceAll("\\s+","");
+
+        // Compare password hashes.
+        if (hashMap.containsKey(userName)) {
+            var storedPasswordHash = hashMap.get(userName);
+            var thisPasswordHash = createHash(password);
+            if (storedPasswordHash.equals(thisPasswordHash)) {
+                retval = true;
+            }
+        }
+        return retval;
+    }
+
+    private String createHash(String inString) {
+        var retval = "";
+        try {
+            var md = MessageDigest.getInstance("SHA1");
+            md.update(inString.getBytes(StandardCharsets.UTF_8));
+            byte[] digest = md.digest();
+            retval = DatatypeConverter.printHexBinary(digest).toUpperCase();
+        }
+        catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+        }
+        return retval;
     }
 }
