@@ -91,6 +91,10 @@ public class JavaOne {
         }
     }
 
+    public void ex6() {
+
+    }
+
     //
     // Private helper methods
     //

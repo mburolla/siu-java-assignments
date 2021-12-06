@@ -7,6 +7,6 @@ public class Main {
         //javaOne.ex2();
        // javaOne.ex3();
        // javaOne.ex4();
-        javaOne.ex5();
+        //javaOne.ex5();
     }
 }
