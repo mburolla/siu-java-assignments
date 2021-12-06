@@ -14,6 +14,7 @@ public class JavaOne {
 
     public void ex1() {
         System.out.println("Student 9: ex1.");
+        System.out.println("Hello World");
     }
 
     public void ex2() {
