@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student9;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class JavaOne {
@@ -76,8 +78,10 @@ public class JavaOne {
              if(tempString.equals("quit")){
                  return;
              }
+
             var vowelCount = 0;
             var constantsCount = 0;
+
         for(var index = 0; index <tempString.length();index++){
             var tempChar = tempString.charAt(index);
             if(tempChar == 'a' || tempChar == 'e' || tempChar == 'i' || tempChar == 'o' || tempChar == 'u'){
@@ -123,6 +127,35 @@ public class JavaOne {
             System.out.println("Invalid operation");
         }
         System.out.printf("Result > %d",result);
+    }
+
+    public void ex8() {
+        System.out.print("Enter price per square feet > ");
+        var scanner = new Scanner(System.in);
+        var pricePerFeet = scanner.nextDouble();
+        var totalDimensions = 0;
+        scanner.nextLine();
+        while(true){
+            System.out.print("Enter room dimensions >");
+            var tempDimensions = scanner.nextLine();
+            if(tempDimensions.toLowerCase().equals("done")){
+                break;
+            } else {
+               tempDimensions= tempDimensions.replaceAll("[^\\d]", " ");
+               var tempScanner = new Scanner(tempDimensions);
+               var roomDimensions=0;
+               while(tempScanner.hasNext()){
+                   if(roomDimensions == 0){
+                       roomDimensions += tempScanner.nextInt();
+                   } else {
+                       roomDimensions  *=  tempScanner.nextInt();
+                   }
+               }
+               totalDimensions += roomDimensions;
+            }
+        }
+        var result = totalDimensions * pricePerFeet;
+        System.out.printf("total cost > %f",result);
     }
 
     //
