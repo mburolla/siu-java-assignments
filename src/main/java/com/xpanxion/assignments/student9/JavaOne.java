@@ -26,7 +26,7 @@ public class JavaOne {
         var scanner = new Scanner(System.in);
         var line = scanner.nextLine();
         var count =0;
-        for(int index = 0; index < line.length();index++){
+        for(var index = 0; index < line.length();index++){
            if(Character.isUpperCase(line.charAt(index))){
                count++;
            } // else char is not upper, doNothing()
@@ -35,7 +35,22 @@ public class JavaOne {
     }
 
     public void ex3() {
-        System.out.println("Student 9: ex3.");
+        System.out.print("Enter a String > ");
+        var scanner = new Scanner(System.in);
+        var tempLine =scanner.nextLine();
+        tempLine.toLowerCase();
+        var isCap = true;
+        var builder = new StringBuilder();
+        for (var temp : tempLine.split(" ")){
+            if(isCap){
+                builder.append(temp.toUpperCase()).append(" ");
+                isCap = false;
+            } else {
+                builder.append(temp).append(" ");
+                isCap = true;
+            }
+        }
+        System.out.println(builder);
     }
 
     //
