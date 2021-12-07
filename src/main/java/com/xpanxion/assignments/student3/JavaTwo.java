@@ -56,7 +56,7 @@ public class JavaTwo {
         }
     }
 
-    public void ex3(){
+    public void ex3_4(){
        var invoice =  new Invoice(1);
         invoice.addProduct(new Product(111,"Mustard", 2.00));
         invoice.addProduct(new Product(222,"Ketchup", 3.00));
@@ -66,6 +66,7 @@ public class JavaTwo {
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
+    public void ex5(){
 
-
+    }
 }
