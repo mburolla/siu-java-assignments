@@ -238,3 +238,77 @@ Example:
 
 Process finished with exit code 0
 ```
+
+### Ex. 11 Tiny Auth
+Create a Java program that prompts the user to do one of three actions:
+
+#### Add 
+The program allows a user to enter a username and password.  The password is hashed using
+the SHA1 algorithm.  The program contains a `HashMap` that stores the username as the key, 
+and the SHA1 password as the value.  The program repeats until "done" is entered by the user.
+
+#### Login
+The program looks up the stored password hash from the `HashMap` for the specified user.  
+If the stored password hash is the same as the supplied password (hashed) the program displays "OK".  
+If the hashes are not equal the program displays "Incorrect username or password".
+
+#### Done
+The program exits.
+
+Example:
+```
+Action [add|login|done]: add
+Enter username, password: joe, pwd1
+Action [add|login|done]: add
+Enter username, password: fred, pwd2
+Action [add|login|done]: login
+Enter username, password: joe, pwd1
+OK
+Action [add|login|done]: login
+Enter username, password: joe, wrongpwd
+Incorrect username or password.
+Action [add|login|done]: login
+Enter username, password: sally, nothere
+Incorrect username or password.
+Action [add|login|done]: done
+
+Process finished with exit code 0
+```
+
+### Ex. 12 Movie Theater
+Create a Java program that displays the seats for a movie theater.  The user enters the size of the theater and 
+can purchase tickets for seats in the theater.  The upper top left is row 1, seat 1.  The price of a seat is 
+equal to the row number.
+
+Example:
+```
+Enter number rows: 3
+Enter number seats: 10
+0000000000
+0000000000
+0000000000
+Total sales: $0.00
+Purchase seat (row, seat): 1,1
+X000000000
+0000000000
+0000000000
+Total sales: $1.00
+Purchase seat (row, seat): 1,10
+X00000000X
+0000000000
+0000000000
+Total sales: $2.00
+Purchase seat (row, seat): 2,1
+X00000000X
+X000000000
+0000000000
+Total sales: $4.00
+Purchase seat (row, seat): 3,5
+X00000000X
+X000000000
+0000X00000
+Total sales: $7.00
+Purchase seat (row, seat): done
+
+Process finished with exit code 0
+```
