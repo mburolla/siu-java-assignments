@@ -1,9 +1,8 @@
 package com.xpanxion.assignments.student9;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class JavaTwo {
 
@@ -108,6 +107,24 @@ public class JavaTwo {
             }
 
         calculationList.forEach(System.out::println);
+    }
+
+    public void ex7() {
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
+        );
+
+        List<Person> newPersonList = personList.stream().map(p -> new Person(p.getId(),p.getFirstName(),"xxx")).toList();
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex8() {
+
     }
 
 }
