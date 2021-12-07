@@ -83,7 +83,31 @@ public class JavaTwo {
     }
 
     public void ex6() {
+        var calculationList = new ArrayList<Calculator>();
+        while(true) {
+            System.out.print("Enter first number > ");
+            var scanner = new Scanner(System.in);
+            var firstNumber = scanner.next();
+            if(firstNumber.equals("done")){
+                break;
+            } else {
+                System.out.print("Enter the second number > ");
+                var secondNumber = scanner.nextInt();
+                scanner.nextLine();
+                System.out.print("Enter operation > ");
+                var operationString = scanner.nextLine();
 
+                if (operationString.equals("add") || operationString.equals("sub") || operationString.equals("mul") || operationString.equals("div")) {
+                    var calculation = new Calculator(Integer.parseInt(firstNumber), secondNumber, operationString);
+                    calculationList.add(calculation);
+                    System.out.printf("Result > %d%n",calculation.getResult());
+                } else {
+                    System.out.println("Invalid operation");
+                }
+            }
+            }
+
+        calculationList.forEach(System.out::println);
     }
 
 }
