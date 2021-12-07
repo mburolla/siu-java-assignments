@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student8;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -12,7 +13,7 @@ public class JavaTwo {
 
     public void ex1() {
 
-        ArrayList<Person> listOfPersons = new ArrayList<Person>();
+        ArrayList<Person> listOfPersons = new ArrayList<>();
         String userInput;
 
         while(true) {
@@ -34,5 +35,31 @@ public class JavaTwo {
         for (Person person : listOfPersons) {
             System.out.println(person);
         }
+    }
+
+    public void ex2() {
+
+        HashMap<Integer, Person> hashMapOfPersons = new HashMap<>();
+
+        Person p1 = new Person(1, "Peter", "Jones");
+        Person p2 = new Person(2, "John", "Smith");
+        Person p3 = new Person(3, "Mary", "Jane");
+
+        hashMapOfPersons.put(p1.getId(), p1);
+        hashMapOfPersons.put(p2.getId(), p2);
+        hashMapOfPersons.put(p3.getId(), p3);
+
+        while(true) {
+            System.out.print("Enter Person ID: ");
+            String userInput = scanner.nextLine();
+
+            if (userInput.equals("done"))
+                break;
+
+            int requestedID = Integer.parseInt(userInput);
+
+            System.out.println(hashMapOfPersons.get(requestedID));
+        }
+
     }
 }

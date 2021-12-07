@@ -24,4 +24,8 @@ public class Person {
                 '}';
     }
 
+    // Accessors
+    public int getId() {
+        return id;
+    }
 }
