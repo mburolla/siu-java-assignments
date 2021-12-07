@@ -312,3 +312,33 @@ Purchase seat (row, seat): done
 
 Process finished with exit code 0
 ```
+
+#### Ex 13. Classic Polymorphism
+Consider the following Java program:
+```
+var shapeList = new ArrayList<Shape>();
+var s = new Square("red");
+var c = new Circle("green");
+shapeList.add(s);
+shapeList.add(c);
+
+for (Shape shape : shapeList) {
+    System.out.println(shape.draw());
+}
+```
+
+Based on this program, create the following Java classes:
+- `Shape`
+- `Square`
+- `Circle`
+
+The `Shape` class is an abstract class that contains an abstract method called `draw()`.  The `Square` and 
+`Circle` class subclass the `Shape` class.  These three classes must be created to support the 
+following output for the program above:
+
+```
+I am a red square.
+I am a green circle.
+
+Process finished with exit code 0
+```

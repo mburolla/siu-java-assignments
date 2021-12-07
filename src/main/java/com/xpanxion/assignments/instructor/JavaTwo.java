@@ -267,6 +267,20 @@ public class JavaTwo {
         }
     }
 
+
+    public void ex13() {
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
+        }
+    }
+
+
     //
     // Private methods
     //
