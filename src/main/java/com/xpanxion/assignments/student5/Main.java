@@ -2,10 +2,14 @@ package com.xpanxion.assignments.student5;
 
 public class Main {
     public static void main(String[] args) {
+
+        TinyAuth ta = new TinyAuth();
+        ta.run();
+
 //
 // JAVA TWO EXERCISES
 //
-        JavaTwo javaTwo = new JavaTwo();
+//        JavaTwo javaTwo = new JavaTwo();
 
 //        javaTwo.ex1();
 //        javaTwo.ex2();
@@ -16,7 +20,7 @@ public class Main {
 //        javaTwo.ex7();
 //        javaTwo.ex8();
 //        javaTwo.ex9();
-        javaTwo.ex10();
+//        javaTwo.ex10();
 //
 // JAVA ONE EXERCISES
 //

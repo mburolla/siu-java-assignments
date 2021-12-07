@@ -1,5 +1,8 @@
 package com.xpanxion.assignments.student5;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -171,9 +174,36 @@ public class JavaTwo {
             } catch(Exception e) {}
         }
     }
+// EX11
+    public void ex11() {
+
+    }
+
 //
 // Private methods
 //
+    private void add() {
+        var sc = new Scanner(System.in);
+        String usrName;
+        String sha1 = "";
+        System.out.print("Enter your username: ");
+        usrName = sc.nextLine();
+
+        System.out.print("Enter your password: ");
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.reset();
+            digest.update(sc.nextLine().getBytes(StandardCharsets.UTF_8));
+            sha1 = String.format("%040x", new BigInteger(1, digest.digest()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        sc.close();
+    }
+    private void login() {
+
+    }
+
     private void title(int i){
         System.out.printf("\n=============" +
                           "\n====Ex.%s====" +
