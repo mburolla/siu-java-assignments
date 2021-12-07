@@ -1,8 +1,7 @@
 package com.xpanxion.assignments.student10;
 
-public class Product {
+public class Product extends Base {
 
-    private int id;
     private String name;
     private double cost;
 

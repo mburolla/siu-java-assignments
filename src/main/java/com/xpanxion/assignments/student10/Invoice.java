@@ -3,9 +3,7 @@ package com.xpanxion.assignments.student10;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Invoice {
-
-    private int id;
+public class Invoice extends Base {
 
     private List<Product> productList = new ArrayList<>();
 
