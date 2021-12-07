@@ -13,14 +13,6 @@ public class Product extends Base implements Comparable<Product>{
         this.cost = cost;
     }
 
-    public int getId() {
-        return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return this.name;
     }

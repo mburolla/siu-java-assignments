@@ -13,14 +13,6 @@ public class Invoice extends Base implements Comparable<Invoice>{
         this.productList = new ArrayList<>();
     }
 
-    public int getId() {
-        return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void addProduct(Product product){
         this.productList.add(product);
     }
