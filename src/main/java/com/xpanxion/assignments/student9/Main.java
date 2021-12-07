@@ -13,5 +13,8 @@ public class Main {
        // javaOne.ex8();
        // javaOne.ex9();
         javaOne.ex10();
+
+        var javaTwo = new JavaTwo();
+
     }
 }
