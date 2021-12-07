@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student7;
 
 import java.sql.Array;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -187,13 +188,15 @@ public class JavaOne {
         String dimensions = "";
         //int dimensionsTotal = 1;
         int finalDimensions = 0;
-
+        var formatter = NumberFormat.getCurrencyInstance();
 
         //Separates width and height value then multiplies them//
         while (!dimensions.equals("done")) {
 
             System.out.print("Enter room dimensions (width x height): ");
             dimensions = scanner.nextLine();
+
+
 
             if (dimensions.equals("done")) {
                 break;
@@ -211,11 +214,8 @@ public class JavaOne {
             }
             finalDimensions += dimensionsTotal;
         }
-
         double finalCost = finalDimensions * pricePerFoot;
-        String finalCostToString = Double.toString(finalCost);
-
-        System.out.println("Total cost: $" + finalCostToString);
+        System.out.println("Total cost: " + formatter.format(finalCost));
     }
 
     public void ex9() {

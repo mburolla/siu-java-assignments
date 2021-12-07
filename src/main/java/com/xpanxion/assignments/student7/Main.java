@@ -3,7 +3,7 @@ package com.xpanxion.assignments.student7;
 public class Main {
     public static void main(String[] args) {
         JavaOne javaOne = new JavaOne();
-        javaOne.ex1();
+       /* javaOne.ex1();
         javaOne.ex2();
         javaOne.ex3();
         javaOne.ex4();
@@ -12,6 +12,18 @@ public class Main {
         javaOne.ex7();
         javaOne.ex8();
         javaOne.ex9();
-        javaOne.ex10();
+        javaOne.ex10();*/
+
+        JavaTwo javaTwo = new JavaTwo();
+        javaTwo.ex1();
+        /*javaTwo.ex2();
+        javaTwo.ex3();
+        javaTwo.ex4();
+        javaTwo.ex5();
+        javaTwo.ex6();
+        javaTwo.ex7();
+        javaTwo.ex8();
+        javaTwo.ex9();
+        javaTwo.ex10();*/
     }
 }
