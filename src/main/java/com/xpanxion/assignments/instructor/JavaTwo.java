@@ -144,9 +144,7 @@ public class JavaTwo {
                 new Person(3, "Sue", "Anderson")
         );
 
-        var newPersonList = personList.stream().map(p -> {
-                return new Person(p.getId(), p.getFirstName(), "xxx");
-            }).collect(Collectors.toList());
+        var newPersonList = personList.stream().map(p -> new Person(p.getId(), p.getFirstName(), "xxx")).toList();
 
         for (Person p : newPersonList) {
             System.out.println(p);
