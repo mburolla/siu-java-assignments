@@ -15,7 +15,8 @@ public class Main {
 //        javaTwo.ex6();
 //        javaTwo.ex7();
 //        javaTwo.ex8();
-        javaTwo.ex9();
+//        javaTwo.ex9();
+        javaTwo.ex10();
 //
 // JAVA ONE EXERCISES
 //

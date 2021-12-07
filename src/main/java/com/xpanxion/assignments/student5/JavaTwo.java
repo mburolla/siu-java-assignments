@@ -154,6 +154,23 @@ public class JavaTwo {
             System.out.println(p);
         }
     }
+// EX10
+    public void ex10() {
+        Queue<Cat> catQueue = new LinkedList<>();
+
+        catQueue.add(new Cat("Alice"));
+        catQueue.add(new Cat("Bob"));
+        catQueue.add(new Cat("Charlie"));
+        catQueue.add(new Cat("Dan"));
+
+        while (!catQueue.isEmpty()) {
+            System.out.println(catQueue.toString());
+            catQueue.remove();
+            try{
+                Thread.sleep(3000);
+            } catch(Exception e) {}
+        }
+    }
 //
 // Private methods
 //
