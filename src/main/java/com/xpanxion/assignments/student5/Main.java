@@ -13,8 +13,8 @@ public class Main {
 //        javaTwo.ex4(); //same as ex3 now
 //        javaTwo.ex5();
 //        javaTwo.ex6();
-        javaTwo.ex7();
-
+//        javaTwo.ex7();
+        javaTwo.ex8();
 //
 // JAVA ONE EXERCISES
 //

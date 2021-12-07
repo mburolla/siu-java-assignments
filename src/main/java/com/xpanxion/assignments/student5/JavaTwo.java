@@ -91,17 +91,20 @@ public class JavaTwo {
     }
 // EX5
     public void ex5() {
+        title(5);
         var repository = new Repository();
         var p = repository.getPerson();
         System.out.println(p);
     }
 // EX6
     public void ex6() {
+        title(6);
         Calculator calc = new Calculator();
         calc.run();
     }
 // EX7
     public void ex7() {
+        title(7);
         var personList = Arrays.asList(
                 new Person("1", "Peter", "Jones"),
                 new Person("2", "John", "Smith"),
@@ -116,6 +119,21 @@ public class JavaTwo {
                 .collect(Collectors.toList());
 
         for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+// EX8
+    public void ex8() {
+        title(8);
+        var personList = Arrays.asList(
+                new Person("1", "Charlie", "Jones"),
+                new Person("2", "Zoey", "Smith"),
+                new Person("3", "Adam", "Anderson")
+        );
+
+        personList.sort( (Comparator.comparing((Person p) -> p.getFirstName())));
+
+        for (Person p : personList) {
             System.out.println(p);
         }
     }
