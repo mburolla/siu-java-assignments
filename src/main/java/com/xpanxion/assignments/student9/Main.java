@@ -17,6 +17,7 @@ public class Main {
         var javaTwo = new JavaTwo();
         //javaTwo.ex1();
         //javaTwo.ex2();
+        javaTwo.ex3();
 
     }
 }
