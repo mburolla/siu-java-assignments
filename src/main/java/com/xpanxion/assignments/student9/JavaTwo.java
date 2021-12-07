@@ -21,6 +21,7 @@ public class JavaTwo {
                 String[] splits = tempString.split(",");
                 var tempId = Integer.parseInt(splits[0]);
                 var fullName = splits[1];
+
                 String[] splitName = fullName.trim().split(" ");
                 var firstName = splitName[0];
                 var lastName = splitName[1];
@@ -28,6 +29,10 @@ public class JavaTwo {
             }
         }
         list.forEach(System.out::println);
+    }
+
+    public void ex2() {
+
     }
 
 }
