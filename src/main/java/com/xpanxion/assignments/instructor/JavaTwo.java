@@ -2,6 +2,7 @@ package com.xpanxion.assignments.instructor;
 
 import jakarta.xml.bind.DatatypeConverter;
 
+import java.awt.*;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -267,7 +268,9 @@ public class JavaTwo {
         }
     }
 
-
+    /**
+     * Classic Polymorphism
+     */
     public void ex13() {
         var shapeList = new ArrayList<Shape>();
         var s = new Square("red");
@@ -280,6 +283,18 @@ public class JavaTwo {
         }
     }
 
+    /**
+     * MyPoint
+     */
+    public void ex14() {
+        var p1 = new Point(12,14);
+        var p2 = new Point(10,10);
+        System.out.println(p1.distance(p2));
+
+        var p3 = new MyPoint(12,14);
+        var p4 = new MyPoint(10,10);
+        System.out.println(p3.distance(p4));
+    }
 
     //
     // Private methods

@@ -342,3 +342,30 @@ I am a green circle.
 
 Process finished with exit code 0
 ```
+
+#### Ex 14. My Point
+The distance between two points is represented by the following equation:
+
+√[(x₂ - x₁)² + (y₂ - y₁)²]
+
+Create a class called `MyPoint` that works like the `Point` class included in `java.awt` to calculate
+the distance between two points:
+
+Client code:
+```
+var p1 = new Point(12,14);
+var p2 = new Point(10,10);
+System.out.println(p1.distance(p2));
+
+var p3 = new MyPoint(12,14);
+var p4 = new MyPoint(10,10);
+System.out.println(p3.distance(p4));
+```
+
+Output:
+```
+4.47213595499958
+4.47213595499958
+
+Process finished with exit code 0
+```
