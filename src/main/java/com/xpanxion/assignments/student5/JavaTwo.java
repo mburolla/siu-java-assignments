@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student5;
 
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class JavaTwo {
 //
@@ -98,6 +99,25 @@ public class JavaTwo {
     public void ex6() {
         Calculator calc = new Calculator();
         calc.run();
+    }
+// EX7
+    public void ex7() {
+        var personList = Arrays.asList(
+                new Person("1", "Peter", "Jones"),
+                new Person("2", "John", "Smith"),
+                new Person("3", "Sue", "Anderson")
+        );
+
+        List<Person> newPersonList = personList.stream()
+                .map(p -> {
+                    p.setLastName("xxx");
+                    return p;
+                })
+                .collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
     }
 //
 // Private methods
