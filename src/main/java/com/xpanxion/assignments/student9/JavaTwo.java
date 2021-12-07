@@ -77,6 +77,12 @@ public class JavaTwo {
     }
 
     public void ex5() {
+        var repository = new Repository();
+        var p = repository.getPerson();
+        System.out.println(p);
+    }
+
+    public void ex6() {
 
     }
 
