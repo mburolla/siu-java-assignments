@@ -137,6 +137,23 @@ public class JavaTwo {
             System.out.println(p);
         }
     }
+// EX9
+    public void ex9() {
+        title(9);
+        var personList = Arrays.asList(
+                new Person("1", "Charlie", "Jones"),
+                new Person("2", "Zoey", "Smith"),
+                new Person("3", "Adam", "Anderson")
+        );
+
+        var filteredList = personList.stream()
+                .filter(p -> (p.getLastName().equals("Smith")))
+                .collect(Collectors.toList());
+
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
 //
 // Private methods
 //
