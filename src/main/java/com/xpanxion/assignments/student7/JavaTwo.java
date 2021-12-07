@@ -1,5 +1,8 @@
 package com.xpanxion.assignments.student7;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -8,43 +11,38 @@ public class JavaTwo {
     public void ex1() {
         var scanner = new Scanner(System.in);
 
-        System.out.print("Enter Person: ");
+        ArrayList<Person> people = new ArrayList<Person>();
 
+
+        System.out.print("Enter Person: ");
         String userInput = scanner.nextLine();
 
-        while (!userInput.equals("done")) {
+        while(!userInput.equals("done")) {
 
-            var tokenizer = new StringTokenizer(userInput, " ");
-            String token = tokenizer.nextToken();
+            String[] stringArray = userInput.split(",");
 
-           //while(tokenizer.hasMoreTokens()) {
+            int id = Integer.parseInt(stringArray[0]);
+            String firstName = "";
+            String lastName = "";
 
-               int id = 0;
-               String firstName = "";
-               String lastName = "";
+            //Split full name and initialize to first and last name
+            String fullName = stringArray[1].toString();
+            String[] fullNameSplit = fullName.split(" ");
+            firstName = fullNameSplit[1];
+           lastName = fullNameSplit[2];
 
-               System.out.println(tokenizer.countTokens());
+           Person person = new Person(id, firstName, lastName);
 
-               if (tokenizer.countTokens() == 2) {
-                  id = Integer.parseInt(token);
-               }
-               if (tokenizer.countTokens() == 1) {
-                   firstName = token;
-               }
-               if (tokenizer.countTokens() == 0) {
-                   lastName = token;
-               }
-               else
-                   tokenizer.nextToken();
+           people.add(person);
 
-              if(!(id==0) && !firstName.equals("") && !lastName.equals("")) {
-                  Person person = new Person(id, firstName, lastName);
-              }
-          // }
+            System.out.print("Enter Person: ");
+            userInput = scanner.nextLine();
+        }
 
-
-
-
+        if (userInput.equals("done")) {
+            for (Person person : people) {
+                System.out.println(person);
+            }
         }
     }
 }
