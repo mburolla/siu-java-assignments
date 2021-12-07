@@ -1,6 +1,6 @@
 package com.xpanxion.assignments.shared;
 
-import com.xpanxion.assignments.instructor.Person;
+import com.xpanxion.assignments.student3.Person;
 
 import java.util.HashMap;
 
