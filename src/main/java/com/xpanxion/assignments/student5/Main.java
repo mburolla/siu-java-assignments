@@ -2,8 +2,22 @@ package com.xpanxion.assignments.student5;
 
 public class Main {
     public static void main(String[] args) {
-        JavaOne javaOne = new JavaOne();
+//
+// JAVA TWO EXERCISES
+//
+        JavaTwo javaTwo = new JavaTwo();
 
+//        javaTwo.ex1();
+//        javaTwo.ex2();
+//        javaTwo.ex3();
+//        javaTwo.ex4(); //same as ex3 now
+//        javaTwo.ex5();
+
+
+//
+// JAVA ONE EXERCISES
+//
+//        JavaOne javaOne = new JavaOne();
 //        javaOne.ex1();
 //        javaOne.ex2();
 //        javaOne.ex3();
@@ -13,6 +27,6 @@ public class Main {
 //        javaOne.ex7();
 //        javaOne.ex8();
 //        javaOne.ex9();
-        javaOne.ex10();
+//        javaOne.ex10();
     }
 }
