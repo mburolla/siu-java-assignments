@@ -8,7 +8,8 @@ public class JavaOne {
     // Constructors
     //
 
-    JavaOne() {}
+    JavaOne() {
+    }
 
     //
     // Public methods
@@ -31,7 +32,7 @@ public class JavaOne {
         int count = 0;
 
         for (int i = 0; i < sentence.length(); i++) {
-            if(Character.isUpperCase(sentence.charAt(i))) {
+            if (Character.isUpperCase(sentence.charAt(i))) {
                 count++;
             }
         }
@@ -44,7 +45,7 @@ public class JavaOne {
         //CAPITALIZE WORDS
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a Sentence: ");
-        String sentence2  = sc.nextLine();
+        String sentence2 = sc.nextLine();
         String[] capitalizedWords = sentence2.split(" ");
 
         for (int i = 0; i < capitalizedWords.length; i += 2) {
@@ -63,7 +64,7 @@ public class JavaOne {
         StringBuilder sbRvsrd = null;
 
         boolean running = true;
-        while(running) {
+        while (running) {
             System.out.println("Enter a string: ");
             strOrig = sc.nextLine().toLowerCase();
 
@@ -90,8 +91,8 @@ public class JavaOne {
         int vowels = 0;
         int consonants = 0;
 
-        for (char ch: toBeCounted.toCharArray()) {
-            if(ch == 'a' || ch=='e' || ch == 'i' || ch=='o' || ch == 'u')
+        for (char ch : toBeCounted.toCharArray()) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
                 vowels++;
             else
                 consonants++;
@@ -155,17 +156,17 @@ public class JavaOne {
         String roomDimensions = sc.nextLine();
 
 //        String newRoomDimensions = roomDimensions.toLowerCase();
-            if (roomDimensions != "done") {
-                String nums = roomDimensions.replaceAll("[^0-9]", "");
-                int[] numbers = Arrays.stream(nums.split(",")).mapToInt(Integer::parseInt).toArray();
+        if (roomDimensions != "done") {
+            String nums = roomDimensions.replaceAll("[^0-9]", "");
+            int[] numbers = Arrays.stream(nums.split(",")).mapToInt(Integer::parseInt).toArray();
 
-                int result = 0;
-                for (int i = 0; i < numbers.length; i++) {
-                    int newResult = result *= numbers[i];
-                    System.out.println(newResult);
-                }
-
+            int result = 0;
+            for (int i = 0; i < numbers.length; i++) {
+                int newResult = result *= numbers[i];
+                System.out.println(newResult);
             }
+
+        }
 
     }
 
@@ -176,13 +177,13 @@ public class JavaOne {
         int range = max - min + 1;
 
         for (int i = 0; i < 5; i++) {
-          int rand = (int)(Math.random() * range) + min;
+            int rand = (int) (Math.random() * range) + min;
 
             Scanner sc = new Scanner(System.in);
             System.out.println("Guess the Magic Number Between 1 and 5");
             int guess = sc.nextInt();
             int guess2 = 0;
-            while(guess != rand && guess2 != rand) {
+            while (guess != rand && guess2 != rand) {
                 Scanner sc2 = new Scanner(System.in);
                 System.out.println("Try Again!");
                 guess2 = sc2.nextInt();
@@ -200,12 +201,24 @@ public class JavaOne {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string");
         String word = sc.nextLine();
-        for (int i = 0; i < word.length(); i++) {
-            System.out.println(spaces + word.charAt(i));
-            spaces += "  ";
-        }
+        String[] words = word.split("\\W+");
 
+        for (int i = 0; i < words.length; i++) {
+            System.out.println(spaces + words[i]);
+            spaces += " ";
+        }
     }
+
+//
+
+//        for(int i = 0; i < words.length; i++) {
+//            for (int spacesCount = 0; spacesCount<i; spacesCount++){
+//                System.out.print(" ");
+//            }
+//            System.out.println(word.charAt(i));
+//        }
+
+
 
 
 
