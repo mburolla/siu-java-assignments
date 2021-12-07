@@ -3,9 +3,9 @@ package com.xpanxion.assignments.student9;
 import java.util.Objects;
 
 public class Person implements Comparable<Person> {
-    int id;
-    String firstName;
-    String lastName;
+    private int id;
+     private String firstName;
+    private String lastName;
 
     public Person(int id, String firstName, String lastName){
         this.id = id;
