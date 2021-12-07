@@ -5,7 +5,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 import java.lang.StringBuilder;
-import java.util.Random;
 
 public class JavaOne {
 
