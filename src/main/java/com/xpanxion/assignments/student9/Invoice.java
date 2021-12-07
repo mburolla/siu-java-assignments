@@ -3,13 +3,13 @@ package com.xpanxion.assignments.student9;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Invoice implements Comparable<Invoice>{
+public class Invoice extends Base implements Comparable<Invoice>{
     private int id;
     private ArrayList<Product> productList;
 
 
     public Invoice(int id){
-        this.id = id;
+        super(id);
         this.productList = new ArrayList<>();
     }
 
