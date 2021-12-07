@@ -26,4 +26,6 @@ public final class Person {
         return this.id;
     }
 
+    @Override
+    public String toString(){ return String.format("Person{id=%s, firstname=%s, lastname=%s}", id, firstName, lastName);}
 }
