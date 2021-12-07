@@ -4,17 +4,17 @@ import java.text.NumberFormat;
 import java.util.*;
 
 public class JavaTwo {
-    //
-    // Data members
-    //
+//
+// Data members
+//
 
-    //
-    // Constructors
-    //
+//
+// Constructors
+//
     JavaTwo() {}
-    //
-    // Public methods
-    //
+//
+// Public methods
+//
 
 // EX1
     public void ex1() {
@@ -94,15 +94,20 @@ public class JavaTwo {
         var p = repository.getPerson();
         System.out.println(p);
     }
-    //
-    // Private methods
-    //
+// EX6
+    public void ex6() {
+        Calculator calc = new Calculator();
+        calc.run();
+    }
+//
+// Private methods
+//
     private void title(int i){
         System.out.printf("\n=============" +
                           "\n====Ex.%s====" +
                           "\n=============\n", i);
     }
-    //
-    // Overrides
-    //
+//
+// Overrides
+//
 }

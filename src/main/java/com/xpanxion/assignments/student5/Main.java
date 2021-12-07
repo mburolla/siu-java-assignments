@@ -12,6 +12,7 @@ public class Main {
 //        javaTwo.ex3();
 //        javaTwo.ex4(); //same as ex3 now
 //        javaTwo.ex5();
+//        javaTwo.ex6();
 
 
 //
