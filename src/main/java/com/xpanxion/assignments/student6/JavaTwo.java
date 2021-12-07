@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.student6;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,6 +32,31 @@ public class JavaTwo {
         for (Person p : persons) {
             System.out.println(p);
         }
+
+    }
+
+    public void ex2() {
+        HashMap<Integer, Person> personHashMap = new HashMap<>();
+
+        Person p1 = new Person(1, "Peter", "Jones");
+        Person p2 = new Person(2, "John", "Smith");
+        Person p3 = new Person(3, "Mary", "Jane");
+
+        personHashMap.put(1, p1);
+        personHashMap.put(2, p2);
+        personHashMap.put(3, p3);
+
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter Person ID: ");
+            String input = sc.nextLine();
+            if (input.equals("done")) {
+                break;
+            }
+            System.out.println(personHashMap.get(Integer.parseInt(input)));
+        }
+
+
 
     }
 }
