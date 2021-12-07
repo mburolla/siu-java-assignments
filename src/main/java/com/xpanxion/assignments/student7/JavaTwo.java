@@ -1,16 +1,12 @@
 package com.xpanxion.assignments.student7;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class JavaTwo {
 
     public void ex1() {
         var scanner = new Scanner(System.in);
-
         ArrayList<Person> people = new ArrayList<Person>();
 
 
@@ -20,7 +16,6 @@ public class JavaTwo {
         while(!userInput.equals("done")) {
 
             String[] stringArray = userInput.split(",");
-
             int id = Integer.parseInt(stringArray[0]);
             String firstName = "";
             String lastName = "";
@@ -32,7 +27,6 @@ public class JavaTwo {
            lastName = fullNameSplit[2];
 
            Person person = new Person(id, firstName, lastName);
-
            people.add(person);
 
             System.out.print("Enter Person: ");
@@ -43,6 +37,25 @@ public class JavaTwo {
             for (Person person : people) {
                 System.out.println(person);
             }
+        }
+    }
+
+    public void ex2() {
+        var scanner = new Scanner(System.in);
+        HashMap<String, Person> people = new HashMap<String, Person>();
+        String userInput = "";
+
+        people.put("1", new Person(1,"Peter", "Jones"));
+        people.put("2", new Person(2, "John", "Smith"));
+        people.put("3", new Person(3, "Mary", "Jane"));
+
+        while(true) {
+            System.out.print("Enter Person ID: ");
+            userInput = scanner.nextLine();
+            if (userInput.equals("done")) {
+                break;
+            }
+            System.out.println(people.get(userInput));
         }
     }
 }

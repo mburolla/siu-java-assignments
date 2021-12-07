@@ -15,9 +15,9 @@ public class Main {
         javaOne.ex10();*/
 
         JavaTwo javaTwo = new JavaTwo();
-        javaTwo.ex1();
-        /*javaTwo.ex2();
-        javaTwo.ex3();
+       /* javaTwo.ex1();*/
+        javaTwo.ex2();
+       /* javaTwo.ex3();
         javaTwo.ex4();
         javaTwo.ex5();
         javaTwo.ex6();
