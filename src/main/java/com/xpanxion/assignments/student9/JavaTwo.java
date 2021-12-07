@@ -1,8 +1,10 @@
 package com.xpanxion.assignments.student9;
 
 import com.xpanxion.assignments.instructor.Person;
+import com.xpanxion.assignments.instructor.PersonRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class JavaTwo {
@@ -32,7 +34,29 @@ public class JavaTwo {
     }
 
     public void ex2() {
-
+        HashMap<Integer,Person>map = new HashMap<>();
+        map.put(1,new Person(1,"Peter","Jones"));
+        map.put(2,new Person(2,"John","Smith"));
+        map.put(3,new Person(3,"Mary","Jane"));
+        while(true) {
+            System.out.print("Enter Person ID > ");
+            var scanner = new Scanner(System.in);
+            var userId = scanner.next();
+            if (userId.equals("done")) {
+                break;
+            } else {
+                try{
+                    var tempId = Integer.parseInt(userId);
+                    if(map.containsKey(tempId)){
+                        System.out.println(map.get(tempId));
+                    } else {
+                        System.out.println("Invalid id. Try again");
+                    }
+                } catch (NumberFormatException ex){
+                    System.out.println("Must be an integer value");
+                }
+            }
+        }
     }
 
 }
