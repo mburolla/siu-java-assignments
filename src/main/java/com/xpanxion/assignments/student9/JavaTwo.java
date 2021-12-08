@@ -245,7 +245,7 @@ public class JavaTwo {
                     System.out.print("Enter to continue >");
                 } else {
                     totalSales += purchasedRow;
-                    seats[purchasedRow - 1][purchasedSeat - 1] = 'X';
+                    seats[purchasedRow - 1][purchasedSeat - 1] = 'x';
                     System.out.println(Arrays.deepToString(seats).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
                     System.out.printf("Total Sales : $%d%n", totalSales);
                     System.out.print("Enter to continue >");
