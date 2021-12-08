@@ -97,6 +97,46 @@ public class JavaTwo {
         System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
     }
 
+    public void ex6() {
+        Calculator calculator = null;
+        Scanner scanner = new Scanner(System.in);
+
+        //while user is not "done"
+        while (true) {
+            //prompt user for first operand
+            System.out.print("Enter first number: ");
+
+            //variables
+            var firstNumber = scanner.next();
+            int secondNumber;
+            String operation;
+
+            //if user enters "done" for first operand break loop
+            if (firstNumber.equals("done")) break;
+
+            if (isInt(firstNumber)) {
+
+                var firstNumberInt = Integer.parseInt(firstNumber);
+
+                //prompt user for second operand
+                System.out.print("Enter second number: ");
+                secondNumber = scanner.nextInt();
+
+                //prompt user to choose operation
+                System.out.print("Enter operation (add, sub, mul, div): ");
+                operation = scanner.next().toLowerCase();
+                calculator = new Calculator(firstNumberInt, secondNumber, operation);
+                calculator.performCalculations();
+
+                var getResult = calculator.getResult();
+                System.out.print("Result: " + getResult + "\n");
+            }
+        }
+        //show history of all calculations
+        calculator.printHistory();
+
+    }
+
     //
     // Private helper methods
     //
