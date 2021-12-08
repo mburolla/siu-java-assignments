@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student1;
 
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class JavaTwo {
 
@@ -135,6 +136,26 @@ public class JavaTwo {
         //show history of all calculations
         calculator.printHistory();
 
+    }
+
+    public void ex7() {
+        var personList = Arrays.asList(
+                new Person("1", "Peter", "Jones"),
+                new Person("2", "John", "Smith"),
+                new Person("3", "Sue", "Anderson")
+        );
+
+        var newPersonList = personList
+                .stream()
+                .map(p -> {
+                    p.setLastName("xxx");
+                    return p;
+                })
+                .collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
+        }
     }
 
     //

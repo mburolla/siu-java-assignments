@@ -4,10 +4,9 @@ public class Person {
     private int userID;
     private String firstName;
     private String lastName;
-    private static int id;
+//    private static int id;
 
     public Person(String userid, String firstName, String lastName) {
-        id++;
         this.userID = Integer.parseInt(userid);
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,6 +35,4 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-
 }
