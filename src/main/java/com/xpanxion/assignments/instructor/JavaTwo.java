@@ -115,7 +115,7 @@ public class JavaTwo {
 
             System.out.print("Enter second number: ");
             var operand2 = scanner.nextLine();
-            if (operand1.equals("done")) {
+            if (operand2.equals("done")) {
                 break;
             }
 
