@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student8;
 
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -161,6 +162,23 @@ public class JavaTwo {
 
         for (Person p : filteredList) {
             System.out.println(p);
+        }
+
+
+    }
+
+    public void ex10() throws InterruptedException {
+        Queue<Cat> catsInAQ = new LinkedList<Cat>();
+
+        catsInAQ.add(new Cat("Alice"));
+        catsInAQ.add(new Cat("Bob"));
+        catsInAQ.add(new Cat("Charlie"));
+        catsInAQ.add(new Cat("Dan"));
+
+        while(!catsInAQ.isEmpty()) {
+            System.out.println(catsInAQ);
+            catsInAQ.poll();
+            Thread.sleep(3000);
         }
     }
 }
