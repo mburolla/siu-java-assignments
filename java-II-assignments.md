@@ -238,3 +238,134 @@ Example:
 
 Process finished with exit code 0
 ```
+
+### Ex. 11 Tiny Auth
+Create a Java program that prompts the user to do one of three actions:
+
+#### Add
+The program allows a user to enter a username and password.  The password is hashed using
+the SHA1 algorithm.  The program contains a `HashMap` that stores the username as the key,
+and the SHA1 password as the value.  The program repeats until "done" is entered by the user.
+
+#### Login
+The program looks up the stored password hash from the `HashMap` for the specified user.  
+If the stored password hash is the same as the supplied password (hashed) the program displays "OK".  
+If the hashes are not equal the program displays "Incorrect username or password".
+
+#### Done
+The program exits.
+
+Example:
+```
+Action [add|login|done]: add
+Enter username, password: joe, pwd1
+Action [add|login|done]: add
+Enter username, password: fred, pwd2
+Action [add|login|done]: login
+Enter username, password: joe, pwd1
+OK
+Action [add|login|done]: login
+Enter username, password: joe, wrongpwd
+Incorrect username or password.
+Action [add|login|done]: login
+Enter username, password: sally, nothere
+Incorrect username or password.
+Action [add|login|done]: done
+
+Process finished with exit code 0
+```
+
+### Ex. 12 Movie Theater
+Create a Java program that displays the seats for a movie theater.  The user enters the size of the theater and
+can purchase tickets for seats in the theater.  The upper top left is row 1, seat 1.  The price of a seat is
+equal to the row number.
+
+Example:
+```
+Enter number rows: 3
+Enter number seats: 10
+0000000000
+0000000000
+0000000000
+Total sales: $0.00
+Purchase seat (row, seat): 1,1
+X000000000
+0000000000
+0000000000
+Total sales: $1.00
+Purchase seat (row, seat): 1,10
+X00000000X
+0000000000
+0000000000
+Total sales: $2.00
+Purchase seat (row, seat): 2,1
+X00000000X
+X000000000
+0000000000
+Total sales: $4.00
+Purchase seat (row, seat): 3,5
+X00000000X
+X000000000
+0000X00000
+Total sales: $7.00
+Purchase seat (row, seat): done
+
+Process finished with exit code 0
+```
+
+#### Ex 13. Classic Polymorphism
+Consider the following Java program:
+```
+var shapeList = new ArrayList<Shape>();
+var s = new Square("red");
+var c = new Circle("green");
+shapeList.add(s);
+shapeList.add(c);
+
+for (Shape shape : shapeList) {
+    System.out.println(shape.draw());
+}
+```
+
+Based on this program, create the following Java classes:
+- `Shape`
+- `Square`
+- `Circle`
+
+The `Shape` class is an abstract class that contains an abstract method called `draw()`.  The `Square` and
+`Circle` class subclass the `Shape` class.  These three classes must be created to support the
+following output for the program above:
+
+```
+I am a red square.
+I am a green circle.
+
+Process finished with exit code 0
+```
+
+#### Ex 14. My Point
+The distance between two points is represented by the following equation:
+
+√[(x₂ - x₁)² + (y₂ - y₁)²]
+
+Create a class called `MyPoint` that works like the `Point` class included in `java.awt` to calculate
+the distance between two points:
+
+Client code:
+```
+var p1 = new Point(12,14);
+var p2 = new Point(10,10);
+System.out.println(p1.distance(p2));
+
+var p3 = new MyPoint(12,14);
+var p4 = new MyPoint(10,10);
+System.out.println(p3.distance(p4));
+```
+
+Output:
+```
+4.47213595499958
+4.47213595499958
+
+Process finished with exit code 0
+```

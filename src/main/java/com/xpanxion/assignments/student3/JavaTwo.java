@@ -136,8 +136,6 @@ public class JavaTwo {
                 new Person(3, "Adam", "Anderson")
         );
 
-
-        //Collections.sort(personList);
         personList.sort(Comparator.comparing((Person p) -> p.getFirstname()));
 
         for(Person p : personList){
@@ -178,6 +176,32 @@ public class JavaTwo {
             if (queue.isEmpty())
                 break;
         }
+
+    }
+
+    public void ex11(){
+
+    }
+
+    public void ex12(){
+
+    }
+
+    public void ex13(){
+        //shapes
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
+        }
+
+    }
+
+    public void ex14(){
 
     }
 
