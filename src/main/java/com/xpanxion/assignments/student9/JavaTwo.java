@@ -136,4 +136,17 @@ public class JavaTwo {
         }
     }
 
+    public void ex9() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        var filteredList = personList.stream().filter(p -> p.getLastName().contains("Smith")).toList();
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
+
 }
