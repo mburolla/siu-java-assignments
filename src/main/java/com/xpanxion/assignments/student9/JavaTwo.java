@@ -5,6 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.SQLOutput;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -252,6 +253,23 @@ public class JavaTwo {
                 }
             }
         }
+    }
+
+    public void ex13(){
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            shape.draw();
+            System.out.println();
+        }
+    }
+
+    public void ex14() {
+
     }
 
 
