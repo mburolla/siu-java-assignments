@@ -87,4 +87,35 @@ public class JavaTwo {
         var p = repository.getPerson();
         System.out.println(p);
     }
+
+    public void ex6() {
+        Calculator calculator = new Calculator();
+
+        while(true) {
+            System.out.print("Enter first number: ");
+            String inputA = scanner.next();
+            if (inputA.equals("done")) {
+                break;
+            }
+            System.out.print("Enter second number: ");
+            String inputB = scanner.next();
+            if (inputB.equals("done")) {
+                break;
+            }
+            System.out.print("Enter operation (add, sub, mul, div): ");
+            String operation = scanner.next();
+            if (operation.equals("done")) {
+                break;
+            }
+
+            int a = Integer.parseInt(inputA);
+            int b = Integer.parseInt(inputB);
+
+            int result = calculator.calculate(a, b, operation);
+            System.out.printf("Result: %s\n", result);
+        }
+
+        calculator.getHistory();
+
+    }
 }
