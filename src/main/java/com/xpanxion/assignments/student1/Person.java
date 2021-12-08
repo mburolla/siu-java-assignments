@@ -1,22 +1,24 @@
 package com.xpanxion.assignments.student1;
 
 public class Person {
-    private int id;
+    private int userID;
     private String firstName;
     private String lastName;
+    private static int id;
 
-    public Person(int id, String firstName, String lastName) {
-        this.id = id;
+    public Person(String firstName, String lastName) {
+        id++;
+        this.userID = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public int getId() {
-        return id;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int id) {
+        this.userID = id;
     }
 
     public String getFirstName() {
@@ -34,4 +36,6 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+
 }
