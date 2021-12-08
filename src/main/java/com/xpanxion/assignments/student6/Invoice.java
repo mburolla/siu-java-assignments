@@ -3,15 +3,16 @@ package com.xpanxion.assignments.student6;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Invoice {
+public class Invoice extends Base {
 
     //MEM VARS
-    private final int id;
+    //private final int id;
     private final List<Product> productList;
 
     //CONSTRUCTOR
     public Invoice(int id) {
-        this.id = id;
+        //this.id = id;
+        super(id);
         this.productList = new ArrayList<>();
     }
 
