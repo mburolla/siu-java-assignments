@@ -18,7 +18,8 @@ public class Main {
         //javaTwo.ex1();
         //javaTwo.ex2();
         //javaTwo.ex3_4();
-        javaTwo.ex5();
+        //javaTwo.ex5();
+        javaTwo.ex6();
 
     }
 }

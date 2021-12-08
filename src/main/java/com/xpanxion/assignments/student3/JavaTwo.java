@@ -9,6 +9,7 @@ public class JavaTwo {
     JavaTwo() {}
 
     public void ex1(){
+        //enter people based on id, firstname, and lastname and put into array
 
         var peopleArray = new ArrayList<Person>();
 
@@ -34,6 +35,7 @@ public class JavaTwo {
     }
 
     public void ex2(){
+        //hashMap to find person by id
 
         Map hashMap = new HashMap<Integer, Person>();
 
@@ -57,6 +59,8 @@ public class JavaTwo {
     }
 
     public void ex3_4(){
+        //product cost and base class extension
+
        var invoice =  new Invoice(1);
         invoice.addProduct(new Product(111,"Mustard", 2.00));
         invoice.addProduct(new Product(222,"Ketchup", 3.00));
@@ -67,10 +71,18 @@ public class JavaTwo {
     }
 
     public void ex5(){
+        //repository
 
         var repository = new Repository();
         var p = repository.getPerson();
         System.out.println(p);
+
+    }
+
+    public void ex6() {
+        //oop calculator
+        Calculator calculator = new Calculator();
+        calculator.calculate();
 
     }
 }
