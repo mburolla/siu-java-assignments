@@ -132,7 +132,7 @@ public class JavaTwo {
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
-    public static void ex3() {
+    public static void ex4() {
 
     }
 
