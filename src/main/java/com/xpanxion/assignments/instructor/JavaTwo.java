@@ -3,6 +3,7 @@ package com.xpanxion.assignments.instructor;
 import jakarta.xml.bind.DatatypeConverter;
 
 import java.awt.*;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -333,7 +334,9 @@ public class JavaTwo {
         // Compare password hashes.
         if (hashMap.containsKey(userName)) {
             var storedPasswordHash = hashMap.get(userName);
+            System.out.println(storedPasswordHash);
             var thisPasswordHash = createHash(password);
+            System.out.println(thisPasswordHash);
             if (storedPasswordHash.equals(thisPasswordHash)) {
                 retval = true;
             }
@@ -344,10 +347,10 @@ public class JavaTwo {
     private String createHash(String inString) {
         var retval = "";
         try {
-            var md = MessageDigest.getInstance("SHA1");
-            md.update(inString.getBytes(StandardCharsets.UTF_8));
-            byte[] digest = md.digest();
-            retval = DatatypeConverter.printHexBinary(digest).toUpperCase();
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.reset();
+            digest.update(inString.getBytes(StandardCharsets.UTF_8));
+            retval = String.format("%040x", new BigInteger(1, digest.digest()));
         }
         catch (NoSuchAlgorithmException nsae) {
             nsae.printStackTrace();

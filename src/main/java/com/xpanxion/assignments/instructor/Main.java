@@ -25,10 +25,10 @@ public class Main {
 //        javaTwo.ex8();
 //        javaTwo.ex9();
 //        javaTwo.ex10();
-//        javaTwo.ex11();
+       javaTwo.ex11();
 //        javaTwo.ex12();
 //        javaTwo.ex13();
-        javaTwo.ex14();
+//        javaTwo.ex14();
 
 
         JavaThree javaThree = new JavaThree();
