@@ -128,9 +128,7 @@ public class JavaTwo {
         }
 
         // Print history.
-        for(String s: calculator.getHistory()) {
-            System.out.println(s);
-        }
+        calculator.getHistory().forEach(System.out::println);
     }
 
     /**
