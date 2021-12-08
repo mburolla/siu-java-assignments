@@ -28,6 +28,14 @@ class Person {
 
 }
 
+class NameCompare implements Comparator<Person>
+{
+    public int compare(Person p1, Person p2)
+    {
+        return p1.firstName.compareTo(p2.firstName);
+    }
+}
+
 class Invoice extends Base {
 
     int invoiceId;
@@ -249,6 +257,20 @@ public class JavaTwo {
         }
     }
 
+    public static void ex8() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        NameCompare nameCompare = new NameCompare();
+        Collections.sort(personList, nameCompare);
+
+        for (Person p : personList) {
+            System.out.println(p);
+        }
+    }
     //
     // Private helper methods
     //
