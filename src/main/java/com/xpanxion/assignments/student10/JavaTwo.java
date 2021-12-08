@@ -124,4 +124,20 @@ public class JavaTwo {
             System.out.println(p);
         }
     }
+
+    public void ex8 () {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        personList = personList.stream()
+                .sorted(Comparator.comparing(Person::getFirstName))
+                .collect(Collectors.toList());
+
+        for (Person p : personList) {
+            System.out.println(p);
+        }
+    }
 }
