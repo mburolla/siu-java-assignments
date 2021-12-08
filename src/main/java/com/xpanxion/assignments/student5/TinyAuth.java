@@ -32,38 +32,36 @@ public class TinyAuth {
     private void add() {
 
         String usrName;
-        String sha1 = "";
         System.out.print("Enter your username: ");
         usrName = sc.nextLine();
 
         System.out.print("Enter your password: ");
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-1");
-            digest.reset();
-            digest.update(sc.nextLine().getBytes(StandardCharsets.UTF_8));
-            sha1 = String.format("%040x", new BigInteger(1, digest.digest()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String sha1 = enterPassword();
+
         users.put(usrName, sha1);
     }
 
     private void login() {
         String usrName;
-        String sha1 = "";
         System.out.print("Enter your username: ");
         usrName = sc.nextLine();
 
         System.out.print("Enter your password: ");
+        String sha1 = enterPassword();
+
+        var response = sha1.equals(users.get(usrName))?"OK":"Incorrect username or password";
+        System.out.println(response);
+    }
+
+    private String enterPassword() {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-1");
             digest.reset();
             digest.update(sc.nextLine().getBytes(StandardCharsets.UTF_8));
-            sha1 = String.format("%040x", new BigInteger(1, digest.digest()));
+            return String.format("%040x", new BigInteger(1, digest.digest()));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        var response = sha1.equals(users.get(usrName))?"OK":"Incorrect username or password";
-        System.out.println(response);
+        return "";
     }
 }
