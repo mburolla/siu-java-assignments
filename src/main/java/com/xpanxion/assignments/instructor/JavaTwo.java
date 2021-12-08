@@ -254,8 +254,8 @@ public class JavaTwo {
                 break;
             }
             var inputArray = inputString.split(",");
-            var rowNumber = Integer.parseInt(inputArray[0].replaceAll("\\s+",""));
-            var seatNumber = Integer.parseInt(inputArray[1].replaceAll("\\s+",""));
+            var rowNumber = Integer.parseInt(inputArray[0].trim());
+            var seatNumber = Integer.parseInt(inputArray[1].trim());
             var index = ((rowNumber - 1) * numSeats) + (seatNumber - 1);
             theaterSeats[index] = "X";
             totalSales += rowNumber;
