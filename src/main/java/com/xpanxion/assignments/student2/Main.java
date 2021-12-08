@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) {
 
-        JavaOne.ex3();
+        JavaTwo.ex1();
 
     }
 }
