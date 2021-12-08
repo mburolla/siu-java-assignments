@@ -1,9 +1,11 @@
 package com.xpanxion.assignments.student10;
 
+import java.math.BigInteger;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import java.security.*;
 
 public class JavaTwo {
 
@@ -191,5 +193,61 @@ public class JavaTwo {
 
 
 
+    }
+
+    public void ex11 () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Student 10: ex11.");
+        HashMap<String, String> loginMap = new HashMap<>();
+
+        while(true) {
+            System.out.print("Action [add|login|done]: ");
+            String action = scanner.nextLine();
+            if (action.equals("done")){
+                break;
+            }
+            else if (action.equals("add")) {
+                System.out.print("Enter username, password: ");
+                String info = scanner.nextLine();
+                String infoList [] = info.split(", ");
+                String username = infoList[0];
+                String password = encryptPassword(infoList[1]);
+                infoList[1] = password;
+                loginMap.put(username, password);
+            }
+            else {
+                System.out.print("Enter username, password: ");
+                String info = scanner.nextLine();
+                String infoList [] = info.split(", ");
+                String username = infoList[0];
+                String password = encryptPassword(infoList[1]);
+                infoList[1] = password;
+                String hash = loginMap.get(username);
+                if (hash!=null && hash.equals(password)) {
+                    System.out.println("OK");
+                } else {
+                    System.out.println("Incorrect username or password");
+                }
+            }
+        }
+    }
+
+
+    //Helper Functions
+
+    public static String encryptPassword(String password){
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            byte[] messageDigest = md.digest(password.getBytes());
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashtext = no.toString(16);
+            while (hashtext.length()<32){
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
