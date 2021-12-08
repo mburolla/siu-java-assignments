@@ -124,7 +124,16 @@ public class JavaTwo {
     }
 
     public void ex8() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
 
+        Collections.sort(personList);
+        for (Person p : personList) {
+            System.out.println(p);
+        }
     }
 
 }
