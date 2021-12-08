@@ -14,19 +14,19 @@ public class MovieTheater {
 
     public MovieTheater() {
         this.salesTotal = 0.00;
+        System.out.print("Enter number rows: ");
+        int rows = Integer.valueOf(sc.nextLine());
+        System.out.print("Enter number seats: ");
+        int seats = Integer.valueOf(sc.nextLine());
+        buildTheater(rows, seats);
     }
 
     public void run() {
-        int rows;
-        int seats;
-        System.out.print("Enter number rows: ");
-        rows = Integer.valueOf(sc.nextLine());
-        System.out.print("Enter number seats: ");
-        seats = Integer.valueOf(sc.nextLine());
-        buildTheater(rows, seats);
+        printSeating();
         printSalesTotal();
         ticketBooth();
     }
+
     private void ticketBooth() {
         while (true) {
             System.out.print("Purchase seat (row,seat): ");
@@ -52,15 +52,17 @@ public class MovieTheater {
         if (auditorium[row-1].charAt(seat-1)=='0') {
             auditorium[row-1].setCharAt(seat-1, occupiedSeat.charAt(0));
             salesTotal += row;
-        }
-        else System.out.println("That seat has already been sold.");
+        } else System.out.println("That seat has already been sold.");
+        printSeating();
         printSalesTotal();
     }
-
-    private void printSalesTotal() {
+    private void printSeating() {
         for (StringBuilder s: auditorium) {
             System.out.println(s.toString());
         }
+    }
+
+    private void printSalesTotal() {
         System.out.printf("Total sales: %s\n", formatter.format(salesTotal));
     }
 }
