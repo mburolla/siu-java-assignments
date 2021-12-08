@@ -18,7 +18,8 @@ public class Main {
 //        javaTwo.ex10();
 //        javaTwo.ex11();
 //        javaTwo.ex12();
-        javaTwo.ex13();
+//        javaTwo.ex13();
+        javaTwo.ex14();
 
 
         //

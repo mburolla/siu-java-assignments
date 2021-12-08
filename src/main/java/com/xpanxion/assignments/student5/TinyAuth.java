@@ -30,7 +30,6 @@ public class TinyAuth {
     }
 
     private void add() {
-
         String usrName;
         System.out.print("Enter your username: ");
         usrName = sc.nextLine();
