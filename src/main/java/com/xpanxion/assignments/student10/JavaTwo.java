@@ -75,9 +75,38 @@ public class JavaTwo {
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
-    public void ex5() {
+    public void ex5 () {
         var repository = new Repository();
         var p = repository.getPerson();
         System.out.println(p);
+    }
+
+    public void ex6 () {
+        Scanner scanner = new Scanner(System.in);
+        Calculator calc = new Calculator();
+        System.out.println("Student 10: ex6.");
+
+        while (true) {
+            System.out.print("Enter a number: ");
+            String next = scanner.next();
+            if (next.equals("done")){
+                break;
+            }
+            else {
+                int num1 = Integer.parseInt(next);
+                calc.setNum1(num1);
+                System.out.print("Enter another number: ");
+                int num2 = scanner.nextInt();
+                calc.setNum2(num2);
+                System.out.print("Enter an operation(add, sub, mul, div): ");
+                String operator = scanner.next();
+                calc.setOperator(operator);
+                int result = calc.calculate();
+                System.out.println("Result: " + result);
+            }
+        }
+        for (String operation: calc.getList()){
+            System.out.println(operation);
+        }
     }
 }
