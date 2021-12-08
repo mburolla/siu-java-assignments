@@ -46,6 +46,5 @@ public class Calculator {
         } while (true);
         System.out.println("Result: " + z);
         history.add(String.format("%s %s %s = %s", x, op, y, z));
-
     }
 }
