@@ -158,6 +158,27 @@ public class JavaTwo {
         }
     }
 
+    public void ex8() {
+        var personList = Arrays.asList(
+                new Person("1", "Charlie", "Jones"),
+                new Person("2", "Zoey", "Smith"),
+                new Person("3", "Adam", "Anderson")
+        );
+
+        Comparator<Person> firstnameComparator = new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getFirstName().compareTo(o2.getFirstName());
+            }
+        };
+
+        personList.sort(firstnameComparator);
+
+        for (Person p : personList) {
+            System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
+        }
+    }
+
     //
     // Private helper methods
     //
