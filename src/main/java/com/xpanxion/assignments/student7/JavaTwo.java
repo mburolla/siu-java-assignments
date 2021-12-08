@@ -68,4 +68,10 @@ public class JavaTwo {
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
+
+    public void ex5() {
+        var repository = new Repository();
+        var p = repository.getPerson();
+        System.out.println(p);
+    }
 }
