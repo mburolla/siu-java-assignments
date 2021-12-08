@@ -132,6 +132,10 @@ public class JavaTwo {
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
+    public static void ex3() {
+
+    }
+
     //
     // Private helper methods
     //
