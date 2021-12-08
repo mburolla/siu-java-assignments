@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
+import java.util.concurrent.TimeUnit;
 
 class Person {
 
@@ -110,6 +111,20 @@ class Calculator {
         for(String n : calculations) {
             System.out.println(n);
         }
+    }
+
+}
+
+class Cat {
+
+    String name;
+
+    Cat(String name) {
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Cat{name=" + name + "'}";
     }
 
 }
@@ -288,6 +303,25 @@ public class JavaTwo {
         }
     }
 
+    public static void ex10() throws InterruptedException {
+         List<Cat> catQueue = new LinkedList<> (Arrays.asList(
+                new Cat("Alice"),
+                new Cat("Bob"),
+                new Cat("Charlie"),
+                new Cat("Dan")
+        ));
+
+         while(true) {
+             System.out.println(catQueue);
+             catQueue.remove(0);
+
+             if(catQueue.isEmpty()) {
+                 break;
+             }
+
+             TimeUnit.SECONDS.sleep(3);
+         }
+    }
     //
     // Private helper methods
     //
