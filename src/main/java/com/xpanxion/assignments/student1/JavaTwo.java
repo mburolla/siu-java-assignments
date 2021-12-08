@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student1;
 
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -202,6 +203,31 @@ public class JavaTwo {
         }
     }
 
+    public void ex10() {
+//        long start = System.currentTimeMillis();
+//        long end = start + 60 * 3;
+        Queue<Cat> catQueue = new LinkedList<Cat>();
+        catQueue.add(new Cat("Alice"));
+        catQueue.add(new Cat("Bob"));
+        catQueue.add(new Cat("Charlie"));
+        catQueue.add(new Cat("Dan"));
+
+        while(!catQueue.isEmpty()) {
+            catQueue
+                    .forEach(cat -> System.out.print("name=" + cat.getName() + " "));
+            catQueue.remove();
+
+            //set 3 second delay
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch(InterruptedException ex) {
+                ex.printStackTrace();
+            }
+
+            System.out.println();
+        }
+    }
+
     //
     // Private helper methods
     //
@@ -220,4 +246,16 @@ public class JavaTwo {
     private static String formatString(Person p) {
         return "id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName();
     }
+
+//    private static void setTimeout(Runnable runnable, int delay) {
+//        new Thread(() -> {
+//            try {
+//                Thread.sleep(delay);
+//                runnable.run();
+//            }
+//            catch (Exception e) {
+//                System.err.println(e);
+//            }
+//        }).start();
+//    }
 }
