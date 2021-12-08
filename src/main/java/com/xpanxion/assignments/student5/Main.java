@@ -2,9 +2,12 @@ package com.xpanxion.assignments.student5;
 
 public class Main {
     public static void main(String[] args) {
+        MovieTheater theater = new MovieTheater();
+        theater.run();
 
-        TinyAuth ta = new TinyAuth();
-        ta.run();
+
+//        TinyAuth ta = new TinyAuth();
+//        ta.run();
 
 //
 // JAVA TWO EXERCISES

@@ -59,8 +59,8 @@ public class TinyAuth {
             digest.reset();
             digest.update(sc.nextLine().getBytes(StandardCharsets.UTF_8));
             return String.format("%040x", new BigInteger(1, digest.digest()));
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception NoSuchAlgorithmException) {
+            NoSuchAlgorithmException.printStackTrace();
         }
         return "";
     }
