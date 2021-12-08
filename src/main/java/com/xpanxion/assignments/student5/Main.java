@@ -2,18 +2,10 @@ package com.xpanxion.assignments.student5;
 
 public class Main {
     public static void main(String[] args) {
-        MovieTheater theater = new MovieTheater();
-        theater.run();
-
-
-//        TinyAuth ta = new TinyAuth();
-//        ta.run();
-
-//
-// JAVA TWO EXERCISES
-//
-//        JavaTwo javaTwo = new JavaTwo();
-
+        //
+        // JAVA TWO EXERCISES
+        //
+        JavaTwo javaTwo = new JavaTwo();
 //        javaTwo.ex1();
 //        javaTwo.ex2();
 //        javaTwo.ex3();
@@ -24,9 +16,14 @@ public class Main {
 //        javaTwo.ex8();
 //        javaTwo.ex9();
 //        javaTwo.ex10();
-//
-// JAVA ONE EXERCISES
-//
+//        javaTwo.ex11();
+//        javaTwo.ex12();
+        javaTwo.ex13();
+
+
+        //
+        // JAVA ONE EXERCISES
+        //
 //        JavaOne javaOne = new JavaOne();
 //        javaOne.ex1();
 //        javaOne.ex2();

@@ -2,7 +2,6 @@ package com.xpanxion.assignments.student5;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -39,7 +38,10 @@ public class MovieTheater {
             sellTicket(seat);
         }
     }
-
+    private void buildTheater(int rows, int seats) {
+        auditorium = new ArrayList<>();
+    }
+/*  refactor this
     private void buildTheater(int rows, int seats) {
         auditorium = new ArrayList<>();
 
@@ -47,6 +49,7 @@ public class MovieTheater {
             auditorium.add(new StringBuilder(emptySeat.repeat(seats)));
         }
     }
+*/
 
     private void sellTicket (String[] seatSold) {
         if (seatSold.length != 2) return;

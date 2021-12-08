@@ -176,7 +176,28 @@ public class JavaTwo {
     }
 // EX11
     public void ex11() {
+        title(11);
+        TinyAuth ta = new TinyAuth();
+        ta.run();
+    }
+// EX12
+    public void ex12() {
+        title(12);
+        MovieTheater theater = new MovieTheater();
+        theater.run();
+    }
+// EX12
+    public void ex13() {
+        title(13);
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
 
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
+        }
     }
 
 //
@@ -205,9 +226,15 @@ public class JavaTwo {
     }
 
     private void title(int i){
-        System.out.printf("\n=============" +
-                          "\n====Ex.%s====" +
-                          "\n=============\n", i);
+        if (i>9){
+            System.out.printf("\n=============" +
+                "\n====Ex.%s====" +
+                "\n=============\n", i);
+        } else {
+            System.out.printf("\n=============" +
+                    "\n====Ex.%s=====" +
+                    "\n=============\n", i);
+        }
     }
 //
 // Overrides
