@@ -89,6 +89,14 @@ public class JavaTwo {
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
+    public void ex5() {
+        var repository = new Repository();
+        HashMap<Integer, Person> personHashMap = new HashMap<Integer, Person>();
+        personHashMap.put(1, new Person("1", "John", "Doe"));
+        var p = repository.getPerson(personHashMap);
+        System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
+    }
+
     //
     // Private helper methods
     //
