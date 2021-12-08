@@ -81,8 +81,46 @@ public class JavaTwo {
 
     public void ex6() {
         //oop calculator
-        Calculator calculator = new Calculator();
-        calculator.calculate();
+        int x, y, z = 0;
+        String op, input;
+        var history = new ArrayList<String>();
+
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            op = "";
+            System.out.print("Enter First Number: ");
+            input = scanner.nextLine();
+            if (input.equals("done"))
+                break;
+            x = Integer.parseInt(input);
+
+            System.out.print("Enter Second Number: ");
+            y = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Enter Operator( +, -, *, /): ");
+            op = scanner.nextLine();
+
+            if (op.equals("+"))
+                z = Calculator.plus(x, y);
+            else if (op.equals("-"))
+                z = Calculator.sub(x, y);
+            else if (op.equals("*"))
+                z = Calculator.multi(x, y);
+            else if (op.equals("/"))
+                z = Calculator.div(x, y);
+            else
+                System.out.println("Invalid Operator");
+
+            System.out.println("Result: " + z);
+            history.add(String.format("%s %s %s = %s", x, op, y, z));
+
+        } while (true);
+
+        for (String s: history)
+            System.out.println(s);
+        //Calculator calculator = new Calculator();
 
     }
 }
