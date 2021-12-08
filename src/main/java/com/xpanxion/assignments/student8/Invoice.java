@@ -2,7 +2,7 @@ package com.xpanxion.assignments.student8;
 
 import java.util.ArrayList;
 
-public class Invoice {
+public class Invoice extends Base {
 
     // Data
     private int id;
@@ -10,7 +10,7 @@ public class Invoice {
 
     // Constructor
     public Invoice(int id) {
-        this.id = id;
+        super(id);
         this.listOfProducts = new ArrayList<>();
     }
 

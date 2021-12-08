@@ -1,6 +1,6 @@
 package com.xpanxion.assignments.student8;
 
-public class Product {
+public class Product extends Base {
 
     // Data
     private int id;
@@ -9,7 +9,7 @@ public class Product {
 
     // Constructor
     public Product(int id, String name, double cost) {
-        this.id = id;
+        super(id);
         this.name = name;
         this.cost = cost;
     }
