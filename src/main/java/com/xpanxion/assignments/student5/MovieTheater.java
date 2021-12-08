@@ -7,9 +7,9 @@ public class MovieTheater {
     private double salesTotal;
     private StringBuilder[] auditorium;
     private Scanner sc = new Scanner(System.in);
-    NumberFormat formatter = NumberFormat.getCurrencyInstance();
-    String emptySeat = "0";
-    String occupiedSeat = "X";
+    private NumberFormat formatter = NumberFormat.getCurrencyInstance();
+    private String emptySeat = "0";
+    private String occupiedSeat = "X";
 
 
     public MovieTheater() {
@@ -45,7 +45,7 @@ public class MovieTheater {
             auditorium[i] = new StringBuilder(emptySeat.repeat(seats));
         }
     }
-    public void sellTicket (String[] seatSold) {
+    private void sellTicket (String[] seatSold) {
         if (seatSold.length != 2) return;
         int row = Integer.valueOf(seatSold[0]);
         int seat = Integer.valueOf(seatSold[1]);
@@ -57,7 +57,7 @@ public class MovieTheater {
         printSalesTotal();
     }
 
-    public void printSalesTotal() {
+    private void printSalesTotal() {
         for (StringBuilder s: auditorium) {
             System.out.println(s.toString());
         }
