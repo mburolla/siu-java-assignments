@@ -269,7 +269,13 @@ public class JavaTwo {
     }
 
     public void ex14() {
+        var p1 = new MyPoint(12,14);
+        var p2 = new MyPoint(10,10);
+        System.out.println(p1.distance(p2));
 
+        var p3 = new MyPoint(12,14);
+        var p4 = new MyPoint(10,10);
+        System.out.println(p3.distance(p4));
     }
 
 
