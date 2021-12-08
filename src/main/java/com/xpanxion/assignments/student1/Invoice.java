@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 
-public class Invoice {
+public class Invoice extends Base {
     private final List<Product> products = new ArrayList<>();
-    private int invoiceID;
 
     public Invoice(int iID) {
-        this.invoiceID = iID;
+        super(iID);
     }
 
     public void addProduct(Product product) {

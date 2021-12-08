@@ -17,8 +17,8 @@ public class Main {
         JavaTwo javaTwo = new JavaTwo();
 //        javaTwo.ex1();
 //        javaTwo.ex2();
-        javaTwo.ex3();
-//        javaTwo.ex4();
+//        javaTwo.ex3();
+        javaTwo.ex4();
 //        javaTwo.ex5();
 //        javaTwo.ex6();
 //        javaTwo.ex7();

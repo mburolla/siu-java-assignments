@@ -1,22 +1,13 @@
 package com.xpanxion.assignments.student1;
 
-public class Product {
-    private int productID;
+public class Product extends Base {
     private String productName;
     private double productPrice;
 
     public Product(int pid, String pName, double price) {
-        this.productID = pid;
+        super(pid);
         this.productName = pName;
         this.productPrice = price;
-    }
-
-    public int getProductID() {
-        return productID;
-    }
-
-    public void setProductID(int productID) {
-        this.productID = productID;
     }
 
     public String getProductName() {
