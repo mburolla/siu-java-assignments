@@ -1,10 +1,10 @@
 package com.xpanxion.assignments.student6;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.lang.Integer.parseInt;
 
@@ -112,6 +112,64 @@ public class JavaTwo {
             System.out.println(s);
         }
 
+    }
+
+    public void ex7() {
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
+        );
+
+       var newPersonList = personList.stream().map(p -> {
+           return new Person(p.getId(), p.getFirstName(), "xxx");
+       }).collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex8() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        personList.sort(Comparator.comparing((Person p) -> p.getFirstName()));
+
+        for (Person p : personList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex9() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        var filteredList = personList.stream().filter(x -> x.getLastName().equals("Smith")).collect(Collectors.toList());
+
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex10() throws InterruptedException {
+        Queue<Cat> catQueue = new LinkedList<Cat>();
+        catQueue.add(new Cat("Alice"));
+        catQueue.add(new Cat("Bob"));
+        catQueue.add(new Cat("Charlie"));
+        catQueue.add(new Cat("Dan"));
+
+        while(!catQueue.isEmpty()) {
+            System.out.println(catQueue);
+            catQueue.remove();
+            TimeUnit.SECONDS.sleep(3);
+        }
 
     }
 }
