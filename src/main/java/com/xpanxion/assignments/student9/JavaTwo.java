@@ -149,4 +149,23 @@ public class JavaTwo {
         }
     }
 
+    public void ex10() {
+       Queue<Cat> catList = new LinkedList<>();
+        catList.add(new Cat("Alice"));
+        catList.add(new Cat("Bob"));
+        catList.add(new Cat("Charlie"));
+        catList.add(new Cat("Dan"));
+
+      while(!catList.isEmpty()){
+          System.out.println(catList);
+          try {
+              Thread.sleep(3000);
+          } catch (InterruptedException e) {
+              e.printStackTrace();
+          }
+          catList.poll();
+      }
+
+    }
+
 }
