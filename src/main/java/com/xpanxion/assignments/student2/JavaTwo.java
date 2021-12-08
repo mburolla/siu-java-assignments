@@ -1,6 +1,5 @@
 package com.xpanxion.assignments.student2;
 
-import javax.xml.crypto.Data;
 import java.text.NumberFormat;
 import java.util.Scanner;
 import java.util.*;
@@ -89,6 +88,22 @@ class Repository implements DataAccess {
 
 }
 
+class Calculator {
+
+    List<String> calculations = new ArrayList<>();
+
+    void storeCalc(String calculation) {
+        calculations.add(calculation);
+    }
+
+    void printCalc() {
+        for(String n : calculations) {
+            System.out.println(n);
+        }
+    }
+
+}
+
 public class JavaTwo {
 
     //
@@ -171,6 +186,48 @@ public class JavaTwo {
         System.out.println(p);
     }
 
+    public static void ex6() {
+
+        Calculator calc = new Calculator();
+        String operatorSymbol = null;
+
+        while(true) {
+            System.out.print("Enter first number: ");
+            Scanner scannerExample7_1 = new Scanner(System.in);
+            String firstEntry = scannerExample7_1.next();
+            if(firstEntry.equals("done")) {
+                calc.printCalc();
+                break;
+            }
+            System.out.print("Enter second number: ");
+            Scanner scannerExample7_2 = new Scanner(System.in);
+            String secondEntry = scannerExample7_2.next();
+            System.out.print("Enter operation (add, sub, mul, div): ");
+            Scanner scannerExample7_3 = new Scanner(System.in);
+            String operator = scannerExample7_3.next();
+            
+
+            int firstNum = Integer.parseInt(firstEntry);
+            int secondNum = Integer.parseInt(secondEntry);
+
+            float result = 0;
+            if (operator.equals("add")) {
+                result = firstNum + secondNum;
+                operatorSymbol = "+";
+            } else if (operator.equals("sub")) {
+                result = firstNum - secondNum;
+                operatorSymbol = "-";
+            } else if (operator.equals("mul")) {
+                result = firstNum * secondNum;
+                operatorSymbol = "*";
+            } else if (operator.equals("div")) {
+                result = (float) firstNum / (float) secondNum;
+                operatorSymbol = "/";
+            }
+            System.out.println("Result: " + result);
+            calc.storeCalc(firstEntry + " " + operatorSymbol + " " + secondEntry + " = " + result);
+        }
+    }
     //
     // Private helper methods
     //
