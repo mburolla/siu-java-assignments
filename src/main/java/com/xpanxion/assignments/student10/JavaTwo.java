@@ -12,6 +12,7 @@ public class JavaTwo {
     }
 
     public void ex1 () {
+        System.out.println("Student 10: ex1.");
         List<Person> personList = new ArrayList(0);
         Scanner scanner = new Scanner(System.in);
 
@@ -35,6 +36,7 @@ public class JavaTwo {
     }
 
     public void ex2 () {
+        System.out.println("Student 10: ex2.");
         HashMap<Integer, Person> personMap = new HashMap<>();
         Person person1 = new Person(1, "Peter", "Jones");
         Person person2 = new Person(2, "John", "Smith");
@@ -56,6 +58,7 @@ public class JavaTwo {
     }
 
     public void ex3 () {
+        System.out.println("Student 10: ex3.");
         var invoice =  new Invoice(1);
         invoice.addProduct(new Product(111,"Mustard", 2.00));
         invoice.addProduct(new Product(222,"Ketchup", 3.00));
@@ -65,6 +68,7 @@ public class JavaTwo {
     }
 
     public void ex4 () {
+        System.out.println("Student 10: ex4.");
         var invoice =  new Invoice(1);
         invoice.addProduct(new Product(111,"Mustard", 2.00));
         invoice.addProduct(new Product(222,"Ketchup", 3.00));
@@ -74,6 +78,7 @@ public class JavaTwo {
     }
 
     public void ex5 () {
+        System.out.println("Student 10: ex5.");
         var repository = new Repository();
         var p = repository.getPerson();
         System.out.println(p);
@@ -109,6 +114,7 @@ public class JavaTwo {
     }
 
     public void ex7 () {
+        System.out.println("Student 10: ex7.");
         var personList = Arrays.asList(
                 new Person(1, "Peter", "Jones"),
                 new Person(2, "John", "Smith"),
@@ -126,6 +132,7 @@ public class JavaTwo {
     }
 
     public void ex8 () {
+        System.out.println("Student 10: ex8.");
         var personList = Arrays.asList(
                 new Person(1, "Charlie", "Jones"),
                 new Person(2, "Zoey", "Smith"),
@@ -137,6 +144,25 @@ public class JavaTwo {
                 .collect(Collectors.toList());
 
         for (Person p : personList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex9 () {
+        System.out.println("Student 10: ex9.");
+
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        var filteredList = personList.stream()
+                .filter(person -> person.getLastName().equals("Smith"))
+                .collect(Collectors.toList());
+
+
+        for (Person p : filteredList) {
             System.out.println(p);
         }
     }
