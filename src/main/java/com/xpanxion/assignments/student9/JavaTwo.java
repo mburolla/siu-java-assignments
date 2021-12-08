@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student9;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -211,6 +213,45 @@ public class JavaTwo {
 
     public void ex12() {
 
+        System.out.print("Enter the number of rows > ");
+        var scanner = new Scanner(System.in);
+        var numberOfRows = scanner.nextInt();
+        System.out.print("Enter the number of seats > ");
+        var numberOfSeats = scanner.nextInt();
+
+        var seats = new Character[numberOfRows][numberOfSeats];
+
+        for(var rows = 0; rows < numberOfRows; rows++){
+            for(var seat = 0; seat < numberOfSeats; seat++){
+                seats[rows][seat] = 'O';
+            }
+        }
+        System.out.println(Arrays.deepToString(seats).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
+        var totalSales = 0;
+        System.out.printf("Total Sales : $%d%n",totalSales );
+        while(true){
+            scanner.nextLine();
+            System.out.print("Purchase seat (row,seat) > ");
+            var seatPurchased = scanner.nextLine();
+            if(seatPurchased.equalsIgnoreCase("done")){
+                break;
+            } else {
+                System.out.println(seatPurchased);
+                String[] splits = seatPurchased.split(",");
+                var purchasedRow = Integer.parseInt(splits[0]);
+                var purchasedSeat = Integer.parseInt(splits[1]);
+                if(purchasedRow > numberOfRows || purchasedSeat > numberOfSeats){
+                    System.out.println("Invalid. Seat or Row are out of bounds");
+                    System.out.print("Enter to continue >");
+                } else {
+                    totalSales += purchasedRow;
+                    seats[purchasedRow - 1][purchasedSeat - 1] = 'X';
+                    System.out.println(Arrays.deepToString(seats).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
+                    System.out.printf("Total Sales : $%d%n", totalSales);
+                    System.out.print("Enter to continue >");
+                }
+            }
+        }
     }
 
 
