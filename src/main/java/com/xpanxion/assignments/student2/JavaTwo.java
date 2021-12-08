@@ -26,12 +26,13 @@ class Person {
 
 }
 
-class Invoice {
+class Invoice extends Base {
 
     int invoiceId;
     private final List<Product> products = new ArrayList<>();
 
     Invoice(int invoiceId) {
+        super();
         this.invoiceId = invoiceId;
     }
 
@@ -48,13 +49,14 @@ class Invoice {
     }
 }
 
-class Product {
+class Product extends Base {
 
     private final int productId;
     private final String productName;
     private final double productCost;
 
     Product(int productId, String productName, double productCost) {
+        super();
         this.productId = productId;
         this.productName = productName;
         this.productCost = productCost;
@@ -62,6 +64,15 @@ class Product {
 
     double getProductCost() {
         return productCost;
+    }
+}
+
+abstract class Base {
+
+    String id;
+
+    Base() {
+
     }
 }
 
@@ -133,7 +144,12 @@ public class JavaTwo {
     }
 
     public static void ex4() {
-
+        var invoice =  new Invoice(1);
+        invoice.addProduct(new Product(111,"Mustard", 2.00));
+        invoice.addProduct(new Product(222,"Ketchup", 3.00));
+        invoice.addProduct(new Product(333,"Franks Hot Sauce", 4.00));
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
     }
 
     //
