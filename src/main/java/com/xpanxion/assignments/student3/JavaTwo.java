@@ -1,6 +1,5 @@
 package com.xpanxion.assignments.student3;
 
-import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -82,6 +81,7 @@ public class JavaTwo {
         String op, input;
         var history = new ArrayList<String>();
 
+        Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
 
         do {
@@ -99,26 +99,14 @@ public class JavaTwo {
             System.out.print("Enter Operator( +, -, *, /): ");
             op = scanner.nextLine();
 
-            if (op.equals("+"))
-                z = Calculator.plus(x, y);
-            else if (op.equals("-"))
-                z = Calculator.sub(x, y);
-            else if (op.equals("*"))
-                z = Calculator.multi(x, y);
-            else if (op.equals("/"))
-                z = Calculator.div(x, y);
-            else
-                System.out.println("Invalid Operator");
+            z = calculator.calculate(x, y,  op );;
 
             System.out.println("Result: " + z);
-            history.add(String.format("%s %s %s = %s", x, op, y, z));
+
 
         } while (true);
 
-        for (String s: history)
-            System.out.println(s);
-        //Calculator calculator = new Calculator();
-
+        calculator.getHistory().forEach(System.out::println);
     }
 
     public void ex7(){
@@ -174,9 +162,23 @@ public class JavaTwo {
         }
     }
 
-    public void ex10(){
+    public void ex10() throws InterruptedException {
         //cat
-        String name;
+        Queue<Cat> queue = new LinkedList<>();
+
+        queue.add(new Cat("Alice"));
+        queue.add(new Cat("Bob"));
+        queue.add(new Cat("Charlie"));
+        queue.add(new Cat("Dan"));
+
+        while (true){
+            System.out.println(queue);
+            queue.remove();
+            Thread.sleep(3000);
+            if (queue.isEmpty())
+                break;
+        }
+
     }
 
 }
