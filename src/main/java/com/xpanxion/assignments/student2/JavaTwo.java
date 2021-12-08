@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.student2;
 
+import javax.xml.crypto.Data;
 import java.text.NumberFormat;
 import java.util.Scanner;
 import java.util.*;
@@ -76,6 +77,18 @@ abstract class Base {
     }
 }
 
+interface DataAccess {
+    String getPerson();
+}
+
+class Repository implements DataAccess {
+
+    public String getPerson() {
+        return "{id= 1, firstName='John', lastName='Doe'}";
+    }
+
+}
+
 public class JavaTwo {
 
     //
@@ -150,6 +163,12 @@ public class JavaTwo {
         invoice.addProduct(new Product(333,"Franks Hot Sauce", 4.00));
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         System.out.println("Total cost: " + formatter.format(invoice.getTotalCost()));
+    }
+
+    public static void ex5() {
+        var repository = new Repository();
+        var p = repository.getPerson();
+        System.out.println(p);
     }
 
     //
