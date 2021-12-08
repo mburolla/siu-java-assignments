@@ -3,6 +3,7 @@ package com.xpanxion.assignments.student7;
 import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class JavaTwo {
@@ -35,10 +36,8 @@ public class JavaTwo {
             userInput = scanner.nextLine();
         }
 
-        if (userInput.equals("done")) {
-            for (Person person : people) {
-                System.out.println(person);
-            }
+        for (Person person : people) {
+            System.out.println(person);
         }
     }
 
@@ -125,6 +124,22 @@ public class JavaTwo {
                 .map(p -> new Person(p.getId(), p.getFirstName(), "xxx"))
                 .toList();
 
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex8() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        List<Person> newPersonList = personList.stream()
+                .sorted(Comparator.comparing(Person::getFirstName))
+                .collect(Collectors.toList());
 
         for (Person p : newPersonList) {
             System.out.println(p);
