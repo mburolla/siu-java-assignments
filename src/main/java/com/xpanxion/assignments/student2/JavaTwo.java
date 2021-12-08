@@ -228,7 +228,6 @@ public class JavaTwo {
             calc.storeCalc(firstEntry + " " + operatorSymbol + " " + secondEntry + " = " + result);
         }
     }
-
     //
     // Private helper methods
     //
