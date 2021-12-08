@@ -124,9 +124,25 @@ public class JavaTwo {
                 new Person(3, "Sue", "Anderson")
         );
 
-        List<Person> newPersonList = personList.stream().map(p -> new Person(p.getId(), p.getFirstName(), "x".repeat(p.getLastName().length()))).collect(Collectors.toList());
+        List<Person> newPersonList = personList.stream()
+                .map(p -> new Person(p.getId(), p.getFirstName(), "x".repeat(p.getLastName().length())))
+                .collect(Collectors.toList());
 
         for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex8() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        personList.sort(Comparator.comparing(p -> p.getFirstName()));
+
+        for (Person p : personList) {
             System.out.println(p);
         }
     }
