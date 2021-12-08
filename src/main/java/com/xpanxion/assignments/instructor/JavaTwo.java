@@ -212,7 +212,7 @@ public class JavaTwo {
         while (true) {
             System.out.print("Action [add|login|done]: ");
             Scanner scanner = new Scanner(System.in);
-            var inputString = scanner.nextLine();
+            var inputString = scanner.nextLine().trim();
 
             if (inputString.equals("add")) {
                 System.out.print("Enter username, password: ");
@@ -221,7 +221,7 @@ public class JavaTwo {
             }
             if (inputString.equals("login")) {
                 System.out.print("Enter username, password: ");
-                inputString = scanner.nextLine();
+                inputString = scanner.nextLine().trim();
                 if (isPasswordCorrect(hashMap, inputString))
                     System.out.println("OK");
                 else
@@ -334,9 +334,7 @@ public class JavaTwo {
         // Compare password hashes.
         if (hashMap.containsKey(userName)) {
             var storedPasswordHash = hashMap.get(userName);
-            System.out.println(storedPasswordHash);
             var thisPasswordHash = createHash(password);
-            System.out.println(thisPasswordHash);
             if (storedPasswordHash.equals(thisPasswordHash)) {
                 retval = true;
             }
