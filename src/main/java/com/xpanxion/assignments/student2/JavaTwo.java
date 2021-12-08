@@ -3,12 +3,14 @@ package com.xpanxion.assignments.student2;
 import java.text.NumberFormat;
 import java.util.Scanner;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 class Person {
 
-    private final int id;
-    private final String firstName;
-    private final String lastName;
+    int id;
+    String firstName;
+    String lastName;
 
     //
     // Constructors
@@ -20,8 +22,8 @@ class Person {
         this.lastName = lastName;
     }
 
-    public String outputPerson() {
-        return "{id=" + id + ", firstName='" + firstName + "', lastName='" + lastName + "'}";
+    public String toString() {
+        return "Person{id=" + id + ", firstName='" + firstName + "', lastName='" + lastName + "'}";
     }
 
 }
@@ -136,7 +138,7 @@ public class JavaTwo {
         }
 
         for(Person n : people) {
-            System.out.println(n.outputPerson());
+            System.out.println(n);
         }
     }
 
@@ -226,6 +228,24 @@ public class JavaTwo {
             }
             System.out.println("Result: " + result);
             calc.storeCalc(firstEntry + " " + operatorSymbol + " " + secondEntry + " = " + result);
+        }
+    }
+
+    public static void ex7() {
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
+        );
+
+        List<Person> newPersonList = personList.stream().map(p -> {
+            Person obj = new Person(p.id, p.firstName, "xxx");
+            return obj;
+                })
+                .collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
         }
     }
     //
