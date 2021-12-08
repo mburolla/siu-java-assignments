@@ -74,4 +74,41 @@ public class JavaTwo {
         var p = repository.getPerson();
         System.out.println(p);
     }
+
+    public void ex6() {
+        var scanner = new Scanner(System.in);
+        Calculator calculator = new Calculator();
+
+        while(true) {
+            System.out.print("Enter first number: ");
+            String num1String = scanner.nextLine();
+
+            if (num1String.equals("done")) {
+                for ( String s: calculator.getHistory()) {
+                    System.out.println(s);
+                };
+                break;
+            }
+            int num1 = Integer.parseInt(num1String);
+
+
+            System.out.print("Enter second number: ");
+            String num2String = scanner.nextLine();
+            int num2 = Integer.parseInt(num2String);
+
+            System.out.print("Enter Operation(add, sub, div, mul): ");
+            String operand1 = scanner.nextLine();
+            String operand = operand1.toUpperCase();
+
+            calculator.calculate(num1, num2, operand);
+
+            switch (operand) {
+                case "ADD" -> System.out.println("Result: " + (num1 + num2));
+                case "SUB" -> System.out.println("Result: " + (num1 - num2));
+                case "DIV" -> System.out.println("Result: " + (num1 / num2));
+                case "MUL" -> System.out.println("Result: " + (num1 * num2));
+            }
+        }
+
+    }
 }
