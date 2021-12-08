@@ -36,7 +36,7 @@ public class JavaTwo {
             people.add(new Person(id,firstName, lastName));
         }
 
-        people.forEach(p -> System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName()));
+        people.forEach(p -> System.out.println(formatString(p)));
     }
 
     public void ex2() {
@@ -61,7 +61,7 @@ public class JavaTwo {
                 // use id to look up the Person object of that id
                 var getPerson = map.get(Integer.parseInt(userID));
                 //print user info, if found
-                System.out.println("id=" + getPerson.getUserID() + ", firstName=" + getPerson.getFirstName() + ", lastName=" + getPerson.getLastName());
+                System.out.println(formatString(getPerson));
             }
 
         }
@@ -95,7 +95,7 @@ public class JavaTwo {
         HashMap<Integer, Person> personHashMap = new HashMap<Integer, Person>();
         personHashMap.put(1, new Person("1", "John", "Doe"));
         var p = repository.getPerson(personHashMap);
-        System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
+        System.out.println(formatString(p));
     }
 
     public void ex6() {
@@ -154,7 +154,7 @@ public class JavaTwo {
                 .collect(Collectors.toList());
 
         for (Person p : newPersonList) {
-            System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
+            System.out.println(formatString(p));
         }
     }
 
@@ -175,7 +175,30 @@ public class JavaTwo {
         personList.sort(firstnameComparator);
 
         for (Person p : personList) {
-            System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName());
+            System.out.println(formatString(p));
+        }
+    }
+
+    public void ex9() {
+        var personList = Arrays.asList(
+                new Person("1", "Charlie", "Jones"),
+                new Person("2", "Zoey", "Smith"),
+                new Person("3", "Adam", "Anderson")
+        );
+
+        var filteredList = personList
+                .stream()
+                .filter(p -> {
+                    var getLastName = p.getLastName();
+                    if (getLastName == "Smith") {
+                        return true;
+                    }
+                    return false;
+                })
+                .collect(Collectors.toList());
+
+        for (Person p : filteredList) {
+            System.out.println(formatString(p));
         }
     }
 
@@ -192,5 +215,9 @@ public class JavaTwo {
             return false;
         }
 
+    }
+
+    private static String formatString(Person p) {
+        return "id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName();
     }
 }
