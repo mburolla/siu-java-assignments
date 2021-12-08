@@ -3,6 +3,7 @@ package com.xpanxion.assignments.student3;
 import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class JavaTwo {
 
@@ -10,7 +11,6 @@ public class JavaTwo {
 
     public void ex1(){
         //enter people based on id, firstname, and lastname and put into array
-
         var peopleArray = new ArrayList<Person>();
 
         while (true) {
@@ -36,7 +36,6 @@ public class JavaTwo {
 
     public void ex2(){
         //hashMap to find person by id
-
         Map hashMap = new HashMap<Integer, Person>();
 
         Person p1 = new Person(1, "Peter", "Jones");
@@ -60,7 +59,6 @@ public class JavaTwo {
 
     public void ex3_4(){
         //product cost and base class extension
-
        var invoice =  new Invoice(1);
         invoice.addProduct(new Product(111,"Mustard", 2.00));
         invoice.addProduct(new Product(222,"Ketchup", 3.00));
@@ -72,7 +70,6 @@ public class JavaTwo {
 
     public void ex5(){
         //repository
-
         var repository = new Repository();
         var p = repository.getPerson();
         System.out.println(p);
@@ -123,4 +120,56 @@ public class JavaTwo {
         //Calculator calculator = new Calculator();
 
     }
+
+    public void ex7(){
+        //redact last name
+        var personList = Arrays.asList(
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
+        );
+
+        List<Person> newPersonList = personList.stream().map(p -> {
+                    p.setLastname("xxxx");
+                    return p;
+                })
+                .collect(Collectors.toList());
+
+        for (Person p : newPersonList) {
+            System.out.println(p);
+        }
+    }
+
+    public void ex8(){
+        //sort people by first name
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+
+        //Collections.sort(personList);
+        personList.sort(Comparator.comparing((Person p) -> p.getFirstname()));
+
+        for(Person p : personList){
+            System.out.println(p);
+        }
+    }
+
+    public void ex9(){
+        //filter people by name
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+
+
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
+
 }
