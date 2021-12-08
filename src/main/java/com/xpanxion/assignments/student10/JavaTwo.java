@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student10;
 
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -165,5 +166,30 @@ public class JavaTwo {
         for (Person p : filteredList) {
             System.out.println(p);
         }
+    }
+
+    public void ex10 () throws InterruptedException {
+        System.out.println("Student 10: ex10.");
+
+        Queue<Cat> catQ = new LinkedList<>();
+
+        catQ.add(new Cat("Alice"));
+        catQ.add(new Cat("Bob"));
+        catQ.add(new Cat("Charlie"));
+        catQ.add(new Cat("Dan"));
+
+
+        while(true) {
+            if (catQ.isEmpty()){
+                break;
+            }
+            System.out.println(catQ);
+            catQ.remove();
+            TimeUnit.SECONDS.sleep(3);
+
+        }
+
+
+
     }
 }
