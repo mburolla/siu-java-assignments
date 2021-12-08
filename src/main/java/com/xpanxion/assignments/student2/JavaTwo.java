@@ -1,5 +1,9 @@
 package com.xpanxion.assignments.student2;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
 import java.util.Scanner;
 import java.util.*;
@@ -129,11 +133,8 @@ class Cat {
 
 }
 
-public class JavaTwo {
 
-    //
-    // Constructors
-    //
+public class JavaTwo {
 
     JavaTwo() {
     }
@@ -141,6 +142,24 @@ public class JavaTwo {
     //
     // Public methods
     //
+
+    public static String Encrypt(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while(hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static void ex1() {
         List<Person> people = new ArrayList<>();
@@ -322,6 +341,44 @@ public class JavaTwo {
              TimeUnit.SECONDS.sleep(3);
          }
     }
+
+    public static void ex11() {
+        Map<String, String> loginInfo = new HashMap<>();
+
+        while(true) {
+            System.out.print("Action [add|login|done]: ");
+            Scanner scannerExample1 = new Scanner(System.in);
+            String action = scannerExample1.nextLine();
+
+            if(action.equals("add")) {
+                System.out.print("Enter username, password: ");
+                Scanner scannerExample2 = new Scanner(System.in);
+                String userLogin = scannerExample2.nextLine();
+                String[] userArray = userLogin.split(", ", 2);
+
+                String passwordHash = Encrypt(userArray[1]);
+                loginInfo.put(userArray[0], passwordHash);
+                userArray[1] = null;
+            }
+            else if(action.equals("login")) {
+                System.out.print("Enter username, password: ");
+                Scanner scannerExample3 = new Scanner(System.in);
+                String userLogin = scannerExample3.nextLine();
+                String[] userArray = userLogin.split(", ", 2);
+
+                if(Encrypt(userArray[1]).equals(loginInfo.get(userArray[0]))) {
+                    System.out.println("OK");
+                }
+                else {
+                    System.out.println("Incorrect username or password.");
+                }
+            }
+            else if(action.equals("done")) {
+                break;
+            }
+        }
+    }
+
     //
     // Private helper methods
     //
