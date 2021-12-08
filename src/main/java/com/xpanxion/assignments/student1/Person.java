@@ -6,9 +6,9 @@ public class Person {
     private String lastName;
     private static int id;
 
-    public Person(String firstName, String lastName) {
+    public Person(String userid, String firstName, String lastName) {
         id++;
-        this.userID = id;
+        this.userID = Integer.parseInt(userid);
         this.firstName = firstName;
         this.lastName = lastName;
     }

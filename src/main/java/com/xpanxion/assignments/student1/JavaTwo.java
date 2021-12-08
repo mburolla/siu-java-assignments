@@ -1,9 +1,6 @@
 package com.xpanxion.assignments.student1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class JavaTwo {
 
@@ -23,21 +20,39 @@ public class JavaTwo {
         //while user has not entered 'done'
         while (true) {
             //prompt use to enter a list of people
-            System.out.print("Enter Person (first last): ");
+            System.out.print("Enter Person (id first last): ");
             //store each token in varibles (first, last)
-            String firstName = scanner.next();
+            String id = scanner.next();
+            String firstName;
             String lastName;
 
-            if (firstName.equals("done")) {
+            if (id.equals("done")) {
                 break;
             }
-
+            firstName = scanner.next();
             lastName = scanner.next();
-            people.add(new Person(firstName, lastName));
+            people.add(new Person(id,firstName, lastName));
         }
 
         people.forEach(p -> System.out.println("id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName()));
     }
+
+//    public void ex2() {
+//        Scanner scanner = new Scanner(System.in);
+//        //create HashMap whose key is an Integer and value is a Person
+//        HashMap<Integer, Person> map = new HashMap<Integer, Person>();
+//        map.put()
+//        //while user is not "done"
+//        while(true) {
+//            //prompt user to enter a person id and store in variable
+//            System.out.print("Enter Person ID: ");
+//            var userID = scanner.nextInt();
+//
+//            // use id to look up the Person object of that id
+//
+//            //print user info, if found
+//        }
+//    }
 
     //
     // Private helper methods
