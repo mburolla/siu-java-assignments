@@ -291,6 +291,12 @@ public class JavaTwo {
         System.out.println(p3.distance(p4));
     }
 
+    public void ex15() {
+        System.out.println("hi");
+
+
+    }
+
     //
     // Private methods
     //
@@ -312,8 +318,8 @@ public class JavaTwo {
 
     private void addUser(HashMap<String, String> hashMap, String inputString) {
         var inputArray = inputString.split(",");
-        var userName = inputArray[0].replaceAll("\\s+","");
-        var password = inputArray[1].replaceAll("\\s+","");
+        var userName = inputArray[0].trim();
+        var password = inputArray[1].trim();
 
         var passwordHash = createHash(password);
         hashMap.put(userName, passwordHash);
@@ -324,8 +330,8 @@ public class JavaTwo {
 
         // Parse input.
         var inputArray = inputString.split(",");
-        var userName = inputArray[0].replaceAll("\\s+","");
-        var password = inputArray[1].replaceAll("\\s+","");
+        var userName = inputArray[0].trim();
+        var password = inputArray[1].trim();
 
         // Compare password hashes.
         if (hashMap.containsKey(userName)) {
