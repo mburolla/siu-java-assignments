@@ -173,12 +173,12 @@ public class JavaTwo {
     public void ex11() {
         var userAccounts = new HashMap<String,String>();
         while(true) {
-            System.out.print("Action [Add|Login|Done] > ");
+            System.out.print("Action [Add|login|Done] > ");
             var scanner = new Scanner(System.in);
             var tempString = scanner.nextLine();
-            if(tempString.equals("done")){
+            if(tempString.equalsIgnoreCase("done")){
                 break;
-            } else if(tempString.toLowerCase().equals("add")){
+            } else if(tempString.equalsIgnoreCase("add")){
                 System.out.print("Enter username and password (username,password) > ");
                 var tempAddUser = scanner.nextLine();
                 String[] splits = tempAddUser.split(",");
@@ -186,7 +186,7 @@ public class JavaTwo {
                 var tempPass = splits[1];
                 var encryptedPassword = encryptPassword(tempPass);
                 userAccounts.put(tempName,encryptedPassword);
-            } else if(tempString.equals("login")){
+            } else if(tempString.equalsIgnoreCase("login")){
                 System.out.print("Enter username and password to login (username,password) > ");
                 var tempLogin = scanner.nextLine();
                 String[] splits = tempLogin.split(",");
@@ -207,6 +207,10 @@ public class JavaTwo {
                 scanner.nextLine();
             }
         }
+    }
+
+    public void ex12() {
+
     }
 
 
