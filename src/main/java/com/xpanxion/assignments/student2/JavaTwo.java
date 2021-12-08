@@ -271,6 +271,23 @@ public class JavaTwo {
             System.out.println(p);
         }
     }
+
+    public static void ex9() {
+        var personList = Arrays.asList(
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
+        );
+
+        List<Person> filteredList = personList.stream()
+                .filter(p -> p.lastName.equals("Smith"))
+                .collect(Collectors.toList());
+
+        for (Person p : filteredList) {
+            System.out.println(p);
+        }
+    }
+
     //
     // Private helper methods
     //
