@@ -165,11 +165,18 @@ public class JavaTwo {
                 new Person(3, "Adam", "Anderson")
         );
 
-
+        var filteredList = personList.stream()
+                .filter(p -> p.getLastname().equals("Smith") )
+                .collect(Collectors.toList());
 
         for (Person p : filteredList) {
             System.out.println(p);
         }
+    }
+
+    public void ex10(){
+        //cat
+        String name;
     }
 
 }
