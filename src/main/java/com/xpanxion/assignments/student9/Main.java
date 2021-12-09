@@ -31,7 +31,12 @@ public class Main {
        // javaTwo.ex14();
 
         var javaThree = new JavaThree();
-        javaThree.ex1();
+       // javaThree.ex1();
+       try {
+           javaThree.ex2();
+       } catch (CalculatorException ex){
+           System.out.println(ex.getMessage());
+       }
 
 
     }

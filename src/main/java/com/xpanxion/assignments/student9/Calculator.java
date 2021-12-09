@@ -14,6 +14,8 @@ public class Calculator {
         this.operation = operation;
         this.result = getResult();
     }
+    public Calculator() {
+    }
 
     public int getResult() {
         return switch (operation) {
@@ -23,6 +25,23 @@ public class Calculator {
             case "mul" -> this.firstNum * this.secondNum;
             default -> 0;
         };
+    }
+
+    public int calculate(int firstNum, int secondNum, String operation) throws CalculatorException {
+        this.firstNum = firstNum;
+        this.secondNum = secondNum;
+        this.operation = operation;
+
+        if(operation.equalsIgnoreCase("div")){
+            try {
+                this.result = getResult();
+            } catch (ArithmeticException ex){
+                throw new CalculatorException("Cannot divide by zero");
+            }
+        }  else {
+            this.result= getResult();
+        }
+        return result;
     }
 
 
