@@ -1,5 +1,9 @@
 package com.xpanxion.assignments.student1;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -204,8 +208,6 @@ public class JavaTwo {
     }
 
     public void ex10() {
-//        long start = System.currentTimeMillis();
-//        long end = start + 60 * 3;
         Queue<Cat> catQueue = new LinkedList<Cat>();
         catQueue.add(new Cat("Alice"));
         catQueue.add(new Cat("Bob"));
@@ -228,6 +230,51 @@ public class JavaTwo {
         }
     }
 
+    public void ex11() {
+        Scanner scanner = new Scanner(System.in);
+        EncryptedPerson person = null;
+        HashMap<String, EncryptedPerson > credentials = new HashMap<String, EncryptedPerson>();
+        //while user is not done
+        while (true) {
+            //prompt user for username and password
+            System.out.print("Action [add|login|done]: ");
+            var action = scanner.next();
+            //HashMap for storing username and password
+            String username;
+            String hashedPassword = "";
+
+            if (action.equals("done")) {
+                break;
+            } else {
+                System.out.print("Enter username password: ");
+                username = scanner.next();
+                hashedPassword = add(scanner.next());
+
+                switch(action) {
+                    case "add":
+                        //hash password using SHA1 algorithm
+
+                        person = new EncryptedPerson(username, hashedPassword);
+                        //store username and Person in HashMap as K,V respectively
+                        credentials.put(username, person);
+                        break;
+                    case "login":
+                        var retrievePerson = credentials.get(username);
+                        if (retrievePerson.getPassword().equals(hashedPassword) && retrievePerson.getUsername().equals(username)) {
+                            System.out.println("OK");
+                        } else {
+                            System.out.println("Incorrect username or password.");
+                        }
+                        break;
+                    default:
+                        System.out.println("Invalid Command!");
+                        break;
+
+                }
+            }
+        }
+    }
+
     //
     // Private helper methods
     //
@@ -247,15 +294,23 @@ public class JavaTwo {
         return "id=" + p.getUserID() + ", firstName=" + p.getFirstName() + ", lastName=" + p.getLastName();
     }
 
-//    private static void setTimeout(Runnable runnable, int delay) {
-//        new Thread(() -> {
-//            try {
-//                Thread.sleep(delay);
-//                runnable.run();
-//            }
-//            catch (Exception e) {
-//                System.err.println(e);
-//            }
-//        }).start();
-//    }
+    private static String encryptThisString(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static String add(String password) {
+        return encryptThisString(password);
+    }
 }
