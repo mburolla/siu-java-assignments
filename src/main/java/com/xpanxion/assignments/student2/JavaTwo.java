@@ -1,9 +1,11 @@
 package com.xpanxion.assignments.student2;
 
+import java.awt.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Scanner;
 import java.util.*;
 import java.util.ArrayList;
@@ -201,6 +203,22 @@ class Circle extends Shape {
 
     String draw() {
         return "I am a " + color + " circle.";
+    }
+
+}
+
+class MyPoint {
+
+    double x;
+    double y;
+
+    MyPoint(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    double distance(MyPoint point2) {
+        return Math.sqrt( Math.pow(this.x - point2.x, 2) + Math.pow(this.y - point2.y, 2) );
     }
 
 }
@@ -487,6 +505,16 @@ public class JavaTwo {
         for (Shape shape : shapeList) {
             System.out.println(shape.draw());
         }
+    }
+
+    public static void ex14() {
+        var p1 = new Point(12,14);
+        var p2 = new Point(10,10);
+        System.out.println(p1.distance(p2));
+
+        var p3 = new MyPoint(12,14);
+        var p4 = new MyPoint(10,10);
+        System.out.println(p3.distance(p4));
     }
 
     //
