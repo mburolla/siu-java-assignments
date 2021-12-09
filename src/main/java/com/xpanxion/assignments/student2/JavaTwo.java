@@ -1,7 +1,6 @@
 package com.xpanxion.assignments.student2;
 
 import java.math.BigInteger;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
@@ -131,6 +130,46 @@ class Cat {
         return "Cat{name=" + name + "'}";
     }
 
+}
+
+class Theater {
+
+    private int rows;
+    private int seats;
+    private double totalSales = 0.00;
+
+    Theater(int rows, int seats) {
+        this.rows = rows;
+        this.seats = seats;
+    }
+
+    char[][] CreateTheater() {
+        char[][] theaterArray = new char[rows][seats];
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < seats; j++) {
+                theaterArray[i][j] = '0';
+            }
+        }
+        return theaterArray;
+    }
+
+    void TakeSeat(char[][] theaterArray, int i, int j) {
+        theaterArray[i - 1][j - 1] = 'X';
+    }
+
+    void ShowTheater(char[][] theaterArray) {
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < seats; j++) {
+                System.out.print(theaterArray[i][j]);
+                if(theaterArray[i][j] == 'X') {
+                    totalSales += 1.00;
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("Total sales: $" + String.format("%.2f",totalSales));
+        totalSales = 0;
+    }
 }
 
 
@@ -376,6 +415,33 @@ public class JavaTwo {
             else if(action.equals("done")) {
                 break;
             }
+        }
+    }
+
+    public static void ex12() {
+        System.out.print("Enter number rows: ");
+        Scanner scannerRows = new Scanner(System.in);
+        int rows = scannerRows.nextInt();
+        System.out.print("Enter number seats: ");
+        Scanner scannerSeats = new Scanner(System.in);
+        int seats = scannerSeats.nextInt();
+
+        Theater theater = new Theater(rows, seats);
+        char[][] theaterArray = theater.CreateTheater();
+        theater.ShowTheater(theaterArray);
+
+        while(true) {
+            System.out.print("Purchase seat (row, seat): ");
+            Scanner scannerPurchase = new Scanner(System.in);
+            String purchase = scannerPurchase.nextLine();
+
+            if(purchase.equals("done")) {
+                break;
+            }
+
+            String[] seatNumber = purchase.split(",", 2);
+            theater.TakeSeat(theaterArray, Integer.parseInt(seatNumber[0]), Integer.parseInt(seatNumber[1]));
+            theater.ShowTheater(theaterArray);
         }
     }
 
