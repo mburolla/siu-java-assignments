@@ -83,15 +83,13 @@ public class JavaTwo {
 
     public void ex6() {
         //oop calculator
-        int x, y, z = 0;
+        int x, y, z;
         String op, input;
-        var history = new ArrayList<String>();
 
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
 
         do {
-            op = "";
             System.out.print("Enter First Number: ");
             input = scanner.nextLine();
             if (input.equals("done"))
@@ -105,7 +103,7 @@ public class JavaTwo {
             System.out.print("Enter Operator( +, -, *, /): ");
             op = scanner.nextLine();
 
-            z = calculator.calculate(x, y,  op );;
+            z = calculator.calculate(x, y,  op );
 
             System.out.println("Result: " + z);
 
@@ -142,7 +140,7 @@ public class JavaTwo {
                 new Person(3, "Adam", "Anderson")
         );
 
-        personList.sort(Comparator.comparing((Person p) -> p.getFirstname()));
+        personList.sort(Comparator.comparing(Person::getFirstname));
 
         for(Person p : personList){
             System.out.println(p);
@@ -175,19 +173,17 @@ public class JavaTwo {
         queue.add(new Cat("Charlie"));
         queue.add(new Cat("Dan"));
 
-        while (true){
+        do {
             System.out.println(queue);
             queue.remove();
             Thread.sleep(3000);
-            if (queue.isEmpty())
-                break;
-        }
+        } while (!queue.isEmpty());
 
     }
 
     public void ex11(){
         //Tiny Auth
-        HashMap<String, String> login = new HashMap<String, String>();
+        HashMap<String, String> login = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         String action;
 
@@ -256,7 +252,7 @@ public class JavaTwo {
         return retval;
     }
 
-    private HashMap addUser(HashMap login){
+    private void addUser(HashMap login){
         var scanner = new Scanner(System.in);
         System.out.print("Enter username, password: ");
         var info = scanner.nextLine();
@@ -265,10 +261,9 @@ public class JavaTwo {
         var passWord = stringTokenizer.nextToken();
         var passwordHash = createHash(passWord);
         login.put(username, passwordHash);
-        return login;
     }
 
-    private HashMap loginUser(HashMap login){
+    private void loginUser(HashMap login){
         var scanner = new Scanner(System.in);
         System.out.print("Enter username, password: ");
         var info = scanner.nextLine();
@@ -284,7 +279,6 @@ public class JavaTwo {
                 System.out.println("Incorrect username or password.");
         }else
             System.out.println("Username or password don't exist");
-        return login;
     }
 
 }
