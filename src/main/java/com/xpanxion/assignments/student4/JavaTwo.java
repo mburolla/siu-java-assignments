@@ -141,7 +141,7 @@ public class JavaTwo {
             while (!queue.isEmpty()) {
                 System.out.println(queue);
                 queue.remove();
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(3);//waits for 3 sec
             }
         }
     }
