@@ -20,9 +20,11 @@ public class Invoice extends Base {
 
     protected double getTotalCost() {
         double totalCost = 0.0;
-        for (Product product : listOfProducts) {
-            totalCost += product.getCost();
-        }
+//        for (Product product : listOfProducts) {
+//            totalCost += product.getCost();
+//        }
+
+        totalCost = listOfProducts.stream().mapToDouble(Product::getCost).sum();
         return totalCost;
     }
 

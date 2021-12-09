@@ -32,9 +32,11 @@ public class JavaTwo {
             listOfPersons.add(new Person(id, firstName, lastName));
         }
 
-        for (Person person : listOfPersons) {
-            System.out.println(person);
-        }
+//        for (Person person : listOfPersons) {
+//            System.out.println(person);
+//        }
+        listOfPersons.forEach(System.out::println);
+
     }
 
     public void ex2() {
@@ -180,5 +182,9 @@ public class JavaTwo {
             catsInAQ.poll();
             Thread.sleep(3000);
         }
+    }
+
+    public void ex11() {
+
     }
 }
