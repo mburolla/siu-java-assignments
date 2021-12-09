@@ -232,6 +232,39 @@ public class JavaTwo {
         }
     }
 
+    public void ex12 () {
+        //Marty, I ended up using a 2D Array for this project. I just didn't think another
+        //data structure would be as suitable. Let me know if there was a better one to use
+        //though, and I'll try to refactor the code.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Student 10: ex12.");
+
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of seats: ");
+        int seats = scanner.nextInt();
+
+        //Create array of rows and seats
+        String rowSeatList [][] = new String [rows][seats];
+        rowSeatList = createSeats(rowSeatList, rows, seats);
+        printSeats(rowSeatList, rows, seats);
+        double total = 0.00;
+        scanner.nextLine();
+
+        while (true) {
+            System.out.print("Purchase seat (row,seat): ");
+            String choice = scanner.nextLine();
+            if (choice.equals("done")){
+                break;
+            }
+            total = calculatePrice(rowSeatList, choice, total);
+            rowSeatList = updateSeats(rowSeatList, choice);
+            printSeats(rowSeatList, rows, seats);
+            System.out.println(String.format("Total sales: %s", NumberFormat.getCurrencyInstance().format(total)));
+        }
+
+
+    }
 
     //Helper Functions
 
@@ -249,5 +282,39 @@ public class JavaTwo {
         catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void printSeats(String[][] list, int rows, int seats) {
+        for (int row=0; row<rows; row++){
+            for(int seat=0; seat<seats; seat++){
+                System.out.print(list[row][seat]);
+            }
+            System.out.println("");
+        }
+    }
+    public static String [][] createSeats(String[][] list, int rows, int seats){
+        for (int row=0; row<rows; row++){
+            for(int seat=0; seat<seats; seat++){
+                list[row][seat]= "0";
+            }
+        }
+        return list;
+    }
+    public static String[][] updateSeats(String[][] list, String selection){
+        String selectionList [] = selection.split(",");
+        int row = Integer.parseInt(selectionList[0]);
+        int seat = Integer.parseInt(selectionList[1]);
+        list[row-1][seat-1] = "X";
+        return list;
+    }
+    public static double calculatePrice(String[][] list, String selection, double total) {
+        String selectionList [] = selection.split(",");
+        int row = Integer.parseInt(selectionList[0]);
+        int seat = Integer.parseInt(selectionList[1]);
+        if (list[row-1][seat-1].equals("0")){
+            double price = (double) row;
+            total = total + price;
+        }
+        return total;
     }
 }
