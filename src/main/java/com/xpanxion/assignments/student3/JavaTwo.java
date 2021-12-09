@@ -1,6 +1,10 @@
 package com.xpanxion.assignments.student3;
 
 import java.awt.*;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.List;
@@ -182,7 +186,31 @@ public class JavaTwo {
     }
 
     public void ex11(){
+        //Tiny Auth
+        HashMap<String, String> login = new HashMap<String, String>();
+        Scanner scanner = new Scanner(System.in);
+        String action;
 
+        label:
+        while (true){
+            System.out.print("Action [add|login|done]: ");
+            action = scanner.nextLine();
+            action = action.toLowerCase();
+
+            switch (action) {
+                case "add":
+                    addUser(login);
+                    break;
+                case "login":
+                    loginUser(login);
+                    break;
+                case "done":
+                    break label;
+                default:
+                    System.out.println("Enter Proper Action.");
+                    break;
+            }
+        }
     }
 
     public void ex12(){
@@ -213,6 +241,50 @@ public class JavaTwo {
         var p4 = new MyPoint(10,10);
         System.out.println(p3.distance(p4));
 
+    }
+    private String createHash(String inString) {
+        var retval = "";
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.reset();
+            digest.update(inString.getBytes(StandardCharsets.UTF_8));
+            retval = String.format("%040x", new BigInteger(1, digest.digest()));
+        }
+        catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+        }
+        return retval;
+    }
+
+    private HashMap addUser(HashMap login){
+        var scanner = new Scanner(System.in);
+        System.out.print("Enter username, password: ");
+        var info = scanner.nextLine();
+        StringTokenizer stringTokenizer = new StringTokenizer(info);
+        var username = stringTokenizer.nextToken().replace(",", "");
+        var passWord = stringTokenizer.nextToken();
+        var passwordHash = createHash(passWord);
+        login.put(username, passwordHash);
+        return login;
+    }
+
+    private HashMap loginUser(HashMap login){
+        var scanner = new Scanner(System.in);
+        System.out.print("Enter username, password: ");
+        var info = scanner.nextLine();
+        StringTokenizer stringTokenizer = new StringTokenizer(info);
+
+        var username = stringTokenizer.nextToken().replace(",", "");
+        var passInput = stringTokenizer.nextToken();
+        var passwordHash = createHash(passInput);
+        if (login.containsKey(username)) {
+            if (login.get(username).equals(passwordHash)) {
+                System.out.println("Ok");
+            } else
+                System.out.println("Incorrect username or password.");
+        }else
+            System.out.println("Username or password don't exist");
+        return login;
     }
 
 }
