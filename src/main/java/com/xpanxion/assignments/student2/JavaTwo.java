@@ -172,6 +172,38 @@ class Theater {
     }
 }
 
+abstract class Shape {
+
+    abstract String draw();
+
+}
+
+class Square extends Shape {
+
+    String color;
+
+    Square(String color) {
+        this.color = color;
+    }
+
+    String draw() {
+        return "I am a " + color + " square.";
+    }
+}
+
+class Circle extends Shape {
+
+    String color;
+
+    Circle(String color) {
+        this.color = color;
+    }
+
+    String draw() {
+        return "I am a " + color + " circle.";
+    }
+
+}
 
 public class JavaTwo {
 
@@ -442,6 +474,18 @@ public class JavaTwo {
             String[] seatNumber = purchase.split(",", 2);
             theater.TakeSeat(theaterArray, Integer.parseInt(seatNumber[0]), Integer.parseInt(seatNumber[1]));
             theater.ShowTheater(theaterArray);
+        }
+    }
+
+    public static void ex13() {
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
         }
     }
 
