@@ -86,9 +86,10 @@ public class JavaTwo {
             String no2 = scanner.nextLine();
             System.out.print("Enter operation (add, sub, mul, div): ");
             String op = scanner.nextLine();
-            int result = calculator.calculate(Integer.parseInt(no1), Integer.parseInt(no2), op);
-            String outString = String.format("Result: %s", result);
-            System.out.println(outString);
+            int newNo1=Integer.parseInt(no1);
+            int newNo2=Integer.parseInt(no2);
+            int result=calculator.calculate(newNo1,newNo2, op);
+            System.out.println("Result is: "+result);
         }
         System.out.println(calculator.getHistory());
 
