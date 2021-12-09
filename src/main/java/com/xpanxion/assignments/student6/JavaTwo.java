@@ -35,9 +35,12 @@ public class JavaTwo {
             persons.add(new Person(id, firstName, lastName));
         }
 
-        for (Person p : persons) {
-            System.out.println(p);
-        }
+        //CHANGE TO STREAM FOREACH
+        persons.forEach(System.out::println);
+
+//        for (Person p : persons) {
+//            System.out.println(p);
+//        }
 
     }
 

@@ -30,10 +30,14 @@ public class Invoice extends Base {
     }
 
     public double getTotalCost() {
-        double totalCost = 0.0;
-        for (Product p : productList) {
-            totalCost += p.getCost();
-        }
+//        double totalCost = 0.0;
+
+        //CHANGE TO STREAM FOREACH
+        double totalCost = productList.stream().mapToDouble(Product::getCost).sum();
+
+//        for (Product p : productList) {
+//            totalCost += p.getCost();
+//        }
         return totalCost;
     }
 }
