@@ -151,7 +151,7 @@ public class JavaTwo {
         new Person(1, "Charlie", "Jones"),
                 new Person(2, "Zoey", "Smith"),
                 new Person(3, "Adam", "Anderson")
-);
+        );
 
         List<Person> filteredList = personList.stream()
                 .filter(p -> p.getLastName().equals("Smith"))
@@ -161,6 +161,33 @@ public class JavaTwo {
             System.out.println(p);
         }
 
+    }
+
+    public void ex10()  {
+
+
+        Queue<Cat> catQueue = new LinkedList<Cat>();
+        catQueue.add(new Cat("Alice"));
+        catQueue.add(new Cat("Bob"));
+        catQueue.add(new Cat("Charlie"));
+        catQueue.add(new Cat("Dan"));
+
+        while(catQueue.size() > 0) {
+           var catName = catQueue.stream()
+                    .map(Cat::toString)
+                   .collect(Collectors.toList());
+
+            System.out.println(catName);
+
+            catQueue.remove();
+
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
 
