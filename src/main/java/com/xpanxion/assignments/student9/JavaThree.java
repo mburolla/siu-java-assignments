@@ -1,9 +1,8 @@
 package com.xpanxion.assignments.student9;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class JavaThree {
@@ -11,7 +10,6 @@ public class JavaThree {
     public void ex1(){
         try{
             var result = 10 / 0;
-           /* System.out.println(result);*/
         } catch (ArithmeticException e){
             System.out.println("cannot divide by zero ");
         }
@@ -57,6 +55,24 @@ public class JavaThree {
             IO.printStackTrace();
         }
         personList.forEach(System.out::println);
+    }
+
+    public void ex5(){
+
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
+
+        try(var writer = new PrintWriter(new BufferedWriter(new FileWriter("output-1.txt")))){
+            for (var person : peopleList){
+                writer.append(person.toString()).append("\n");
+                System.out.println(person);
+            }
+        } catch (IOException ex){
+            System.err.println(ex.getMessage());
+        }
     }
 
 }
