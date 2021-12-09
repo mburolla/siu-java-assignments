@@ -1,8 +1,11 @@
 package com.xpanxion.assignments.student4;
 
 
+import com.xpanxion.assignments.instructor.Cat;
+
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -105,7 +108,6 @@ public class JavaTwo {
     }
 
 
-
     public void ex8() {
         var personList = Arrays.asList(
                 new Person(1, "Charlie", "Jones"),
@@ -130,7 +132,21 @@ public class JavaTwo {
         }
     }
 
-}
+    public void ex10() throws InterruptedException {
+            Queue<Cat> queue = new LinkedList<>();
+            queue.add(new Cat("Alice"));
+            queue.add(new Cat("Bob"));
+            queue.add(new Cat("Charlie"));
+            queue.add(new Cat("Dan"));
+            while (!queue.isEmpty()) {
+                System.out.println(queue);
+                queue.remove();
+                TimeUnit.SECONDS.sleep(3);
+            }
+        }
+    }
+
+
 
 
 
