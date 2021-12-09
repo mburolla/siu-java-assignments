@@ -190,5 +190,62 @@ public class JavaTwo {
         }
     }
 
+    public void ex11() {
+
+        var scanner = new Scanner(System.in);
+        String userInput;
+        HashMap<String,String> users = new HashMap<>();
+
+        while(true) {
+            System.out.print("Action [add|login|done]: ");
+            userInput = scanner.nextLine();
+
+            if (userInput.equalsIgnoreCase("DONE")) {
+                break;
+            }
+
+            if (userInput.equalsIgnoreCase("add")) {
+                System.out.print("Enter username, password: ");
+                String createUser = scanner.nextLine();
+
+                String[] createUserSplit = createUser.split(",");
+                String userName = createUserSplit[0];
+
+                String[] preSHAPassword = createUserSplit[1].split(" ");
+                String password = preSHAPassword[1];
+
+                String hashedPassword = SHA1.hash(password);
+                users.put(userName, hashedPassword);
+
+            }
+
+            if (userInput.equalsIgnoreCase("login")) {
+                System.out.print("Enter username, password: ");
+                String createUser = scanner.nextLine();
+
+                String[] createUserSplit = createUser.split(",");
+                String userName = createUserSplit[0];
+
+                String[] preSHAPassword = createUserSplit[1].split(" ");
+                String password = preSHAPassword[1];
+
+                String hashedPassword = SHA1.hash(password);
+
+                if (users.get(userName).equals(hashedPassword)) {
+                    System.out.println("OK");
+                }
+                else
+                    System.out.println("Incorrect username or password");
+
+            }
+
+        }
+
+
+
+
+
+    }
+
 
 }
