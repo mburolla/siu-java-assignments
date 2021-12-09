@@ -1,7 +1,7 @@
 package com.xpanxion.assignments.student9;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CalculatorException {
         JavaOne javaOne = new JavaOne();
       // javaOne.ex1();
         //javaOne.ex2();
@@ -32,11 +32,8 @@ public class Main {
 
         var javaThree = new JavaThree();
        // javaThree.ex1();
-       try {
-           javaThree.ex2();
-       } catch (CalculatorException ex){
-           System.out.println(ex.getMessage());
-       }
+        // javaThree.ex2();
+        javaThree.ex3();
 
 
     }

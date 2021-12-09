@@ -1,5 +1,10 @@
 package com.xpanxion.assignments.student9;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
 public class JavaThree {
 
     public void ex1(){
@@ -18,6 +23,20 @@ public class JavaThree {
     }
 
     public void ex3(){
+        try{
+            var myFile = new FileReader("input-1.txt");
+            var reader = new Scanner(myFile);
+            while(reader.hasNextLine()){
+                var display = reader.nextLine();
+                System.out.println(display);
+            }
+        } catch (FileNotFoundException IO){
+            System.out.println("unable to find file");
+            IO.printStackTrace();
+        }
+    }
+
+    public void ex4(){
 
     }
 
