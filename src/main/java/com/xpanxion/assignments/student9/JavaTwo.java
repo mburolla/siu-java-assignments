@@ -187,7 +187,7 @@ public class JavaTwo {
                 String[] splits = tempAddUser.split(",");
                 var tempName = splits[0];
                 var tempPass = splits[1];
-                var encryptedPassword = encryptPassword(tempPass);
+                var encryptedPassword = hashPassword(tempPass);
                 userAccounts.put(tempName,encryptedPassword);
             } else if(tempString.equalsIgnoreCase("login")){
                 System.out.print("Enter username and password to login (username,password) > ");
@@ -195,7 +195,7 @@ public class JavaTwo {
                 String[] splits = tempLogin.split(",");
                 var tempName = splits[0];
                 var tempPass = splits[1];
-                var encryptedPassword = encryptPassword(tempPass);
+                var encryptedPassword = hashPassword(tempPass);
                 if(userAccounts.containsKey(tempName)){
                     if(userAccounts.containsValue(encryptedPassword)){
                         System.out.println("OK");
@@ -280,7 +280,7 @@ public class JavaTwo {
 
 
 
-    public static String encryptPassword(String password){
+    public static String hashPassword(String password){
         try{
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] messageDigest = md.digest(password.getBytes());
