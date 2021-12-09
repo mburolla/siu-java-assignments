@@ -28,7 +28,10 @@ public class Main {
        // javaTwo.ex11();
        // javaTwo.ex12();
        // javaTwo.ex13();
-        javaTwo.ex14();
+       // javaTwo.ex14();
+
+        var javaThree = new JavaThree();
+        javaThree.ex1();
 
 
     }
