@@ -1,7 +1,9 @@
 package com.xpanxion.assignments.student3;
 
+import java.awt.*;
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -202,6 +204,14 @@ public class JavaTwo {
     }
 
     public void ex14(){
+        //distance
+        var p1 = new Point(12,14);
+        var p2 = new Point(10,10);
+        System.out.println(p1.distance(p2));
+
+        var p3 = new MyPoint(12,14);
+        var p4 = new MyPoint(10,10);
+        System.out.println(p3.distance(p4));
 
     }
 
