@@ -6,10 +6,13 @@ public class JavaThree {
         try{
             var result = 10 / 0;
             System.out.println(result);
-        } catch (Exception e){
+        } catch (ArithmeticException e){
             System.out.println("cannot divide by zero ");
         }
     }
 
+    public void ex2() {
+
+    }
 
 }
