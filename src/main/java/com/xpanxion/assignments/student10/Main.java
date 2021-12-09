@@ -7,6 +7,6 @@ public class Main {
         //JavaOne javaOne = new JavaOne();
         //javaOne.ex10();
         JavaTwo javaTwo = new JavaTwo();
-        javaTwo.ex13();
+        javaTwo.ex14();
     }
 }
