@@ -4,26 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-
-    //
-    // Data members
-    //
-
-    private final List<String> history;
-
-    //
-    // Constructors
-    //
+private final List<String> history;
 
     public Calculator() {
         this.history = new ArrayList<String>();
     }
 
-    //
-    // Methods
-    //
-
-    public int calculate(int operand1, int operand2, String operation) throws CalculatorException {
+    public  int calculate(int operand1, int operand2, String operation) throws CalculatorException {
         int retval = 0;
         String strOperation = "";
         switch (operation) {

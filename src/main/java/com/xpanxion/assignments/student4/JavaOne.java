@@ -178,11 +178,17 @@ public class JavaOne {
             String word = scan.nextLine();
             String gap = "";
             for ( i = 0; i < word.length(); i++) {
-                gap = gap + "  ";
+               if (String.valueOf(word.charAt(i)).equals(" ")) {
+                    gap = "";
+                } else {
+                    gap = gap + " ";
+                }
                 System.out.println(gap + word.charAt(i));
             }
-            }
     }
+    }
+
+
 
 
 
