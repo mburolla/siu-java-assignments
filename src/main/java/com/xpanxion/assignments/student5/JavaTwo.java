@@ -38,7 +38,7 @@ public class JavaTwo {
 
             people.add(new Person(splitInput[0], splitInput[1], splitInput[2]));
         }
-        people.stream().forEach(p -> System.out.println(p.toString()));
+        people.stream().forEach(System.out::println);
 
         sc.close();
     }
