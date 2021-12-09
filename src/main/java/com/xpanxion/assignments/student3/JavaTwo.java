@@ -41,7 +41,7 @@ public class JavaTwo {
 
     public void ex2(){
         //hashMap to find person by id
-        Map hashMap = new HashMap<Integer, Person>();
+        var hashMap = new HashMap<Integer, Person>();
 
         Person p1 = new Person(1, "Peter", "Jones");
         Person p2 = new Person(2, "John", "Smith");
@@ -83,7 +83,7 @@ public class JavaTwo {
 
     public void ex6() {
         //oop calculator
-        int x, y, z;
+        int operand1, operand2, result;
         String op, input;
 
         Calculator calculator = new Calculator();
@@ -94,18 +94,18 @@ public class JavaTwo {
             input = scanner.nextLine();
             if (input.equals("done"))
                 break;
-            x = Integer.parseInt(input);
+            operand1 = Integer.parseInt(input);
 
             System.out.print("Enter Second Number: ");
-            y = scanner.nextInt();
+            operand2 = scanner.nextInt();
             scanner.nextLine();
 
             System.out.print("Enter Operator( +, -, *, /): ");
             op = scanner.nextLine();
 
-            z = calculator.calculate(x, y,  op );
+            result = calculator.calculate(operand1, operand2,  op);
 
-            System.out.println("Result: " + z);
+            System.out.println("Result: " + result);
 
 
         } while (true);
@@ -210,7 +210,27 @@ public class JavaTwo {
     }
 
     public void ex12(){
+        //movie theater
+        var scanner = new Scanner(System.in);
 
+        System.out.print("Enter number of Rows: ");
+        var rows = scanner.nextInt();
+        System.out.print("Enter number of Seats: ");
+        var seats = scanner.nextInt();
+        double totalCost = 0;
+        String totalSeats =  "0".repeat(rows * seats);
+
+        displayTheater(totalSeats, totalCost, rows, seats);
+
+        while (true){
+            System.out.print("Purchase seat (row, seat): ");
+            var boughtSeat = scanner.nextLine();
+            StringTokenizer stringTokenizer = new StringTokenizer(boughtSeat);
+            var r = stringTokenizer.nextToken().replace(",", "");
+            var s = stringTokenizer.nextToken();
+
+
+        }
     }
 
     public void ex13(){
@@ -279,6 +299,24 @@ public class JavaTwo {
                 System.out.println("Incorrect username or password.");
         }else
             System.out.println("Username or password don't exist");
+    }
+
+    private void displayTheater(String totalSeats, double totalCost, int rows, int seats){
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        for (int i = 0; i < totalSeats.length() / seats; i++){
+            for (int j = 0; j < seats; j ++){
+                System.out.print(totalSeats.charAt(j));
+            }
+            System.out.println();
+        }
+        String cost = formatter.format(totalCost);
+        System.out.println(cost);
+//        for(int i = 0; i < rows; i++) {
+//            for (int j = 0; j < seats; j++) {
+//                System.out.print("0");
+//            }
+//            System.out.println();
+//        }
     }
 
 }
