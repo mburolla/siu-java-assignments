@@ -1,10 +1,15 @@
 package com.xpanxion.assignments.student6;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 
 import static java.lang.Integer.parseInt;
 
@@ -171,5 +176,78 @@ public class JavaTwo {
             TimeUnit.SECONDS.sleep(3);
         }
 
+    }
+
+    public void ex11() {
+        //Declare a hashmap of string string
+        //write a while with scanner and conditionals
+        //Write add user function
+        //Write password checker which uses the getHash function
+        HashMap<String, String> hashMap = new HashMap<>();
+
+        while(true) {
+            System.out.println("Action [add|login|done]: ");
+            Scanner sc = new Scanner(System.in);
+            String inputString = sc.nextLine().trim();
+
+            if(inputString.equals("add")) {
+                System.out.println("Enter username, password: ");
+                inputString = sc.nextLine();
+                addUser(hashMap, inputString);
+            }
+            if(inputString.equals("login")) {
+                System.out.println("Enter username, password: ");
+                inputString = sc.nextLine().trim();
+                if(passwordCheck(hashMap, inputString))
+                    System.out.println("OK");
+                else
+                    System.out.println("Incorrect username or password");
+            }
+            if(inputString.equals("done")) {
+                break;
+            }
+        }
+
+
+    }
+
+    private void addUser(HashMap<String, String> hashMap, String inputString) {
+        String[] inputArray = inputString.split(",");
+        String userName = inputArray[0].trim();
+        String password = inputArray[1].trim();
+
+        String hashedPassword = getHash(password);
+        hashMap.put(userName, hashedPassword);
+    }
+
+    private boolean passwordCheck(HashMap<String,String> hashMap, String inputString) {
+        boolean isAuthenticated = false;
+
+        String[] inputArray = inputString.split(",");
+        String userName = inputArray[0].trim();
+        String password = inputArray[1].trim();
+
+        if(hashMap.containsKey(userName)) {
+            String originalHashedPass = hashMap.get(userName);
+            String currentHashedPass = getHash(password);
+            if(originalHashedPass.equals(currentHashedPass)) {
+                isAuthenticated = true;
+            }
+        }
+        return isAuthenticated;
+    }
+
+    private String getHash(String inputString) {
+        String hashValue = "";
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+            messageDigest.reset();
+            messageDigest.update(inputString.getBytes(StandardCharsets.UTF_8));
+            hashValue = String.format("%040x", new BigInteger(1, messageDigest.digest()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return hashValue;
     }
 }

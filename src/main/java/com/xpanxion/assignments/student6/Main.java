@@ -24,6 +24,7 @@ public class Main {
         //javaTwo.ex7();
         //javaTwo.ex8();
         //javaTwo.ex9();
-        javaTwo.ex10();
+        //javaTwo.ex10();
+        javaTwo.ex11();
     }
 }
