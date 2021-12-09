@@ -17,10 +17,7 @@ public class Invoice extends Base {
     }
 
     public double getTotalCost() {
-        double total = 0.00;
-        for (Product product : productList) {
-            total = total + product.getCost();
-        }
+        double total = productList.stream().mapToDouble(Product::getCost).sum();
         return total;
     }
 }

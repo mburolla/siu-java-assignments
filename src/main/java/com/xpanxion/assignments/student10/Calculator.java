@@ -1,53 +1,48 @@
 package com.xpanxion.assignments.student10;
 
+import com.xpanxion.assignments.instructor.CalculatorException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private int num1;
-    private int num2;
-    private String operator;
-    private int result;
 
-    private List<String> calcList = new ArrayList<>();
+    private final List<String> calcList;
 
-    public Calculator () {
-    }
+    public Calculator () { this.calcList = new ArrayList<String>();}
 
-    public void setNum1(int num1) {this.num1 = num1;}
-    public void setNum2(int num2) {this.num2 = num2;}
-    public void setOperator(String operator) {this.operator = operator;}
-    public int getNum1(){return this.num1;}
-    public int getNum2(){return this.num2;}
-    public String getOperator(){return this.operator;}
-    public List<String> getList () {return this.calcList;}
+    public List<String> getCalcList(){return calcList;}
 
-    public int calculate() {
+    public int calculate(int num1, int num2, String operator) throws CalculatorException {
+        int result = 0;
+        String operation = "";
+        switch (operator) {
+            case "add" -> {
+                result = num1 + num2;
+                operation = ("+");
 
-        if (this.operator.equals("add")) {
-            int result = this.num1 + this.num2;
-            setOperator("+");
-            calcList.add(String.format("%s %s %s = %s", num1, operator, num2, result));
-            return result;
+            }
+            case "sub" -> {
+                result = num1 - num2;
+                operation = ("-");
+            }
+            case "mul" -> {
+                result = num1 * num2;
+                operation = ("*");
+            }
+            default -> {
+                try {
+                    result = num1 / num2;
+                    operation = "/";
+                } catch (ArithmeticException ae) {
+                    var message = String.format("Cannot divide by zero: %s / %s.", num1, num2);
+                    throw new CalculatorException(message);
+                }
+            }
         }
-        else if (this.operator.equals("sub")) {
-            int result = this.num1 - this.num2;
-            setOperator("-");
-            calcList.add(String.format("%s %s %s = %s", num1, operator, num2, result));
-            return result;
-        }
-        else if (this.operator.equals("mul")) {
-            int result = this.num1 * this.num2;
-            setOperator("*");
-            calcList.add(String.format("%s %s %s = %s", num1, operator, num2, result));
-            return result;
-        }
-        else {
-            double result = this.num1 /(double) this.num2;
-            setOperator("/");
-            calcList.add(String.format("%s %s %s = %s", num1, operator, num2, result));
-            return (int)result;
-        }
+        var entry = String.format("%s %s %s = %s", String.valueOf(num1), operation, String.valueOf(num2), result);
+        calcList.add(entry);
+        return result;
 
     }
 

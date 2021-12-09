@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student10;
 
+import com.xpanxion.assignments.instructor.CalculatorException;
+
 import java.math.BigInteger;
 import java.text.NumberFormat;
 import java.util.*;
@@ -87,7 +89,7 @@ public class JavaTwo {
         System.out.println(p);
     }
 
-    public void ex6 () {
+    public void ex6 () throws CalculatorException {
         Scanner scanner = new Scanner(System.in);
         Calculator calc = new Calculator();
         System.out.println("Student 10: ex6.");
@@ -100,18 +102,15 @@ public class JavaTwo {
             }
             else {
                 int num1 = Integer.parseInt(next);
-                calc.setNum1(num1);
                 System.out.print("Enter another number: ");
                 int num2 = scanner.nextInt();
-                calc.setNum2(num2);
                 System.out.print("Enter an operation(add, sub, mul, div): ");
                 String operator = scanner.next();
-                calc.setOperator(operator);
-                int result = calc.calculate();
+                int result = calc.calculate(num1, num2, operator);
                 System.out.println("Result: " + result);
             }
         }
-        for (String operation: calc.getList()){
+        for (String operation : calc.getCalcList()){
             System.out.println(operation);
         }
     }
@@ -211,7 +210,7 @@ public class JavaTwo {
                 String info = scanner.nextLine();
                 String infoList [] = info.split(", ");
                 String username = infoList[0];
-                String password = encryptPassword(infoList[1]);
+                String password = hashPassword(infoList[1]);
                 infoList[1] = password;
                 loginMap.put(username, password);
             }
@@ -220,7 +219,7 @@ public class JavaTwo {
                 String info = scanner.nextLine();
                 String infoList [] = info.split(", ");
                 String username = infoList[0];
-                String password = encryptPassword(infoList[1]);
+                String password = hashPassword(infoList[1]);
                 infoList[1] = password;
                 String hash = loginMap.get(username);
                 if (hash!=null && hash.equals(password)) {
@@ -266,9 +265,21 @@ public class JavaTwo {
 
     }
 
+    public void ex13 () {
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
+        }
+    }
+
     //Helper Functions
 
-    public static String encryptPassword(String password){
+    public static String hashPassword(String password){
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] messageDigest = md.digest(password.getBytes());
