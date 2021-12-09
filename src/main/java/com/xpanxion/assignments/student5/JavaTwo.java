@@ -171,7 +171,9 @@ public class JavaTwo {
             catQueue.remove();
             try{
                 Thread.sleep(3000);
-            } catch(Exception e) {}
+            } catch(Exception UnableToSleepException) {
+                UnableToSleepException.printStackTrace();
+            }
         }
     }
 // EX11
