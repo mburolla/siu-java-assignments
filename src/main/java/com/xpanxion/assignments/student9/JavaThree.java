@@ -22,9 +22,10 @@ public class JavaThree {
     }
 
     public void ex3(){
+        Scanner reader = null;
         try{
             var myFile = new FileReader("input-1.txt");
-            var reader = new Scanner(myFile);
+            reader = new Scanner(myFile);
             while(reader.hasNextLine()){
                 var display = reader.nextLine();
                 System.out.println(display);
@@ -32,14 +33,19 @@ public class JavaThree {
         } catch (FileNotFoundException IO){
             System.out.println("unable to find file");
             IO.printStackTrace();
+        }  finally {
+            if(reader != null){
+                reader.close();
+            }
         }
     }
 
     public void ex4(){
         var personList = new ArrayList<Person>();
+        Scanner reader = null;
         try{
             var myFile = new FileReader("input-2.txt");
-            var reader = new Scanner(myFile);
+             reader = new Scanner(myFile);
             while(reader.hasNextLine()){
                 var display = reader.nextLine();
                 String[] splits = display.split(",");
@@ -53,6 +59,10 @@ public class JavaThree {
         } catch (FileNotFoundException IO){
             System.out.println("unable to find file");
             IO.printStackTrace();
+        } finally {
+            if(reader != null){
+                reader.close();
+            }
         }
         personList.forEach(System.out::println);
     }
@@ -73,6 +83,10 @@ public class JavaThree {
         } catch (IOException ex){
             System.err.println(ex.getMessage());
         }
+    }
+
+    public void ex6(){
+
     }
 
 }
