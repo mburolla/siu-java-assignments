@@ -1,7 +1,7 @@
 package com.xpanxion.assignments.student5;
 
 public class Main {
-    public static void main(String[] args) throws CalculatorException {
+    public static void main(String[] args) throws CalculatorException, java.io.IOException {
         //
         // JAVA THREE EXERCISES
         //

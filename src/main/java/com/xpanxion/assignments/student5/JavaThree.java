@@ -25,12 +25,12 @@ public class JavaThree {
         System.out.println(result);
     }
 // Ex3 Read File
-    public void ex3() {
+    public void ex3() throws java.io.IOException{
         List<String> personInfo = readFileByLine("input-1.txt");
         personInfo.forEach(System.out::println);
     }
 // Ex4 File to People
-    public void ex4() {
+    public void ex4() throws java.io.IOException{
         List<String> personInfo = readFileByLine("input-2.txt");
         List<Person> personList= new ArrayList<>();
         for (String person: personInfo) {
@@ -39,20 +39,18 @@ public class JavaThree {
         }
         personList.forEach(System.out::println);
     }
+// Ex5 People to file
+    public void ex5() {
 
-//    private methods'
-    private List<String> readFileByLine(String filePath) {
+    }
+//    private methods
+    private List<String> readFileByLine(String filePath) throws java.io.IOException {
         List<String> fileLines = new ArrayList<>();
-        try {
-            BufferedReader read = new BufferedReader(new FileReader(filePath));
+        try (BufferedReader read = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = read.readLine()) != null) {
                 fileLines.add(line);
             }
-            read.close();
-        } catch (Exception fileNotFound) {
-            System.out.println("File was not found at that location.");
-            fileNotFound.printStackTrace();
         }
         return fileLines;
     }
