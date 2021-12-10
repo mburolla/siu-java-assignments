@@ -332,7 +332,7 @@ public class JavaTwo {
 
             //call to method to print seat arrangement
             flatten2dArray(rowsAndSeats);
-//
+
             //print totalSales = row number converted to currency + totalSales
             purchasedSeatTotal += Integer.parseInt(purchaseRow);
             totalSales = numberFormat.format(purchasedSeatTotal);
@@ -342,6 +342,18 @@ public class JavaTwo {
             System.out.print("Purchase seat (row seat): ");
             purchaseRow = scanner.next();
             purchaseSeat = scanner.nextInt();
+        }
+    }
+
+    public void ex13() {
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
         }
     }
 
