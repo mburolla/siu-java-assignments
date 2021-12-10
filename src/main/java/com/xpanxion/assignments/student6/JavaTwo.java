@@ -93,7 +93,7 @@ public class JavaTwo {
         System.out.println(p);
     }
 
-    public void ex6() {
+    public void ex6() throws DivByZeroException {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
 

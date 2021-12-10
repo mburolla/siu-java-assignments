@@ -20,7 +20,7 @@ public class Calculator {
     }
 
     //METHOD
-    public int calculate(int firstNum, int secondNum, String operation) {
+    public int calculate(int firstNum, int secondNum, String operation) throws DivByZeroException {
         int retval = 0;
         String strOperation = "";
         if (operation.equals("add")) {
@@ -36,8 +36,14 @@ public class Calculator {
             strOperation = "*";
         }
         if (operation.equals("div")) {
-            retval = firstNum / secondNum;
-            strOperation = "/";
+
+            try {
+                retval = firstNum / secondNum;
+                strOperation = "/";
+            } catch (ArithmeticException e) {
+                String message = "Cannot divide by zero!";
+                throw new DivByZeroException(message);
+            }
         }
 
         String strHistory = (firstNum + " " + strOperation + " " + secondNum + " = " + retval);
