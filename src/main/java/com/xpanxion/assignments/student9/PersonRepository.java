@@ -1,18 +1,13 @@
 package com.xpanxion.assignments.student9;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class PersonRepository {
 
-    //
-    // Data members
-    //
 
     private final HashMap<Integer, Person> personHashMap;
 
-    //
-    // Constructors
-    //
 
     public PersonRepository() {
         personHashMap = new HashMap<Integer, Person>();
@@ -21,9 +16,10 @@ public class PersonRepository {
         personHashMap.put(3, new Person(3, "Charlie", "Brown"));
     }
 
-    //
-    // Methods
-    //
+    public Optional<Person> getPerson(int id){
+       return Optional.ofNullable(this.personHashMap.get(id));
+    }
+
 
     public Person getPerson(Integer personId) {
         return personHashMap.get(personId);

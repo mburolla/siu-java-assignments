@@ -87,7 +87,13 @@ public class JavaThree {
     }
 
     public void ex6(){
-
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(3);
+        if(person.isPresent()){
+            System.out.println(person.get().getFirstName());
+        } else {
+            System.out.print("Invalid. No Person with given id");
+        }
     }
 
 
