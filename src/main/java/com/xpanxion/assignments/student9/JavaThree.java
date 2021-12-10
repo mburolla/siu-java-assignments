@@ -96,6 +96,13 @@ public class JavaThree {
         }
     }
 
+    public void ex7() {
+  /*      @Test
+        public void shouldCreatePerson() {
+            var newPerson = new Person(1, "Bill","Smith");
+            Assertions.assertFalse(newPerson.validateFirstNameEmpty());
+        }*/
+    }
 
 
 }

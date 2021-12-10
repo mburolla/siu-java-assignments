@@ -1,6 +1,5 @@
 package com.xpanxion.assignments.student9;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Person implements Comparable<Person> {
@@ -37,6 +36,23 @@ public class Person implements Comparable<Person> {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public boolean validateFirstNameEmpty() {
+        if(this.firstName.isBlank()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean validateLastNameEmpty() {
+        if(this.lastName.isBlank()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     @Override
     public String toString() {
