@@ -3,9 +3,17 @@ package com.xpanxion.assignments.student5;
 public class Main {
     public static void main(String[] args) {
         //
+        // JAVA THREE EXERCISES
+        //
+        JavaThree javaThree = new JavaThree();
+//        javaThree.ex1();
+
+
+
+        //
         // JAVA TWO EXERCISES
         //
-        JavaTwo javaTwo = new JavaTwo();
+//        JavaTwo javaTwo = new JavaTwo();
 //        javaTwo.ex1();
 //        javaTwo.ex2();
 //        javaTwo.ex3();
