@@ -8,7 +8,8 @@ public class Main {
         JavaThree javaThree = new JavaThree();
 //        javaThree.ex1();
 //        javaThree.ex2();
-        javaThree.ex3();
+//        javaThree.ex3();
+        javaThree.ex4();
 
 
         //

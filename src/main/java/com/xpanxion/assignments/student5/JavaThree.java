@@ -3,6 +3,9 @@ package com.xpanxion.assignments.student5;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class JavaThree {
     // Constructor
@@ -35,5 +38,23 @@ public class JavaThree {
             System.out.println("File was not found at that location.");
             fileNotFound.printStackTrace();
         }
+    }
+// Ex4 File to People
+    public void ex4() {
+        List<Person> people = new ArrayList<>();
+        try {
+            BufferedReader read = new BufferedReader(new FileReader("input-2.txt"));
+            String line;
+            while ((line = read.readLine()) != null) {
+                List<String> person = Arrays.stream(line.split(" ")).toList();
+                people.add(new Person(person.get(0), person.get(1), person.get(2)));
+            }
+            read.close();
+            people.stream().forEach(System.out::println);
+        } catch (Exception fileNotFound) {
+            System.out.println("File was not found at that location.");
+            fileNotFound.printStackTrace();
+        }
+
     }
 }
