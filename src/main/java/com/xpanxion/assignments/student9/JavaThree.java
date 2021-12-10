@@ -69,7 +69,6 @@ public class JavaThree {
     }
 
     public void ex5(){
-
         var peopleList = Arrays.asList(
                 new Person(1, "Alice", "Jones"),
                 new Person(2, "Bob", "Smith"),
@@ -97,6 +96,7 @@ public class JavaThree {
     }
 
     public void ex7() {
+
 /*        //Arrange
         var newPerson = new Person();
         // Act
