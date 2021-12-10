@@ -103,7 +103,11 @@ public class JavaTwo {
     public void ex6() {
         title(6);
         Calculator calc = new Calculator();
-        calc.run();
+        try {
+            calc.run();
+        } catch (CalculatorException divideByZero) {
+            divideByZero.printStackTrace();
+        }
     }
 // EX7
     public void ex7() {

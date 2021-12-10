@@ -1,13 +1,13 @@
 package com.xpanxion.assignments.student5;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CalculatorException {
         //
         // JAVA THREE EXERCISES
         //
         JavaThree javaThree = new JavaThree();
 //        javaThree.ex1();
-
+        javaThree.ex2();
 
 
         //
