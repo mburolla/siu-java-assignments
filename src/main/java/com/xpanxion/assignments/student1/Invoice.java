@@ -7,8 +7,8 @@ import java.util.OptionalDouble;
 public class Invoice extends Base {
     private final List<Product> products = new ArrayList<>();
 
-    public Invoice(int iID) {
-        super(iID);
+    public Invoice(int id) {
+        super(id);
     }
 
     public void addProduct(Product product) {

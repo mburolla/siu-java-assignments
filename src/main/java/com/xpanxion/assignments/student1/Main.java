@@ -26,5 +26,6 @@ public class Main {
         javaTwo.ex9();
         javaTwo.ex10();
         javaTwo.ex11();
+//        javaTwo.ex12();
     }
 }

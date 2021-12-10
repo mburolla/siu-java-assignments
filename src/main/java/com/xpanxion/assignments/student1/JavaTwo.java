@@ -4,10 +4,13 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Array;
+import java.sql.SQLOutput;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JavaTwo {
 
@@ -41,7 +44,7 @@ public class JavaTwo {
             people.add(new Person(id,firstName, lastName));
         }
 
-        people.forEach(p -> System.out.println(formatString(p)));
+        people.forEach(System.out::println);
     }
 
     public void ex2() {
@@ -275,6 +278,90 @@ public class JavaTwo {
         }
     }
 
+//    public void ex12() {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        //prompt user for rows and seats
+//        int rows;
+//        int seats;
+//        String purchaseRow = "0";
+//        int purchasedSeatTotal = 0;
+//        int purchaseSeat = 0;
+//        int rowCount = 1;
+//        var totalSales = "";
+//        HashMap<Integer, ArrayList<String>> seatDisplay = new HashMap<Integer, ArrayList<String>>();
+//
+//        //create purchaseRow, purchaseSeat, totalSales variables, uninitialized
+//        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
+//
+//        System.out.print("Enter number rows: ");
+//        rows = scanner.nextInt();
+//
+//        System.out.print("Enter number seats: ");
+//        seats = scanner.nextInt();
+//
+//        //create 2d array for rows, seats
+//        String[][] rowsAndSeats = new String[rows][seats];
+//
+//
+//        //while user is not "done"
+//        while(rowCount != rows ) {
+//            //for loop to iterate thru rows
+//            for (var i = 1; i <= rows; i++) {
+//                ArrayList<String> row = seatDisplay.get(Integer.parseInt(purchaseRow)) != null ? seatDisplay.get(Integer.parseInt(purchaseRow)) : new ArrayList<String>(seats);
+//                rowCount++;
+//                //for loop to iterate thru seats
+//                for (var j = 1; j <= seats; j++) {
+//                    if (isInt(purchaseRow)) {
+//                        //if purchase seat row and seat is equal to current iterator
+//                        if (purchaseSeat > 0) {
+//                            if (row.isEmpty()) {
+//                                row.add(purchaseSeat - 1, "X");
+//                            } else {
+//                                row.set((purchaseSeat - 1), "X");
+//                            }
+//                            purchaseSeat = 0;
+////                        } else if(!row.isEmpty()) {
+////                            if (!row.get(j - 1).equals("X")) {
+////                                row.add(j - 1, "0");
+////                            }
+//                        } else {
+//                            if (!row.isEmpty()) {
+//                                if (row.get(j-1).isEmpty()) {
+//                                row.add(j - 1, "0");
+//                                }
+//                            } else {
+//                                row.add(j - 1, "0");
+//                            }
+//                        }
+////                        if (row) {
+////                            //paint spot with 'X'
+////                            rowsAndSeats[i - 1][j - 1] = "X";
+////                        } else {
+////                            //else
+////                            //paint rows,seats display
+////                            rowsAndSeats[i - 1][j - 1] = "0";
+////                        }
+//                    } else break;
+//                }
+//                System.out.println("Array contents: " + row);
+//                seatDisplay.put(i, row);
+//            }
+//
+////            flatten2dArray(rowsAndSeats);
+////
+//            //print totalSales = row number converted to currency + totalSales
+//            purchasedSeatTotal += Integer.parseInt(purchaseRow);
+//            totalSales = numberFormat.format(purchasedSeatTotal);
+//            System.out.println("Total sales: " + totalSales);
+//
+//            //prompt user for purchase row,seat
+//            System.out.print("Purchase seat (row seat): ");
+//            purchaseRow = scanner.next();
+//            purchaseSeat = scanner.nextInt();
+//        }
+//    }
+
     //
     // Private helper methods
     //
@@ -313,4 +400,12 @@ public class JavaTwo {
     private static String add(String password) {
         return encryptThisString(password);
     }
+//
+//    private void flatten2dArray(String[][] seatArr) {
+//        for (int i = 0; i < seatArr.length; i++) {
+//            seatDisplay.add(seatArr[i]);
+//        }
+//
+//        System.out.println(Arrays.deepToString(seatDisplay.toArray()));
+//    }
 }

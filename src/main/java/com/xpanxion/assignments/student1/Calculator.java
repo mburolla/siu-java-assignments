@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Calculator {
     //private variables
-    private int firstNum;
-    private int secondNum;
-    private String operation;
+    private final int firstNum;
+    private final int secondNum;
+    private final String operation;
     private int result;
 
     //create data storage for tokens
@@ -25,28 +25,28 @@ public class Calculator {
     }
 
     public void performCalculations() {
-        switch(operation) {
-            case "add":
+        switch (operation) {
+            case "add" -> {
                 result = firstNum + secondNum;
                 history.add(firstNum + " + " + secondNum + " = " + result);
-                break;
-            case "sub":
+            }
+            case "sub" -> {
                 result = firstNum - secondNum;
                 history.add(firstNum + " - " + secondNum + " = " + result);
-                break;
-            case "mul":
+            }
+            case "mul" -> {
                 result = firstNum * secondNum;
                 history.add(firstNum + " * " + secondNum + " = " + result);
-                break;
-            case "div":
+            }
+            case "div" -> {
                 result = firstNum / secondNum;
                 history.add(firstNum + " / " + secondNum + " = " + result);
-                break;
+            }
         }
     }
 
     //create method to print history
     public void printHistory() {
-        history.forEach(el -> System.out.println(el));
+        history.forEach(System.out::println);
     }
 }
