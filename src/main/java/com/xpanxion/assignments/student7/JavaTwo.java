@@ -102,12 +102,6 @@ public class JavaTwo {
 
             calculator.calculate(num1, num2, operand);
 
-            switch (operand) {
-                case "ADD" -> System.out.println("Result: " + (num1 + num2));
-                case "SUB" -> System.out.println("Result: " + (num1 - num2));
-                case "DIV" -> System.out.println("Result: " + (num1 / num2));
-                case "MUL" -> System.out.println("Result: " + (num1 * num2));
-            }
         }
 
     }

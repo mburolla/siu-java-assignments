@@ -38,6 +38,7 @@ public class Calculator {
         }
         String calculation = String.format("%s %s %s = %s",num1, operator, num2, resultString);
         history.add(calculation);
+        System.out.println("Result: " + result);
     }
 
 
