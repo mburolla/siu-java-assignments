@@ -40,19 +40,11 @@ public class Person implements Comparable<Person> {
     }
 
     public boolean validateFirstNameEmpty() {
-        if(this.firstName.isBlank()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.firstName.isBlank();
     }
 
     public boolean validateLastNameEmpty() {
-        if(this.lastName.isBlank()) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.lastName.isBlank();
     }
 
 

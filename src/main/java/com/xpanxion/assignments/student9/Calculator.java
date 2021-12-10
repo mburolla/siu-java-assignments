@@ -27,6 +27,47 @@ public class Calculator {
         };
     }
 
+    public int getFirstNum() {
+        return firstNum;
+    }
+
+    public void setFirstNum(int firstNum) {
+        this.firstNum = firstNum;
+    }
+
+    public int getSecondNum() {
+        return secondNum;
+    }
+
+    public void setSecondNum(int secondNum) {
+        this.secondNum = secondNum;
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    public boolean isOperationAdd() {
+        return this.operation.equalsIgnoreCase("add");
+
+    }
+
+    public boolean isOperationSub() {
+        return this.operation.equalsIgnoreCase("sub");
+    }
+
+    public boolean isOperationMul(){
+        return this.operation.equalsIgnoreCase("mul");
+    }
+
+    public boolean isOperationDiv() {
+        return this.operation.equalsIgnoreCase("div");
+    }
+
     public int calculate(int firstNum, int secondNum, String operation) throws CalculatorException {
         this.firstNum = firstNum;
         this.secondNum = secondNum;
