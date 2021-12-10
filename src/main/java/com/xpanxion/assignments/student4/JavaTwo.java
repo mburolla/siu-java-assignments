@@ -11,41 +11,44 @@ import java.util.stream.Collectors;
 public class JavaTwo {
 
     public void ex1() {
-           var person = new Person();
-           ArrayList<Person> prodList = new ArrayList<>();
-           Scanner scanner = new Scanner(System.in);
-           while (true) {
-               System.out.println("enter Person: ");
-               String text = scanner.next();
-                if (text.equals("done")) {
-                   break;
-                }
-                String[] prodStr = text.split(",");
-                //person.id = prodStr[0];
-                person.firstName = prodStr[1];
-               person.lastName = prodStr[2];
-                prodList.add(person);
-           }
-            for(Person p : prodList){
-                System.out.println(p);
-            }
-    }
-
-
-    public void ex2() {
-        Person person=new Person();
+        ArrayList<Person> prodList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("enter PersonID: ");
-        String text = scanner.next();
-        HashMap<String, String> personInfo = new HashMap<String, String>();
-        personInfo.put("1", "Peter Jones");
-        personInfo.put("2", "John Smith");
-        personInfo.put("3", "Mary Jane");
-        String[] str = personInfo.get(text).split(" ");
-        {
-            System.out.println("Person{id=" + text + " firstName= " + str[0] + " lastName= " + str[1] + "}");
+        while (true) {
+            var person = new Person();
+            System.out.println("enter Person: ");
+            String text = scanner.nextLine();  // <=== using nextLine() instead of next()
+            if (text.equals("done")) {
+                break;
+            }
+            String[] prodStr = text.split(",");
+            person.id = Integer.parseInt(prodStr[0]);
+            var name = prodStr[1].split(" ");
+            person.firstName = name[0];
+            person.lastName = name[1];
+            prodList.add(person);
+        }
+        for (Person p : prodList) {
+            System.out.println(p);
         }
     }
+
+
+        public void ex2() {
+        Scanner scanner = new Scanner(System.in);
+            while (true) {
+                System.out.println("enter PersonID: ");
+                String text = scanner.next();
+                if (text.equals("done")) {
+                    break;
+                }
+                HashMap<String, String> personInfo = new HashMap<String, String>();
+                personInfo.put("1", "Peter Jones");
+                personInfo.put("2", "John Smith");
+                personInfo.put("3", "Mary Jane");
+                String[] str = personInfo.get(text).split(" ");
+                System.out.println("Person{id=" + text + " firstName= " + str[0] + " lastName= " + str[1] + "}");
+            }
+       }
 
     public void ex3(){
         var invoice =  new Invoice(1);
@@ -67,8 +70,8 @@ public class JavaTwo {
     }
 
     public void ex5(){
-        var repository = new Repository();
-        var p = repository.getPerson();
+        Repository repository = new Repository();
+        Person p = repository.getPerson();
         System.out.println(p);
     }
 
@@ -86,15 +89,18 @@ public class JavaTwo {
             String no2 = scanner.nextLine();
             System.out.print("Enter operation (add, sub, mul, div): ");
             String op = scanner.nextLine();
-            int newNo1=Integer.parseInt(no1);
-            int newNo2=Integer.parseInt(no2);
-            int result=calculator.calculate(newNo1,newNo2, op);
-            System.out.println("Result is: "+result);
+            int newNo1 = Integer.parseInt(no1);
+            int newNo2 = Integer.parseInt(no2);
+            int result = calculator.calculate(newNo1, newNo2, op);
+            System.out.println("Result is: " + result);
         }
-        System.out.println(calculator.getHistory());
-
-
+        for (String s : calculator.getHistory()) {
+            System.out.println(s);
+        }
     }
+
+
+
    public void ex7() {
        Person person=new Person();
         var personList = Arrays.asList(

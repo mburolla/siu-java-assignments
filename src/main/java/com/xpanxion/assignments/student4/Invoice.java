@@ -14,12 +14,10 @@ public class Invoice extends Base{
         this.product.add(product);
     }
     public double getTotalCost() {
-        double value = 0.0;
-        for (Product p : product) {
-            value =value+ p.getCost();
-        }
-        return value;
-    }
+        double value;
+        value = product.stream().mapToDouble(Product::getCost).sum();           //for (Product p : product) {
+        return value;                                                           //value =value+ p.getCost();
+    }                                                                           // }
 
     public int getId() {
         return id;
