@@ -13,6 +13,8 @@ public class Person implements Comparable<Person> {
         this.lastName = lastName;
     }
 
+    public Person(){}
+
     public int getId() {
         return this.id;
     }

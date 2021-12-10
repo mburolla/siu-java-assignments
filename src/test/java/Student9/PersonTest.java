@@ -9,7 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTest {
     @Test
     public void shouldCreatePerson() {
-        var newPerson = new Person(1, "Bill","Smith");
+        //Arrange
+        var newPerson = new Person();
+        // Act
+        newPerson.setFirstName("Bill");
+        // Assert
         Assertions.assertFalse(newPerson.validateFirstNameEmpty());
     }
 }
