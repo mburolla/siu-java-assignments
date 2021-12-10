@@ -217,19 +217,26 @@ public class JavaTwo {
         var rows = scanner.nextInt();
         System.out.print("Enter number of Seats: ");
         var seats = scanner.nextInt();
+        scanner.nextLine();
         double totalCost = 0;
-        String totalSeats =  "0".repeat(rows * seats);
+        var totalSeats =  new String[rows * seats];
+        Arrays.fill(totalSeats, "0");
 
         displayTheater(totalSeats, totalCost, rows, seats);
 
         while (true){
             System.out.print("Purchase seat (row, seat): ");
-            var boughtSeat = scanner.nextLine();
-            StringTokenizer stringTokenizer = new StringTokenizer(boughtSeat);
-            var r = stringTokenizer.nextToken().replace(",", "");
-            var s = stringTokenizer.nextToken();
+            String inputString = scanner.nextLine();
 
-
+            if (inputString.equals("done"))
+                break;
+            var inputArray = inputString.split(",");
+            var rowNum = Integer.parseInt(inputArray[0].replace("\\s+", ""));
+            var seatNum = Integer.parseInt(inputArray[1].replace("\\s", ""));
+            var index = ((rowNum - 1) * seats) + (seatNum - 1);
+            totalSeats[index] = "X";
+            totalCost += rowNum;
+            displayTheater(totalSeats, totalCost, rows, seats);
         }
     }
 
@@ -301,22 +308,20 @@ public class JavaTwo {
             System.out.println("Username or password don't exist");
     }
 
-    private void displayTheater(String totalSeats, double totalCost, int rows, int seats){
-        NumberFormat formatter = NumberFormat.getCurrencyInstance();
-        for (int i = 0; i < totalSeats.length() / seats; i++){
-            for (int j = 0; j < seats; j ++){
-                System.out.print(totalSeats.charAt(j));
+    private void displayTheater(String[] totalSeats, double totalCost, int rows, int seats){
+            NumberFormat formatter = NumberFormat.getCurrencyInstance();
+            var display = "";
+            for (int i=0; i < rows; i++) {
+                for (int k=0; k < seats; k++) {
+                    var index = k + (i * seats);
+                    display += totalSeats[index];
+                }
+                display += "\n";
             }
-            System.out.println();
-        }
-        String cost = formatter.format(totalCost);
-        System.out.println(cost);
-//        for(int i = 0; i < rows; i++) {
-//            for (int j = 0; j < seats; j++) {
-//                System.out.print("0");
-//            }
-//            System.out.println();
-//        }
+            display += "Total sales: ";
+            display += formatter.format(totalCost);
+            System.out.println(display);
+
     }
 
 }
