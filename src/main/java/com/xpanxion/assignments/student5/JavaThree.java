@@ -1,14 +1,13 @@
 package com.xpanxion.assignments.student5;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class JavaThree {
-    // Constructor
+// Constructor
     public JavaThree() {}
 // Ex1 Divide by Zero
     public void ex1() {
@@ -27,34 +26,34 @@ public class JavaThree {
     }
 // Ex3 Read File
     public void ex3() {
-        try {
-            BufferedReader read = new BufferedReader(new FileReader("input-1.txt"));
-            String line;
-            while ((line = read.readLine()) != null) {
-                System.out.println(line);
-            }
-            read.close();
-        } catch (Exception fileNotFound) {
-            System.out.println("File was not found at that location.");
-            fileNotFound.printStackTrace();
-        }
+        List<String> personInfo = readFileByLine("input-1.txt");
+        personInfo.forEach(System.out::println);
     }
 // Ex4 File to People
     public void ex4() {
-        List<Person> people = new ArrayList<>();
+        List<String> personInfo = readFileByLine("input-2.txt");
+        List<Person> personList= new ArrayList<>();
+        for (String person: personInfo) {
+            List<String> personInfoSplit = Arrays.stream(person.split(" ")).toList();
+                personList.add(new Person(personInfoSplit.get(0), personInfoSplit.get(1), personInfoSplit.get(2)));
+        }
+        personList.forEach(System.out::println);
+    }
+
+//    private methods'
+    private List<String> readFileByLine(String filePath) {
+        List<String> fileLines = new ArrayList<>();
         try {
-            BufferedReader read = new BufferedReader(new FileReader("input-2.txt"));
+            BufferedReader read = new BufferedReader(new FileReader(filePath));
             String line;
             while ((line = read.readLine()) != null) {
-                List<String> person = Arrays.stream(line.split(" ")).toList();
-                people.add(new Person(person.get(0), person.get(1), person.get(2)));
+                fileLines.add(line);
             }
             read.close();
-            people.stream().forEach(System.out::println);
         } catch (Exception fileNotFound) {
             System.out.println("File was not found at that location.");
             fileNotFound.printStackTrace();
         }
-
+        return fileLines;
     }
 }
