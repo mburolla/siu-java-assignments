@@ -12,217 +12,6 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.concurrent.TimeUnit;
 
-class Person {
-
-    int id;
-    String firstName;
-    String lastName;
-
-    //
-    // Constructors
-    //
-
-    Person(int id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public String toString() {
-        return "Person{id=" + id + ", firstName='" + firstName + "', lastName='" + lastName + "'}";
-    }
-
-}
-
-class NameCompare implements Comparator<Person>
-{
-    public int compare(Person p1, Person p2)
-    {
-        return p1.firstName.compareTo(p2.firstName);
-    }
-}
-
-class Invoice extends Base {
-
-    int invoiceId;
-    private final List<Product> products = new ArrayList<>();
-
-    Invoice(int invoiceId) {
-        super();
-        this.invoiceId = invoiceId;
-    }
-
-    void addProduct(Product product) {
-        products.add(product);
-    }
-
-    double getTotalCost() {
-        double i = 0;
-        for(Product n : products) {
-            i = i + n.getProductCost();
-        }
-        return i;
-    }
-}
-
-class Product extends Base {
-
-    private final int productId;
-    private final String productName;
-    private final double productCost;
-
-    Product(int productId, String productName, double productCost) {
-        super();
-        this.productId = productId;
-        this.productName = productName;
-        this.productCost = productCost;
-    }
-
-    double getProductCost() {
-        return productCost;
-    }
-}
-
-abstract class Base {
-
-    String id;
-
-    Base() {
-
-    }
-}
-
-interface DataAccess {
-    String getPerson();
-}
-
-class Repository implements DataAccess {
-
-    public String getPerson() {
-        return "{id= 1, firstName='John', lastName='Doe'}";
-    }
-
-}
-
-class Calculator {
-
-    List<String> calculations = new ArrayList<>();
-
-    void storeCalc(String calculation) {
-        calculations.add(calculation);
-    }
-
-    void printCalc() {
-        for(String n : calculations) {
-            System.out.println(n);
-        }
-    }
-
-}
-
-class Cat {
-
-    String name;
-
-    Cat(String name) {
-        this.name = name;
-    }
-
-    public String toString() {
-        return "Cat{name=" + name + "'}";
-    }
-
-}
-
-class Theater {
-
-    private int rows;
-    private int seats;
-    private double totalSales = 0.00;
-
-    Theater(int rows, int seats) {
-        this.rows = rows;
-        this.seats = seats;
-    }
-
-    char[][] CreateTheater() {
-        char[][] theaterArray = new char[rows][seats];
-        for(int i = 0; i < rows; i++) {
-            for (int j = 0; j < seats; j++) {
-                theaterArray[i][j] = '0';
-            }
-        }
-        return theaterArray;
-    }
-
-    void TakeSeat(char[][] theaterArray, int i, int j) {
-        theaterArray[i - 1][j - 1] = 'X';
-    }
-
-    void ShowTheater(char[][] theaterArray) {
-        for(int i = 0; i < rows; i++) {
-            for (int j = 0; j < seats; j++) {
-                System.out.print(theaterArray[i][j]);
-                if(theaterArray[i][j] == 'X') {
-                    totalSales += 1.00;
-                }
-            }
-            System.out.println("");
-        }
-        System.out.println("Total sales: $" + String.format("%.2f",totalSales));
-        totalSales = 0;
-    }
-}
-
-abstract class Shape {
-
-    abstract String draw();
-
-}
-
-class Square extends Shape {
-
-    String color;
-
-    Square(String color) {
-        this.color = color;
-    }
-
-    String draw() {
-        return "I am a " + color + " square.";
-    }
-}
-
-class Circle extends Shape {
-
-    String color;
-
-    Circle(String color) {
-        this.color = color;
-    }
-
-    String draw() {
-        return "I am a " + color + " circle.";
-    }
-
-}
-
-class MyPoint {
-
-    double x;
-    double y;
-
-    MyPoint(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    double distance(MyPoint point2) {
-        return Math.sqrt( Math.pow(this.x - point2.x, 2) + Math.pow(this.y - point2.y, 2) );
-    }
-
-}
-
 public class JavaTwo {
 
     JavaTwo() {
@@ -232,7 +21,7 @@ public class JavaTwo {
     // Public methods
     //
 
-    public static String Encrypt(String input) {
+    public static String hash(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] messageDigest = md.digest(input.getBytes());
@@ -322,7 +111,6 @@ public class JavaTwo {
     public static void ex6() {
 
         Calculator calc = new Calculator();
-        String operatorSymbol = null;
 
         while(true) {
             System.out.print("Enter first number: ");
@@ -338,25 +126,12 @@ public class JavaTwo {
             System.out.print("Enter operation (add, sub, mul, div): ");
             Scanner scannerExample7_3 = new Scanner(System.in);
             String operator = scannerExample7_3.next();
-            
 
             int firstNum = Integer.parseInt(firstEntry);
             int secondNum = Integer.parseInt(secondEntry);
 
-            float result = 0;
-            if (operator.equals("add")) {
-                result = firstNum + secondNum;
-                operatorSymbol = "+";
-            } else if (operator.equals("sub")) {
-                result = firstNum - secondNum;
-                operatorSymbol = "-";
-            } else if (operator.equals("mul")) {
-                result = firstNum * secondNum;
-                operatorSymbol = "*";
-            } else if (operator.equals("div")) {
-                result = (float) firstNum / (float) secondNum;
-                operatorSymbol = "/";
-            }
+            String operatorSymbol = calc.convertOperator(operator);
+            float result = calc.calculate(operatorSymbol, firstNum, secondNum);
             System.out.println("Result: " + result);
             calc.storeCalc(firstEntry + " " + operatorSymbol + " " + secondEntry + " = " + result);
         }
@@ -445,7 +220,7 @@ public class JavaTwo {
                 String userLogin = scannerExample2.nextLine();
                 String[] userArray = userLogin.split(", ", 2);
 
-                String passwordHash = Encrypt(userArray[1]);
+                String passwordHash = hash(userArray[1]);
                 loginInfo.put(userArray[0], passwordHash);
                 userArray[1] = null;
             }
@@ -455,7 +230,7 @@ public class JavaTwo {
                 String userLogin = scannerExample3.nextLine();
                 String[] userArray = userLogin.split(", ", 2);
 
-                if(Encrypt(userArray[1]).equals(loginInfo.get(userArray[0]))) {
+                if(hash(userArray[1]).equals(loginInfo.get(userArray[0]))) {
                     System.out.println("OK");
                 }
                 else {
@@ -477,8 +252,8 @@ public class JavaTwo {
         int seats = scannerSeats.nextInt();
 
         Theater theater = new Theater(rows, seats);
-        char[][] theaterArray = theater.CreateTheater();
-        theater.ShowTheater(theaterArray);
+        char[][] theaterArray = theater.createTheater();
+        theater.showTheater(theaterArray);
 
         while(true) {
             System.out.print("Purchase seat (row, seat): ");
@@ -490,8 +265,8 @@ public class JavaTwo {
             }
 
             String[] seatNumber = purchase.split(",", 2);
-            theater.TakeSeat(theaterArray, Integer.parseInt(seatNumber[0]), Integer.parseInt(seatNumber[1]));
-            theater.ShowTheater(theaterArray);
+            theater.takeSeat(theaterArray, Integer.parseInt(seatNumber[0]), Integer.parseInt(seatNumber[1]));
+            theater.showTheater(theaterArray);
         }
     }
 
