@@ -1,7 +1,7 @@
 package com.xpanxion.assignments.student6;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, DivByZeroException {
         JavaOne javaOne = new JavaOne();
         //javaOne.ex1();
         //javaOne.ex2();
@@ -25,6 +25,9 @@ public class Main {
         //javaTwo.ex8();
         //javaTwo.ex9();
         //javaTwo.ex10();
-        javaTwo.ex11();
+        //javaTwo.ex11();
+
+        JavaThree javaThree = new JavaThree();
+        javaThree.ex1();
     }
 }
