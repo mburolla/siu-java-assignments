@@ -1,9 +1,8 @@
 package com.xpanxion.assignments.student7;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class JavaThree {
@@ -59,6 +58,27 @@ public class JavaThree {
         }
         for (Person p : people) {
             System.out.println(p);
+        }
+    }
+
+    public void ex5() {
+
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
+
+        try {
+           try(var writer = new BufferedWriter(new FileWriter("1.txt"))) {
+
+               for (Person p : peopleList) {
+                   writer.write(p.getId() + "," + p.getFirstName() + p.getLastName() +" \n");
+               }
+           }
+        }
+        catch (IOException ioe) {
+            ioe.printStackTrace();
         }
     }
 }
