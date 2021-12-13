@@ -1,7 +1,6 @@
 package com.xpanxion.assignments.student3;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -112,7 +111,7 @@ public class JavaThree {
     public void ex6(){
         var personRepository = new PersonRepository();
         var person = personRepository.getPerson(4);
-        System.out.println(person);
+        person.ifPresent(p -> System.out.println(p.getFirstname()));
     }
 
     public void ex7(){
