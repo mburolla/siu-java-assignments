@@ -7,8 +7,6 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException, CalculatorException {
-
-        JavaThree.ex2();
-
+        JavaThree.ex3();
     }
 }

@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student2;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,4 +24,19 @@ public class JavaThree {
         var result = calculator.calculate(10,0,"div"); // Catch this error.
     }
 
+    public static void ex3() {
+        try {
+            BufferedReader br = new BufferedReader(
+                    new FileReader("C:\\Users\\b0j04cn\\input-1.txt"));
+            String text;
+            while((text = br.readLine()) != null) {
+                System.out.println(text);
+            }
+            br.close();
+        }
+        catch(Exception e) {
+                return;
+        }
+
+    }
 }
