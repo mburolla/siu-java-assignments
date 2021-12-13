@@ -93,9 +93,12 @@ public class JavaThree {
     }
 
     public static void ex7() {
-
+//        In PersonTest
     }
 
+    public static void ex8() {
+//        In CalculatorTest
+    }
 
 
 }

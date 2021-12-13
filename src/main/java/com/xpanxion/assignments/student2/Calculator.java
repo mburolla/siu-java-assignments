@@ -25,7 +25,7 @@ public class Calculator {
         }
     }
 
-    float calculate(int firstNum, int secondNum, String operator) throws CalculatorException {
+    public float calculate(int firstNum, int secondNum, String operator) throws CalculatorException {
         float result = 0;
         if (operator.equals("add")) {
             result = firstNum + secondNum;
