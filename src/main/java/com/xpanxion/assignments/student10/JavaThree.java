@@ -1,11 +1,9 @@
 package com.xpanxion.assignments.student10;
 
+
 import java.io.*;
 import java.io.FileNotFoundException;
-import java.util.List;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class JavaThree {
 
@@ -85,6 +83,15 @@ public class JavaThree {
         catch (Exception e){
             System.out.println("An error has occurred");
         }
+    }
+
+    public void ex6 () {
+        System.out.println("Student 10: ex 6");
+
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(4);
+        person.ifPresent(p -> System.out.println(p.getFirstName()));
+
     }
 
 }

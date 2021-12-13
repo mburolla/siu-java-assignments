@@ -11,6 +11,6 @@ public class Main {
         //JavaTwo javaTwo = new JavaTwo();
         //javaTwo.ex14();
         JavaThree javaThree = new JavaThree();
-        javaThree.ex5();
+        javaThree.ex6();
     }
 }
