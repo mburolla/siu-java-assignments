@@ -29,31 +29,26 @@ public class JavaThree {
     }
 
     public void ex3(){
-        Scanner reader = null;
         try{
             var myFile = new FileReader("input-1.txt");
-            reader = new Scanner(myFile);
-            while(reader.hasNextLine()){
-                var display = reader.nextLine();
-                System.out.println(display);
+            try(var scanner = new Scanner(myFile)){
+                while(scanner.hasNextLine()){
+                    var display = scanner.nextLine();
+                    System.out.println(display);
+                }
             }
         } catch (FileNotFoundException IO){
             System.out.println("unable to find file");
             IO.printStackTrace();
-        }  finally {
-            if(reader != null){
-                reader.close();
-            }
         }
     }
 
     public void ex4(){
         var personList = new ArrayList<Person>();
-        Scanner reader = null;
         try{
             var myFile = new FileReader("input-2.txt");
-             reader = new Scanner(myFile);
-            while(reader.hasNextLine()){
+            try(var reader = new Scanner(myFile)) {
+            while(reader.hasNextLine()) {
                 var display = reader.nextLine();
                 String[] splits = display.split(",");
                 var idTemp = Integer.parseInt(splits[0]);
@@ -61,15 +56,12 @@ public class JavaThree {
                 String[] nameSplit = fullName.trim().split(" ");
                 var firstName = nameSplit[0];
                 var lastName = nameSplit[1];
-                personList.add(new Person(idTemp,firstName,lastName));
+                personList.add(new Person(idTemp, firstName, lastName));
+            }
             }
         } catch (FileNotFoundException IO){
             System.out.println("unable to find file");
             IO.printStackTrace();
-        } finally {
-            if(reader != null){
-                reader.close();
-            }
         }
         personList.forEach(System.out::println);
     }

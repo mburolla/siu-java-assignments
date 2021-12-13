@@ -34,10 +34,10 @@ public class Main {
        // javaThree.ex1();
         // javaThree.ex2();
        // javaThree.ex3();
-      // javaThree.ex4();
+        //javaThree.ex4();
       //  javaThree.ex5();
        // javaThree.ex6();
-        javaThree.ex9();
+      //  javaThree.ex9();
 
 
     }
