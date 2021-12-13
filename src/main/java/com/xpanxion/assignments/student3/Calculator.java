@@ -21,7 +21,6 @@ public class Calculator {
                    result = operand1 / operand2;
                }catch (ArithmeticException arithmeticException){
                    var error = String.format("Cannot divide by 0: %s / %s", operand1, operand2);
-                   throw new CalculatorException(error);
                }
             }
             default -> System.out.println("Invalid Operator");

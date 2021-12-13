@@ -34,7 +34,7 @@ public class JavaThree {
 
                     System.out.println("Result: " + result);
                 } catch (CalculatorException calculatorException){
-                    ;
+                    return;
                 }
             }
         }
@@ -119,7 +119,7 @@ public class JavaThree {
     }
 
     public void ex8(){
-
+        System.out.println("Calculator test added");
     }
 
     public void ex9(){
