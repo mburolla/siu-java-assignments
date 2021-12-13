@@ -10,7 +10,8 @@ public class Main {
 //        javaThree.ex2();
 //        javaThree.ex3();
 //        javaThree.ex4();
-        javaThree.ex5();
+//        javaThree.ex5();
+        javaThree.ex6();
 
         //
         // JAVA TWO EXERCISES

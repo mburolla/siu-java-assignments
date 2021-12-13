@@ -50,6 +50,16 @@ public class JavaThree {
         );
         writeListToFile(peopleList, filePath);
     }
+// Ex6 Optional Person
+    public void ex6() {
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(4);
+        person.ifPresentOrElse(p -> System.out.println(p.getFirstName()),
+                () -> {System.out.println("Person Not Found");}
+        );
+    }
+
+
 //    private methods
     private void writeListToFile(List<Person> people, String filePath) throws IOException {
         try (BufferedWriter write = new BufferedWriter(new FileWriter(filePath))){
