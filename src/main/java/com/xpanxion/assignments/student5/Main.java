@@ -14,6 +14,7 @@ public class Main {
 //        javaThree.ex6();
 //        javaThree.ex7();
 //        javaThree.ex8();
+        javaThree.ex9();
         //
         // JAVA TWO EXERCISES
         //

@@ -2,6 +2,7 @@ package student5;
 
 import com.xpanxion.assignments.student5.Calculator;
 import com.xpanxion.assignments.student5.CalculatorException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -29,5 +30,13 @@ public class CalculatorTest {
     @DisplayName("Should find the sum of 5 / 5 to equal 1")
     public void shouldEqual1() throws CalculatorException {
         assertTrue(calculator.calculate(5,5,"div") == 1.0);
+    }
+    @Test
+    @DisplayName("Should throw CalculatorException notByZero 5 / 0 ")
+    void shouldThrowCalculatorException() {
+        Exception exception = assertThrows(CalculatorException.class, () ->
+                calculator.calculate(5, 0, "div"));
+        assertEquals(null, exception.getMessage());
+
     }
 }

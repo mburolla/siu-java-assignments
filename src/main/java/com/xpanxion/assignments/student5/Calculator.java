@@ -1,5 +1,10 @@
 package com.xpanxion.assignments.student5;
 
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,13 +16,19 @@ public class Calculator {
     private double result;
     private String input;
     private String operation;
-
+    private Logger logger;
     public Calculator() {
+        logger = Logger.getLogger(Calculator.class);
+        ConsoleAppender ca = new ConsoleAppender();
+        ca.setThreshold(Level.INFO);
+        ca.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
+        ca.activateOptions();
+        Logger.getRootLogger().addAppender(ca);
+
+        history = new ArrayList<>();
     }
 
     public void run() throws CalculatorException {
-
-        history = new ArrayList<String>();
         var sc = new Scanner(System.in);
 
         while (true) {
@@ -57,11 +68,19 @@ public class Calculator {
             }
             case "div" -> {
                 operation = " / ";
-                if (num2 == 0 ) throw new CalculatorException("Cannot divide by zero: " + num1 + operation + num2);
+                if (num2 == 0 ) {
+                    var notByZeroMessage = "Cannot divide by zero";
+                    logger.warn(notByZeroMessage);
+                    throw new CalculatorException(notByZeroMessage);
+                }
                 else result = num1 / num2;
             }
             default -> System.out.println("Invalid Number!");
         }
+        var record = num1 + operation + num2 + " = " + result;
+        logger.info(record);
+        history.add(record);
+
         return result;
     }
 }

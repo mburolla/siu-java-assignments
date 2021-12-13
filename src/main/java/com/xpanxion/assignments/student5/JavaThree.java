@@ -68,7 +68,7 @@ public class JavaThree {
     }
 // Ex9 Log Calculator
     public void ex9() {
-
+        System.out.println("Run CalculatorTest to generate log events");
     }
 //    private methods
     private void writeListToFile(List<Person> people, String filePath) throws IOException {
