@@ -115,18 +115,19 @@ public class JavaThree {
         c.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
         c.activateOptions();
         Logger.getRootLogger().addAppender(c);
-
+        int result = 0;
         try {
             Calculator calculator = new Calculator();
-            calculator.calculate(5,0, "div");
+            result = calculator.calculate(1,1, "div");
             logger.info(c);
+            System.out.println(result);
         } catch (DivByZeroException e) {
-            ConsoleAppender ca = new ConsoleAppender();
-            ca.setThreshold(Level.WARN);
-            ca.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
-            ca.activateOptions();
-            Logger.getRootLogger().addAppender(ca);
-            logger.warn(ca);
+            c.setThreshold(Level.WARN);
+            c.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
+            c.activateOptions();
+            Logger.getRootLogger().addAppender(c);
+            logger.warn(c);
+            System.out.println(e.getMessage());
         }
     }
 }
