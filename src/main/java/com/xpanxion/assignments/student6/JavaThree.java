@@ -1,5 +1,10 @@
 package com.xpanxion.assignments.student6;
 
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -103,6 +108,25 @@ public class JavaThree {
     }
 
     public void ex9() {
-        
+        Logger logger = Logger.getLogger(Calculator.class);
+
+        ConsoleAppender c = new ConsoleAppender();
+        c.setThreshold(Level.INFO);
+        c.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
+        c.activateOptions();
+        Logger.getRootLogger().addAppender(c);
+
+        try {
+            Calculator calculator = new Calculator();
+            calculator.calculate(5,0, "div");
+            logger.info(c);
+        } catch (DivByZeroException e) {
+            ConsoleAppender ca = new ConsoleAppender();
+            ca.setThreshold(Level.WARN);
+            ca.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
+            ca.activateOptions();
+            Logger.getRootLogger().addAppender(ca);
+            logger.warn(ca);
+        }
     }
 }
