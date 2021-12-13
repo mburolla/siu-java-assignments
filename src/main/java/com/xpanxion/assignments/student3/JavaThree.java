@@ -110,6 +110,20 @@ public class JavaThree {
     }
 
     public void ex6(){
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(4);
+        System.out.println(person);
+    }
+
+    public void ex7(){
+        System.out.println("Person test added");
+    }
+
+    public void ex8(){
+
+    }
+
+    public void ex9(){
 
     }
 }
