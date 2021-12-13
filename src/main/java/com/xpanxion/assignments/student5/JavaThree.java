@@ -38,7 +38,6 @@ public class JavaThree {
         }
         personList.forEach(System.out::println);
     }
-
 // Ex5 People to file
     public void ex5() throws IOException {
         // Write peopleList to output-1.txt
