@@ -1,8 +1,11 @@
 package com.xpanxion.assignments.student2;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,7 +54,8 @@ public class JavaThree {
                 people.add(newPerson);
             }
             br.close();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             return;
         }
 
@@ -59,4 +63,28 @@ public class JavaThree {
             System.out.println(n);
         }
     }
+
+    public static void ex5() {
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
+
+        try {
+            BufferedWriter bw = new BufferedWriter(
+                    new FileWriter("C:\\Users\\b0j04cn\\output-1.txt"));
+            for(Person n : peopleList) {
+                bw.write(n.toString() + "\n");
+            }
+            bw.close();
+        }
+        catch(Exception e) {
+            return;
+        }
+
+    }
+
+
+
 }
