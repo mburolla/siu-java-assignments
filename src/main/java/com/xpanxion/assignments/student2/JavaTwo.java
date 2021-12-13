@@ -108,7 +108,7 @@ public class JavaTwo {
         System.out.println(p);
     }
 
-    public static void ex6() {
+    public static void ex6() throws CalculatorException {
 
         Calculator calc = new Calculator();
 
@@ -131,7 +131,7 @@ public class JavaTwo {
             int secondNum = Integer.parseInt(secondEntry);
 
             String operatorSymbol = calc.convertOperator(operator);
-            float result = calc.calculate(operatorSymbol, firstNum, secondNum);
+            float result = calc.calculate(firstNum, secondNum, operatorSymbol);
             System.out.println("Result: " + result);
             calc.storeCalc(firstEntry + " " + operatorSymbol + " " + secondEntry + " = " + result);
         }

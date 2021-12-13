@@ -11,11 +11,15 @@ public class JavaThree {
         try {
             var result = 10 / 0;
         }
-        catch (Exception e) {
+        catch (ArithmeticException e) {
             System.out.println("Cannot divide by zero.");
         }
 
     }
 
+    public static void ex2() throws CalculatorException {
+        var calculator = new Calculator();
+        var result = calculator.calculate(10,0,"div"); // Catch this error.
+    }
 
 }

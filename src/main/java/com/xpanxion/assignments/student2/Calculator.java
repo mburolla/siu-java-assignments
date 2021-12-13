@@ -25,16 +25,21 @@ public class Calculator {
         }
     }
 
-    float calculate(String operator, int firstNum, int secondNum) {
+    float calculate(int firstNum, int secondNum, String operator) throws CalculatorException {
         float result = 0;
-        if (operator.equals("+")) {
+        if (operator.equals("add")) {
             result = firstNum + secondNum;
-        } else if (operator.equals("-")) {
+        } else if (operator.equals("sub")) {
             result = firstNum - secondNum;
-        } else if (operator.equals("*")) {
+        } else if (operator.equals("mul")) {
             result = firstNum * secondNum;
-        } else if (operator.equals("/")) {
-            result = (float) firstNum / (float) secondNum;
+        } else if (operator.equals("div")) {
+            try {
+                result = firstNum / secondNum;
+            }
+            catch (ArithmeticException e) {
+                throw new CalculatorException(String.valueOf(firstNum) + "/" + String.valueOf(secondNum));
+            }
         }
         return result;
     }
