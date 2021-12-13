@@ -85,7 +85,7 @@ public class JavaThree {
     }
 
     public void ex6() {
-        var personRepository = new PersonRepository();
+        var personRepository = new PersonRepository(); //
         var person = personRepository.getPerson(4);
         if (person.isPresent()) {        // value is present inside Optional
             System.out.println("Value found - " + person.get().getFirstName());
