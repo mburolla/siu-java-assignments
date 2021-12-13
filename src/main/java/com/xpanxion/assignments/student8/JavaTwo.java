@@ -1,8 +1,11 @@
 package com.xpanxion.assignments.student8;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JavaTwo {
@@ -186,5 +189,48 @@ public class JavaTwo {
 
     public void ex11() {
 
+        HashMap<String,String> db = new HashMap<String, String>();
+
+        while(true) {
+            System.out.print("Action [add|login|done]: ");
+            String userAction = scanner.nextLine().trim();
+
+            switch(userAction) {
+                case "add" -> {
+                    System.out.print("Enter username, password: ");
+                    String addUser = scanner.nextLine();
+                }
+                case "login" -> {
+                    System.out.print("Enter username, password: ");
+                    String logIn = scanner.nextLine();
+                }
+                case "done" -> {
+                    break;
+                }
+            }
+        }
+    }
+
+    private void addUser(HashMap<String, String> db, String addUser) {
+        String[] addUserArray = addUser.split(",");
+        String username = addUserArray[0].trim();
+        String pw = addUserArray[1].trim();
+
+    }
+
+    private String createHash(String inString) {
+        String hashed = "";
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.reset();
+            digest.update(inString.getBytes(StandardCharsets.UTF_8));
+            hashed = String.format("%040x", new BigInteger(1, digest.digest()));
+        }
+        catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+        }
+        return hashed;
     }
 }
+
+
