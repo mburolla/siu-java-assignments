@@ -75,7 +75,7 @@ public class JavaThree {
             BufferedWriter bw = new BufferedWriter(
                     new FileWriter("C:\\Users\\b0j04cn\\output-1.txt"));
             for(Person n : peopleList) {
-                bw.write(n.toString() + "\n");
+                bw.write(n.id + ", " + n.firstName + " " + n.lastName + "\n");
             }
             bw.close();
         }
@@ -84,7 +84,6 @@ public class JavaThree {
         }
 
     }
-
 
 
 }
