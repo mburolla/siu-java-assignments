@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student5;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,32 +26,46 @@ public class JavaThree {
         System.out.println(result);
     }
 // Ex3 Read File
-    public void ex3() throws java.io.IOException{
+    public void ex3() {
         List<String> personInfo = readFileByLine("input-1.txt");
         personInfo.forEach(System.out::println);
     }
 // Ex4 File to People
-    public void ex4() throws java.io.IOException{
+    public void ex4() {
         List<String> personInfo = readFileByLine("input-2.txt");
         List<Person> personList= new ArrayList<>();
         for (String person: personInfo) {
             List<String> personInfoSplit = Arrays.stream(person.split(" ")).toList();
-                personList.add(new Person(personInfoSplit.get(0), personInfoSplit.get(1), personInfoSplit.get(2)));
+                personList.add(new Person(Integer.valueOf(personInfoSplit.get(0)), personInfoSplit.get(1), personInfoSplit.get(2)));
         }
         personList.forEach(System.out::println);
     }
+
 // Ex5 People to file
     public void ex5() {
+        // Write peopleList to output-1.txt
+        String filePath = "output-1.txt";
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
 
     }
 //    private methods
-    private List<String> readFileByLine(String filePath) throws java.io.IOException {
+    private void writeListToFile(List<Person> people){
+
+    }
+    // read filePath text file by line into ArrayList.
+    private List<String> readFileByLine(String filePath) {
         List<String> fileLines = new ArrayList<>();
         try (BufferedReader read = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = read.readLine()) != null) {
                 fileLines.add(line);
             }
+        } catch (Exception ioe) {
+            ioe.printStackTrace();
         }
         return fileLines;
     }

@@ -36,7 +36,7 @@ public class JavaTwo {
             String[] splitInput = input.split("([, ])+");
             if (splitInput.length!=3) continue;
 
-            people.add(new Person(splitInput[0], splitInput[1], splitInput[2]));
+            people.add(new Person(Integer.valueOf(splitInput[0]), splitInput[1], splitInput[2]));
         }
         people.stream().forEach(System.out::println);
 
@@ -47,9 +47,9 @@ public class JavaTwo {
         var sc = new Scanner(System.in);
         HashMap<Integer, Person> personMap = new HashMap<>();
 
-        personMap.put(Integer.valueOf(1), new Person("1", "Peter", "Jones"));
-        personMap.put(Integer.valueOf(2), new Person("2", "John", "Smith"));
-        personMap.put(Integer.valueOf(3), new Person("3", "Mary", "Jane"));
+        personMap.put(1, new Person(1, "Peter", "Jones"));
+        personMap.put(2, new Person(2, "John", "Smith"));
+        personMap.put(3, new Person(3, "Mary", "Jane"));
 
         title(2);
 
@@ -113,9 +113,9 @@ public class JavaTwo {
     public void ex7() {
         title(7);
         var personList = Arrays.asList(
-                new Person("1", "Peter", "Jones"),
-                new Person("2", "John", "Smith"),
-                new Person("3", "Sue", "Anderson")
+                new Person(1, "Peter", "Jones"),
+                new Person(2, "John", "Smith"),
+                new Person(3, "Sue", "Anderson")
         );
 
         List<Person> newPersonList = personList.stream()
@@ -133,9 +133,9 @@ public class JavaTwo {
     public void ex8() {
         title(8);
         var personList = Arrays.asList(
-                new Person("1", "Charlie", "Jones"),
-                new Person("2", "Zoey", "Smith"),
-                new Person("3", "Adam", "Anderson")
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
         );
 
         personList.sort( (Comparator.comparing((Person p) -> p.getFirstName())));
@@ -148,9 +148,9 @@ public class JavaTwo {
     public void ex9() {
         title(9);
         var personList = Arrays.asList(
-                new Person("1", "Charlie", "Jones"),
-                new Person("2", "Zoey", "Smith"),
-                new Person("3", "Adam", "Anderson")
+                new Person(1, "Charlie", "Jones"),
+                new Person(2, "Zoey", "Smith"),
+                new Person(3, "Adam", "Anderson")
         );
 
         var filteredList = personList.stream()
