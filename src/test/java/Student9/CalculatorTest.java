@@ -47,6 +47,4 @@ class CalculatorTest {
         Assertions.assertTrue(divCalculator.isOperationDiv());
     }
 
-
-
 }

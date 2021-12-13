@@ -1,6 +1,12 @@
 package com.xpanxion.assignments.student9;
 
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
@@ -147,9 +153,22 @@ public class JavaThree {
         }*/
     }
 
-    public void ex9(){
+        public void ex9(){
+            System.out.println("Logging for ex9");
+            var logger = Logger.getLogger(JavaThree.class);
+            var consoleAppender = new ConsoleAppender();
+            consoleAppender.setThreshold(Level.WARN);
+            consoleAppender.setLayout(new PatternLayout("%d %p [%c] - %m%n"));
+            consoleAppender.activateOptions();
+            Logger.getRootLogger().addAppender(consoleAppender);
 
+                try{
+                    var calculator = new Calculator();
+                    var result = calculator.calculate(10, 0, "div");
+                    System.out.println(result);
+                } catch (CalculatorException e){
+                    logger.warn(e.getMessage(),e);
+                }
+        }
     }
 
-
-}
