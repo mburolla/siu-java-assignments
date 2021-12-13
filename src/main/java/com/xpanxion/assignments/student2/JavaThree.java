@@ -1,13 +1,11 @@
 package com.xpanxion.assignments.student2;
 
+import javax.swing.text.html.Option;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class JavaThree {
 
@@ -75,7 +73,7 @@ public class JavaThree {
             BufferedWriter bw = new BufferedWriter(
                     new FileWriter("C:\\Users\\b0j04cn\\output-1.txt"));
             for(Person n : peopleList) {
-                bw.write(n.id + ", " + n.firstName + " " + n.lastName + "\n");
+                bw.write(n.getId() + ", " + n.getFirstName() + " " + n.getLastName() + "\n");
             }
             bw.close();
         }
@@ -84,6 +82,18 @@ public class JavaThree {
         }
 
     }
+
+    public static void ex6() {
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(4);
+        if(person.isPresent()) {
+            var firstName = person.get().getFirstName();
+            System.out.println(firstName);
+        }
+    }
+
+
+
 
 
 }

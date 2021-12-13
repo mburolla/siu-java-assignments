@@ -145,7 +145,7 @@ public class JavaTwo {
         );
 
         List<Person> newPersonList = personList.stream().map(p -> {
-            Person obj = new Person(p.id, p.firstName, "xxx");
+            Person obj = new Person(p.getId(), p.getFirstName(), "xxx");
             return obj;
                 })
                 .collect(Collectors.toList());
@@ -178,7 +178,7 @@ public class JavaTwo {
         );
 
         List<Person> filteredList = personList.stream()
-                .filter(p -> p.lastName.equals("Smith"))
+                .filter(p -> p.getLastName().equals("Smith"))
                 .collect(Collectors.toList());
 
         for (Person p : filteredList) {
