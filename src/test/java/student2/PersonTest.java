@@ -1,11 +1,15 @@
 package student2;
 
 import com.xpanxion.assignments.student2.Person;
-
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
-    private void validatePerson(Person person) {
-        person.validateFirstName();
+
+    @Test
+    public void checkFirstName() {
+        Person person = new Person(1, "Barrett", "Johnson");
+        String firstName = person.getFirstName();
+        assertEquals("Barrett", firstName, "Incorrect first name.");
     }
 }

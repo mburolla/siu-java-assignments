@@ -5,7 +5,7 @@ public class Person {
     private final String firstName;
     private final String lastName;
 
-    Person(int id, String firstName, String lastName) {
+    public Person(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,10 +25,5 @@ public class Person {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public void validateFirstName() {
-        if (this.firstName.isBlank())
-            throw new RuntimeException("First name cannot be null/empty");
     }
 }
