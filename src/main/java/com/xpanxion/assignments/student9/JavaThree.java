@@ -147,5 +147,9 @@ public class JavaThree {
         }*/
     }
 
+    public void ex9(){
+
+    }
+
 
 }
