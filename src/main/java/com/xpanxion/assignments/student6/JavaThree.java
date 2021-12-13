@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,5 +64,45 @@ public class JavaThree {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void ex5() {
+
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
+
+        try {
+            try (FileWriter fileWriter = new FileWriter("output-1.txt")) {
+                String personString = "";
+                for (Person p : peopleList) {
+                    personString = p.getId() + ", " + p.getFirstName() + " " + p.getLastName() + "\n";
+                    fileWriter.write(personString);
+                    System.out.println(personString);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void ex6() {
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(1);
+        person.ifPresent(p -> System.out.println(p.getFirstName()));
+    }
+
+    public void ex7() {
+        //example is in test/java/student6
+    }
+
+    public void ex8() {
+        //example is in test/java/student6
+    }
+
+    public void ex9() {
+        
     }
 }
