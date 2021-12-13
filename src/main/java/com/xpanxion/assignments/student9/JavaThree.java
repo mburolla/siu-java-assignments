@@ -165,7 +165,9 @@ public class JavaThree {
                 try{
                     var calculator = new Calculator();
                     var result = calculator.calculate(10, 0, "div");
+
                     System.out.println(result);
+
                 } catch (CalculatorException e){
                     logger.warn(e.getMessage(),e);
                 }
