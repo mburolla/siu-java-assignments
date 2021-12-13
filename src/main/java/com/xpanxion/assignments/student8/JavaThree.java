@@ -41,6 +41,7 @@ public class JavaThree {
         }
     }
 
+    // ex 4
     public void ex4() {
         try {
             File file = new File("input-2.txt");
