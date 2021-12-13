@@ -28,12 +28,21 @@ public class JavaThree {
                     result = calculator.calculate(operand1, operand2, operator);
 
                     System.out.println("Result: " + result);
-                } catch (ArithmeticException arithmeticException){
-                    System.out.println("Cannot divide by zero");
+                } catch (CalculatorException calculatorException){
+                    ;
                 }
             }
         }
 
         calculator.getHistory().forEach(System.out::println);
+    }
+
+    public void ex2() {
+        var calculator = new Calculator();
+        try {
+            var result = calculator.calculate(10, 0, "/"); // Catch this error.
+        } catch (CalculatorException calculatorException){
+            System.out.println(calculatorException.getMessage());
+        }
     }
 }

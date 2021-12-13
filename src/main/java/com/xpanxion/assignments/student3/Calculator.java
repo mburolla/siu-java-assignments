@@ -10,13 +10,20 @@ public class Calculator {
 
     }
 
-    public int calculate (int operand1, int operand2, String op){
+    public int calculate (int operand1, int operand2, String op) throws CalculatorException{
         int result = 0;
         switch (op) {
             case "+" -> result = operand1 + operand2;
             case "-" -> result = operand1 - operand2;
             case "*" -> result = operand1 * operand2;
-            case "/" -> result = operand1 / operand2;
+            case "/" -> {
+               try {
+                   result = operand1 / operand2;
+               }catch (ArithmeticException arithmeticException){
+                   var error = String.format("Cannot divide by 0: %s / %s", operand1, operand2);
+                   throw new CalculatorException(error);
+               }
+            }
             default -> System.out.println("Invalid Operator");
         }
 

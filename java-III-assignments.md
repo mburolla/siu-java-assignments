@@ -112,3 +112,8 @@ Create a four unit tests that test the `Calculator` class, one for each operatio
 - substract
 - multiply
 - divide
+
+### Ex. 9 Log Calculator
+Use `Log4J` to log every calculation performed to a log file on your local hard drive.  These
+messages will be classified as INFO messages.  When a divide by zero operation is performed,
+log this operation as a WARN message.

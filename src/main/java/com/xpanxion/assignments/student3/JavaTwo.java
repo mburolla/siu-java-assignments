@@ -81,7 +81,7 @@ public class JavaTwo {
 
     }
 
-    public void ex6() {
+    public void ex6() throws CalculatorException {
         //oop calculator
         int operand1, operand2, result;
         String op, input;
