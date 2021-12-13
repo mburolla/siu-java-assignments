@@ -286,10 +286,10 @@ public class JavaTwo {
         var p4 = new MyPoint(10,10);
         System.out.println(p3.distance(p4));
     }
-
+    
     //Helper Functions
 
-    public static String hashPassword(String password){
+    private static String hashPassword(String password){
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] messageDigest = md.digest(password.getBytes());
@@ -305,7 +305,7 @@ public class JavaTwo {
         }
     }
 
-    public static void printSeats(String[][] list, int rows, int seats) {
+    private static void printSeats(String[][] list, int rows, int seats) {
         for (int row=0; row<rows; row++){
             for(int seat=0; seat<seats; seat++){
                 System.out.print(list[row][seat]);
@@ -313,7 +313,7 @@ public class JavaTwo {
             System.out.println("");
         }
     }
-    public static String [][] createSeats(String[][] list, int rows, int seats){
+    private static String [][] createSeats(String[][] list, int rows, int seats){
         for (int row=0; row<rows; row++){
             for(int seat=0; seat<seats; seat++){
                 list[row][seat]= "0";
@@ -321,14 +321,14 @@ public class JavaTwo {
         }
         return list;
     }
-    public static String[][] updateSeats(String[][] list, String selection){
+    private static String[][] updateSeats(String[][] list, String selection){
         String selectionList [] = selection.split(",");
         int row = Integer.parseInt(selectionList[0]);
         int seat = Integer.parseInt(selectionList[1]);
         list[row-1][seat-1] = "X";
         return list;
     }
-    public static double calculatePrice(String[][] list, String selection, double total) {
+    private static double calculatePrice(String[][] list, String selection, double total) {
         String selectionList [] = selection.split(",");
         int row = Integer.parseInt(selectionList[0]);
         int seat = Integer.parseInt(selectionList[1]);
