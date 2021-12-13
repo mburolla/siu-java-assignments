@@ -92,6 +92,7 @@ public class JavaTwo {
             int newNo1 = Integer.parseInt(no1);
             int newNo2 = Integer.parseInt(no2);
             int result = calculator.calculate(newNo1, newNo2, op);
+
             System.out.println("Result is: " + result);
         }
         for (String s : calculator.getHistory()) {
@@ -102,7 +103,7 @@ public class JavaTwo {
 
 
    public void ex7() {
-       Person person=new Person();
+       //Person person=new Person();
         var personList = Arrays.asList(
                 new Person(1, "Peter", "Jones"),
                 new Person(2, "John", "Smith"),
