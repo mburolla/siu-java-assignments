@@ -92,7 +92,9 @@ public class JavaThree {
         }
     }
 
+    public static void ex7() {
 
+    }
 
 
 

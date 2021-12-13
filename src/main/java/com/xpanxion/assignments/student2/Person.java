@@ -26,4 +26,9 @@ public class Person {
     public String getLastName() {
         return lastName;
     }
+
+    public void validateFirstName() {
+        if (this.firstName.isBlank())
+            throw new RuntimeException("First name cannot be null/empty");
+    }
 }
