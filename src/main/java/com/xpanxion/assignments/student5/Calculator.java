@@ -62,7 +62,6 @@ public class Calculator {
             }
             default -> System.out.println("Invalid Number!");
         }
-        history.add(new String(num1 + operation + num2 + " = " + result) );
         return result;
     }
 }

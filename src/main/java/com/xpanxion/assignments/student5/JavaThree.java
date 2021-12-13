@@ -58,8 +58,18 @@ public class JavaThree {
                 () -> {System.out.println("Person Not Found");}
         );
     }
+// Ex7 Unit Testing: Person
+    public void ex7() {
+        System.out.println("Run PersonTest from test folder.");
+    }
+// Ex8 Unit Testing: Calculator
+    public void ex8() {
+        System.out.println("Run CalculatorTest from test folder.");
+    }
+// Ex9 Log Calculator
+    public void ex9() {
 
-
+    }
 //    private methods
     private void writeListToFile(List<Person> people, String filePath) throws IOException {
         try (BufferedWriter write = new BufferedWriter(new FileWriter(filePath))){
