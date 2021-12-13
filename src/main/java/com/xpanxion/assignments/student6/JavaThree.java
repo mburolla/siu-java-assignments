@@ -1,6 +1,12 @@
 package com.xpanxion.assignments.student6;
 
-import com.xpanxion.assignments.instructor.CalculatorException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class JavaThree {
 
@@ -26,7 +32,36 @@ public class JavaThree {
         }
     }
 
-    public void ex3() {
+    public void ex3() throws FileNotFoundException {
+        try {
+        File file = new File("input-1.txt");
+        Scanner sc = new Scanner(file);
+        while(sc.hasNextLine()) {
+            System.out.println(sc.nextLine());
+        }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void ex4() {
+        try {
+            List<Person> people = new ArrayList<>();
+            File file = new File("input-2.txt");
+            try (Scanner sc = new Scanner(file)) {
+                while(sc.hasNextLine()) {
+                  String updatedString = sc.nextLine().replaceAll(",", "");
+                  String [] updateHolder = updatedString.split(" ");
+
+                  int id = Integer.parseInt(updateHolder[0]);
+                  String firstName = updateHolder[1];
+                  String lastName = updateHolder[2];
+                  people.add(new Person(id, firstName, lastName));
+                }
+            }
+            people.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

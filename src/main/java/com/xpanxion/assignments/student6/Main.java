@@ -1,7 +1,9 @@
 package com.xpanxion.assignments.student6;
 
+import java.io.FileNotFoundException;
+
 public class Main {
-    public static void main(String[] args) throws InterruptedException, DivByZeroException {
+    public static void main(String[] args) throws InterruptedException, DivByZeroException, FileNotFoundException {
         JavaOne javaOne = new JavaOne();
         //javaOne.ex1();
         //javaOne.ex2();
@@ -29,6 +31,8 @@ public class Main {
 
         JavaThree javaThree = new JavaThree();
         //javaThree.ex1();
-        javaThree.ex2();
+        //javaThree.ex2();
+        //javaThree.ex3();
+        javaThree.ex4();
     }
 }
