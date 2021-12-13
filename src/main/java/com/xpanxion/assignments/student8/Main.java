@@ -1,7 +1,9 @@
 package com.xpanxion.assignments.student8;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) throws InterruptedException, CalculatorException {
+    public static void main(String[] args) throws InterruptedException, CalculatorException, IOException {
 //        JavaOne javaOne = new JavaOne();
 //        javaOne.ex1();
 //        javaOne.ex2();
@@ -30,8 +32,8 @@ public class Main {
 //        javaThree.ex1();
 //        javaThree.ex2();
 //        javaThree.ex3();
-        javaThree.ex4();
-//        javaThree.ex5();
+//        javaThree.ex4();
+        javaThree.ex5();
 //        javaThree.ex6();
 //        javaThree.ex7();
 //        javaThree.ex8();

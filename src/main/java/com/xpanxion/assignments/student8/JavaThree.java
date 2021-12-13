@@ -2,6 +2,7 @@ package com.xpanxion.assignments.student8;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -58,6 +59,27 @@ public class JavaThree {
             personsFromFile.forEach(System.out::println);
         } catch (IOException e) {
             System.out.println(e);
+        }
+    }
+
+    public void ex5() throws IOException {
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
+
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("output-1.txt")
+            );
+            for (Person p : peopleList) {
+                String personStr = String.format("%s, %s %s \n", p.getId(), p.getFirstName(), p.getLastName());
+//                System.out.print(personStr);
+                bw.write(personStr);
+                }
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
