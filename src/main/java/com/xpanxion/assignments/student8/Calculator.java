@@ -15,7 +15,7 @@ public class Calculator {
     }
 
     // Public Methods
-    public int calculate(int a, int b, String operation) {
+    public int calculate(int a, int b, String operation) throws CalculatorException {
         int result = 0;
         String op = "";
 //        if (operation.equals("add")) {
@@ -47,7 +47,14 @@ public class Calculator {
             }
             case "div" -> {
                 op = "/";
+                try {
+                    if ( b == 0) {
+                        throw new CalculatorException();
+                    }
                 result = div(a, b);
+                } catch (CalculatorException ce) {
+                    System.out.printf(ce.getMessage() + " %s %s %s", a, op, b);
+                }
             }
         }
         history.add(String.valueOf(a) + " " + op + " " + String.valueOf(b) + " = " + String.valueOf(result));

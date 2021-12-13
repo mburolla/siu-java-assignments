@@ -92,7 +92,7 @@ public class JavaTwo {
         System.out.println(p);
     }
 
-    public void ex6() {
+    public void ex6() throws CalculatorException {
         Calculator calculator = new Calculator();
 
         while(true) {
