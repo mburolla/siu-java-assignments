@@ -1,10 +1,7 @@
 package com.xpanxion.assignments.student8;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class JavaThree {
 
@@ -81,6 +78,13 @@ public class JavaThree {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void ex6() {
+        var personRepo = new PersonRepository();
+        Optional<Person> maybePersonExists = personRepo.getPerson(4);
+//        maybePersonExists.ifPresent(System.out::println);
+        maybePersonExists.ifPresent(p -> System.out.println(p.getFirstName()));
     }
 
 }
