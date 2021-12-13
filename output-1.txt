@@ -1,3 +1,1 @@
-1, Alice Jones
-2, Bob Smith
-3, Charlie Brown
+Person{id=1, firstName='Alice', lastName='Jones'}Person{id=2, firstName='Bob', lastName='Smith'}Person{id=3, firstName='Charlie', lastName='Brown'}

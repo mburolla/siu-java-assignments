@@ -15,7 +15,9 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
+    public String infoToFile() {
+        return id + ", "  + firstName + " " + lastName + "\n";
+    }
     @Override
     public String toString() {
         return "Person{" +

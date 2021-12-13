@@ -1,8 +1,6 @@
 package com.xpanxion.assignments.student5;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,19 +40,27 @@ public class JavaThree {
     }
 
 // Ex5 People to file
-    public void ex5() {
+    public void ex5() throws IOException {
         // Write peopleList to output-1.txt
-        String filePath = "output-1.txt";
+        String filePath = "src\\main\\java\\com\\xpanxion\\assignments\\student5\\output-1.txt";
         var peopleList = Arrays.asList(
                 new Person(1, "Alice", "Jones"),
                 new Person(2, "Bob", "Smith"),
                 new Person(3, "Charlie", "Brown")
         );
-
+        writeListToFile(peopleList, filePath);
     }
 //    private methods
-    private void writeListToFile(List<Person> people){
-
+    private void writeListToFile(List<Person> people, String filePath) throws IOException {
+        try (BufferedWriter write = new BufferedWriter(new FileWriter(filePath))){
+            people.stream().forEach(person -> {
+                try {
+                    write.write(person.infoToFile());
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            });
+        }
     }
     // read filePath text file by line into ArrayList.
     private List<String> readFileByLine(String filePath) {
