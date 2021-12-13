@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class JavaThree {
 
@@ -62,6 +63,27 @@ public class JavaThree {
         }
         for (Object p : personList) {
             System.out.println(p);
+        }
+    }
+
+    public void ex5 () throws IOException {
+        System.out.println("Student 10: ex 5");
+
+        var peopleList = Arrays.asList(
+                new Person(1, "Alice", "Jones"),
+                new Person(2, "Bob", "Smith"),
+                new Person(3, "Charlie", "Brown")
+        );
+
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("output-1.txt"));
+            for (Person p : peopleList){
+                bw.write(String.format("%s, %s %s\n", p.getId(), p.getFirstName(), p.getLastName()));
+            }
+            bw.close();
+        }
+        catch (Exception e){
+            System.out.println("An error has occurred");
         }
     }
 
