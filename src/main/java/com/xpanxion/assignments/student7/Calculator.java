@@ -10,13 +10,17 @@ public class Calculator {
         history = new ArrayList<>();
     }
 
-    public void calculate(int num1, int num2, String operand) {
+    public void calculate(int num1, int num2, String operand) throws CalculatorException {
 
         String firstNum = Integer.toString(num1);
         String secondNum = Integer.toString(num2);
         String operator = "";
         int result = 0;
         String resultString = Integer.toString(result);
+
+        if (num2 == 0 && operand.equalsIgnoreCase("div")) {
+            throw new CalculatorException("Cannot divide by zero: " + num1 + "/" + num2);
+        }
 
         switch (operand) {
             case "ADD" -> {

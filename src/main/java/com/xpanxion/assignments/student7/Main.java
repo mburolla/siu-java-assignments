@@ -1,7 +1,7 @@
 package com.xpanxion.assignments.student7;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CalculatorException {
         JavaOne javaOne = new JavaOne();
        /* javaOne.ex1();
         javaOne.ex2();
@@ -19,11 +19,17 @@ public class Main {
 //        javaTwo.ex2();
 //        javaTwo.ex3();
 //        javaTwo.ex5();
-        javaTwo.ex6();
+//        javaTwo.ex6();
 //        javaTwo.ex7();
 //        javaTwo.ex8();
 //        javaTwo.ex9();
 //        javaTwo.ex10();
 //        javaTwo.ex11();
+
+        JavaThree javaThree = new JavaThree();
+//        javaThree.ex1();
+//        javaThree.ex2();
+//        javaThree.ex3();
+        javaThree.ex4();
     }
 }
