@@ -89,7 +89,9 @@ public class JavaThree {
 
     }
 
+    public void ex8 () {
 
+    }
 }
 
 

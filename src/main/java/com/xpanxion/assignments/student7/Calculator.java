@@ -10,7 +10,7 @@ public class Calculator {
         history = new ArrayList<>();
     }
 
-    public void calculate(int num1, int num2, String operand) throws CalculatorException {
+    public String calculate(int num1, int num2, String operand) throws CalculatorException {
 
         String firstNum = Integer.toString(num1);
         String secondNum = Integer.toString(num2);
@@ -43,10 +43,12 @@ public class Calculator {
         String calculation = String.format("%s %s %s = %s",num1, operator, num2, resultString);
         history.add(calculation);
         System.out.println("Result: " + result);
+        return ("Result: " + result);
     }
-
 
     public List<String> getHistory() {
        return history;
     }
+
+
 }
