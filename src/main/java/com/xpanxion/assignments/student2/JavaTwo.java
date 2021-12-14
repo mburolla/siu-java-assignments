@@ -131,7 +131,7 @@ public class JavaTwo {
             int secondNum = Integer.parseInt(secondEntry);
 
             String operatorSymbol = calc.convertOperator(operator);
-            float result = calc.calculate(firstNum, secondNum, operatorSymbol);
+            float result = calc.calculate(firstNum, secondNum, operator);
             System.out.println("Result: " + result);
             calc.storeCalc(firstEntry + " " + operatorSymbol + " " + secondEntry + " = " + result);
         }

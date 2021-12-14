@@ -7,6 +7,6 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException, CalculatorException {
-        JavaThree.ex8();
+        JavaTwo.ex6();
     }
 }

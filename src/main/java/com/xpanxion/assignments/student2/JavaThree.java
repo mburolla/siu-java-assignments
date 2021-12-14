@@ -1,11 +1,11 @@
 package com.xpanxion.assignments.student2;
 
-import javax.swing.text.html.Option;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class JavaThree {
 
@@ -100,5 +100,10 @@ public class JavaThree {
 //        In CalculatorTest
     }
 
+    static final Logger logger  = Logger.getLogger(String.valueOf(JavaThree.class));
+
+    public static void ex9() {
+//        Logger info in Calculator class
+    }
 
 }
