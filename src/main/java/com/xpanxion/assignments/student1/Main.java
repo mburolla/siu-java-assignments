@@ -1,7 +1,5 @@
 package com.xpanxion.assignments.student1;
 
-import com.xpanxion.assignments.instructor.JavaThree;
-
 public class Main {
     public static void main(String[] args) {
 //        JavaOne javaOne = new JavaOne();
@@ -34,5 +32,6 @@ public class Main {
 
         JavaThree javaThree = new JavaThree();
         javaThree.ex1();
+//        javaThree.ex2();
     }
 }

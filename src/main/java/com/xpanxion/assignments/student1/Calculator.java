@@ -39,6 +39,13 @@ public class Calculator {
                 history.add(firstNum + " * " + secondNum + " = " + result);
             }
             case "div" -> {
+                try {
+                    if (secondNum == 0) {
+                        throw new CalculatorException(firstNum, secondNum, "/");
+                    }
+                } catch(Exception e) {
+                    System.out.println(e);
+                }
                 result = firstNum / secondNum;
                 history.add(firstNum + " / " + secondNum + " = " + result);
             }
