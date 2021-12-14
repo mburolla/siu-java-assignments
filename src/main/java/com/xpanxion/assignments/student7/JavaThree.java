@@ -3,7 +3,7 @@ package com.xpanxion.assignments.student7;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Optional;
 
 public class JavaThree {
 
@@ -81,6 +81,15 @@ public class JavaThree {
             ioe.printStackTrace();
         }
     }
+
+    public void ex6() {
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(4);
+        person.ifPresent(p-> System.out.println(p.getFirstName()));
+
+    }
+
+
 }
 
 
