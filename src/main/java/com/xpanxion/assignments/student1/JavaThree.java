@@ -1,13 +1,13 @@
 package com.xpanxion.assignments.student1;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class JavaThree {
 
@@ -111,6 +111,52 @@ public class JavaThree {
         for (Person person : people) {
             System.out.println(person);
         }
+    }
+
+    public void ex5() {
+        var peopleList = Arrays.asList(
+                new Person("1", "Alice", "Jones"),
+                new Person("2", "Bob", "Smith"),
+                new Person("3", "Charlie", "Brown")
+        );
+
+        //iterate through peopleList
+        //write each person to output-1.txt
+        try {
+            BufferedWriter bw = new BufferedWriter(
+                    new FileWriter("C:\\Users\\k0n03h5\\Desktop\\Test\\output-1.txt"));
+            
+            for (var person : peopleList) {
+                bw.write(Integer.toString(person.getUserID()) + ", ");
+                bw.write(person.getFirstName() + " ");
+                bw.write(person.getLastName() + "\n");
+            }
+            bw.close();
+        } catch (Exception ex) {
+            return;
+        }
+
+
+        try {
+            BufferedReader br = new BufferedReader(
+                    new FileReader("C:\\Users\\k0n03h5\\Desktop\\Test\\output-1.txt"));
+
+            String s;
+
+            while((s = br.readLine()) != null) {
+                System.out.println(s);
+            }
+            br.close();
+        } catch(Exception ex) {
+            return;
+        }
+
+    }
+
+    public void ex6() {
+        var personRepository = new PersonRepository();
+        var person = personRepository.getPerson(3);
+        System.out.println(person.get().getFirstName());
     }
 
     //
