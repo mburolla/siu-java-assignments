@@ -159,6 +159,10 @@ public class JavaThree {
         System.out.println(person.get().getFirstName());
     }
 
+    public void ex7() {
+
+    }
+
     //
     // Private helper methods
     //
