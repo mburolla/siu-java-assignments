@@ -31,7 +31,7 @@ public class Main {
 //        javaTwo.ex14();
 
         JavaThree javaThree = new JavaThree();
-        javaThree.ex1();
-//        javaThree.ex2();
+//        javaThree.ex1();
+        javaThree.ex2();
     }
 }

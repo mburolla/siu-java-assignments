@@ -43,10 +43,10 @@ public class Calculator {
                     if (secondNum == 0) {
                         throw new CalculatorException(firstNum, secondNum, "/");
                     }
-                } catch(Exception e) {
-                    System.out.println(e);
+                    result = firstNum / secondNum;
+                } catch(CalculatorException ignored) {
+                    //catch ignored
                 }
-                result = firstNum / secondNum;
                 history.add(firstNum + " / " + secondNum + " = " + result);
             }
         }

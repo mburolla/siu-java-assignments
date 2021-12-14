@@ -23,7 +23,8 @@ public class JavaThree {
     }
 
     public void ex2() {
-
+        var calculator = new Calculator(10, 0, "div");
+        calculator.performCalculations(); // Catch this error.
     }
 
     //
