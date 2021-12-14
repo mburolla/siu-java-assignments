@@ -167,6 +167,10 @@ public class JavaThree {
         //code in test/java/student1/CalculatorTest
     }
 
+    public void ex9() {
+
+    }
+
     //
     // Private helper methods
     //
