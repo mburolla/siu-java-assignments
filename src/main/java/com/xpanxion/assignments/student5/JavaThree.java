@@ -34,7 +34,7 @@ public class JavaThree {
         List<Person> personList= new ArrayList<>();
         for (String person: personInfo) {
             List<String> personInfoSplit = Arrays.stream(person.split(" ")).toList();
-                personList.add(new Person(Integer.valueOf(personInfoSplit.get(0)), personInfoSplit.get(1), personInfoSplit.get(2)));
+                personList.add(new Person(Integer.parseInt(personInfoSplit.get(0)), personInfoSplit.get(1), personInfoSplit.get(2)));
         }
         personList.forEach(System.out::println);
     }

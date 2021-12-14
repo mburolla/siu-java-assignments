@@ -17,6 +17,7 @@ public class Calculator {
     private String input;
     private String operation;
     private Logger logger;
+
     public Calculator() {
         logger = Logger.getLogger(Calculator.class);
         ConsoleAppender ca = new ConsoleAppender();

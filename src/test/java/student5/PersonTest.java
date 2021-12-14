@@ -11,7 +11,11 @@ public class PersonTest {
     @Test
     @DisplayName("Should create a person with the first name Aaron")
     public void shouldCreatePersonNamedAaron() {
+        // Arrange
         Person person = new Person(1, "Aaron", "Weegens");
-        assertTrue(person.getFirstName().equals("Aaron"));
+        // Act
+        var firstName = person.getFirstName();
+        // Assert
+        assertEquals(firstName, "Aaron");
     }
 }

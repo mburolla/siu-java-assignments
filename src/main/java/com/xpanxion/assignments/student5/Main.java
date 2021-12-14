@@ -5,7 +5,7 @@ public class Main {
         //
         // JAVA THREE EXERCISES
         //
-        JavaThree javaThree = new JavaThree();
+//        JavaThree javaThree = new JavaThree();
 //        javaThree.ex1();
 //        javaThree.ex2();
 //        javaThree.ex3();
@@ -14,7 +14,7 @@ public class Main {
 //        javaThree.ex6();
 //        javaThree.ex7();
 //        javaThree.ex8();
-        javaThree.ex9();
+//        javaThree.ex9();
         //
         // JAVA TWO EXERCISES
         //
@@ -33,8 +33,6 @@ public class Main {
 //        javaTwo.ex12();
 //        javaTwo.ex13();
 //        javaTwo.ex14();
-
-
         //
         // JAVA ONE EXERCISES
         //
