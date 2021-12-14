@@ -1,5 +1,8 @@
 package com.xpanxion.assignments.student3;
 
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -123,6 +126,6 @@ public class JavaThree {
     }
 
     public void ex9(){
-
+        System.out.println("Calculator log added");
     }
 }
