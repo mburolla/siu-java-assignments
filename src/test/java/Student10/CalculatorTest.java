@@ -4,11 +4,10 @@ import com.xpanxion.assignments.instructor.CalculatorException;
 import com.xpanxion.assignments.student10.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-
 
     @Test
     public void testAddition() {
