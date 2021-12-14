@@ -1,11 +1,11 @@
 package com.xpanxion.assignments.student4;
 
+import org.apache.log4j.*;
 import org.w3c.dom.ls.LSOutput;
 
 import java.io.*;
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.Optional;
 
 public class JavaThree {
 
@@ -95,9 +95,44 @@ public class JavaThree {
         }
 
     }
+    public void ex9() throws IOException {
+        final Logger logger = LogManager.getLogger(Calculator.class);
+        Appender fh;
+            fh = new FileAppender(new SimpleLayout(), "C:\\Users\\e0m0bk0\\Desktop\\Test\\Output-2.txt");
+            logger.addAppender(fh);
+            fh.setLayout(new SimpleLayout());
+            Calculator calculator=new Calculator();
+        try{
+            calculator.calculate(1, 2, "add");
+            logger.info("Add Operation performed");
+            }
+            catch(Exception ex) {
+                ex.printStackTrace();
+            }
+        try {
+            calculator.calculate(1, 2, "sub");
+            logger.info("Sub Operation performed");
+        }
+            catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        try {
+            calculator.calculate(1, 2, "mul");
+            logger.info("Mul Operation performed");
+        }
+            catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        try {
+            calculator.calculate(5, 0, "div");
+            logger.warn("cannot divide by zero");
+        }
+            catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    }
 
-
-}
 
 
 

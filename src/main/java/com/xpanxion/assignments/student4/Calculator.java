@@ -1,10 +1,10 @@
 package com.xpanxion.assignments.student4;
 
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
-
-import com.xpanxion.assignments.student4.CalculatorException;
-
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +22,12 @@ public class Calculator {
             case "add":
                 ans = no1 + no2;
                 operation = "+";
+               // log.info("Add operation performed");
                 break;
             case "sub":
                 ans = no1 - no2;
                 operation = "-";
+               // log.info("Sub operation performed");
                 break;
             case "mul":
                 ans = no1 * no2;
