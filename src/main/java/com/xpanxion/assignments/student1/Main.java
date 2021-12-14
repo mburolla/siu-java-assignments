@@ -1,5 +1,7 @@
 package com.xpanxion.assignments.student1;
 
+import com.xpanxion.assignments.instructor.JavaThree;
+
 public class Main {
     public static void main(String[] args) {
 //        JavaOne javaOne = new JavaOne();
@@ -14,20 +16,23 @@ public class Main {
 //        javaOne.ex9();
 //        javaOne.ex10();
 
-        JavaTwo javaTwo = new JavaTwo();
-        javaTwo.ex1();
-        javaTwo.ex2();
-        javaTwo.ex3();
-        javaTwo.ex4();
-        javaTwo.ex5();
-        javaTwo.ex6();
-        javaTwo.ex7();
-        javaTwo.ex8();
-        javaTwo.ex9();
-        javaTwo.ex10();
-        javaTwo.ex11();
-        javaTwo.ex12();
-        javaTwo.ex13();
-        javaTwo.ex14();
+//        JavaTwo javaTwo = new JavaTwo();
+//        javaTwo.ex1();
+//        javaTwo.ex2();
+//        javaTwo.ex3();
+//        javaTwo.ex4();
+//        javaTwo.ex5();
+//        javaTwo.ex6();
+//        javaTwo.ex7();
+//        javaTwo.ex8();
+//        javaTwo.ex9();
+//        javaTwo.ex10();
+//        javaTwo.ex11();
+//        javaTwo.ex12();
+//        javaTwo.ex13();
+//        javaTwo.ex14();
+
+        JavaThree javaThree = new JavaThree();
+        javaThree.ex1();
     }
 }

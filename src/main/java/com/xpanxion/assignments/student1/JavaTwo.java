@@ -253,26 +253,23 @@ public class JavaTwo {
                 username = scanner.next();
                 hashedPassword = add(scanner.next());
 
-                switch(action) {
-                    case "add":
+                switch (action) {
+                    case "add" -> {
                         //hash password using SHA1 algorithm
 
                         person = new EncryptedPerson(username, hashedPassword);
                         //store username and Person in HashMap as K,V respectively
                         credentials.put(username, person);
-                        break;
-                    case "login":
+                    }
+                    case "login" -> {
                         var retrievePerson = credentials.get(username);
                         if (retrievePerson.getPassword().equals(hashedPassword) && retrievePerson.getUsername().equals(username)) {
                             System.out.println("OK");
                         } else {
                             System.out.println("Incorrect username or password.");
                         }
-                        break;
-                    default:
-                        System.out.println("Invalid Command!");
-                        break;
-
+                    }
+                    default -> System.out.println("Invalid Command!");
                 }
             }
         }
