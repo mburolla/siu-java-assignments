@@ -33,12 +33,12 @@ public class Main {
         JavaThree javaThree = new JavaThree();
         javaThree.ex1();
         javaThree.ex2();
-//        javaThree.ex3();
-//        javaThree.ex4();
-//        javaThree.ex5();
-//        javaThree.ex6();
-//        javaThree.ex7();
-//        javaThree.ex8();
-//        javaThree.ex9();
+        javaThree.ex3();
+        javaThree.ex4();
+        javaThree.ex5();
+        javaThree.ex6();
+        javaThree.ex7();
+        javaThree.ex8();
+        javaThree.ex9();
     }
 }
