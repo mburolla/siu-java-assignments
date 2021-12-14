@@ -161,14 +161,16 @@ public class JavaThree {
 
     public void ex7() {
         //code in test/java/student1/PersonTest
+        System.out.println("Code in test/java/student1/PersonTest");
     }
 
     public void ex8() {
         //code in test/java/student1/CalculatorTest
+        System.out.println("Code in test/java/student1/CalculatorTest");
     }
 
     public void ex9() {
-
+        System.out.println("Code in Calculator.java");;
     }
 
     //
