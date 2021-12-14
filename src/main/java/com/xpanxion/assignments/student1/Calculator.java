@@ -1,9 +1,6 @@
 package com.xpanxion.assignments.student1;
 
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
+import org.apache.log4j.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +21,7 @@ public class Calculator {
 
         System.out.println("**** Logging ****");
         logger = Logger.getLogger(Calculator.class);
-
-        ConsoleAppender consoleAppender = new ConsoleAppender();
-        consoleAppender.setThreshold(Level.INFO);
-        consoleAppender.setLayout(new PatternLayout("%d %p [%c] = %m%n"));
-        consoleAppender.activateOptions();
-        Logger.getRootLogger().addAppender(consoleAppender);
+        PropertyConfigurator.configure("log4j.properties");
 
         this.firstNum = firstNum;
         this.secondNum = secondNum;
