@@ -1,20 +1,28 @@
 package com.xpanxion.assignments.student8;
 
 import java.util.ArrayList;
+import org.apache.log4j.*;
+
 
 public class Calculator {
 
     // Data
-
+    static final Logger logger = Logger.getLogger(Calculator.class);
     private ArrayList<String> history;
 
     // Constructor
 
     public Calculator() {
         this.history = new ArrayList<>();
+//        logger.info("Log some info.");
     }
 
     // Public Methods
+
+    public void logging() {
+
+    }
+
     public int calculate(int a, int b, String operation) throws CalculatorException {
         int result = 0;
         String op = "";
@@ -31,19 +39,21 @@ public class Calculator {
 //            op = "/";
 //            result = div(a, b);
 //        }
-
         switch (operation) {
             case "add" -> {
                 op = "+";
                 result = add(a, b);
+                infoLogger(a, b, op, result);
             }
             case "sub" -> {
                 op = "-";
                 result = sub(a, b);
+                infoLogger(a, b, op, result);
             }
             case "mul" -> {
                 op = "*";
                 result = mul(a, b);
+                infoLogger(a, b, op, result);
             }
             case "div" -> {
                 op = "/";
@@ -51,8 +61,10 @@ public class Calculator {
                     if ( b == 0) {
                         throw new CalculatorException();
                     }
-                result = div(a, b);
+                    result = div(a, b);
+                    infoLogger(a, b, op, result);
                 } catch (CalculatorException ce) {
+                    logger.warn("YOU CANNOT DIVIDE BY ZERO!!!");
                     System.out.printf(ce.getMessage() + " %s %s %s", a, op, b);
                 }
             }
@@ -86,6 +98,11 @@ public class Calculator {
 
     private int div(int a, int b) {
         return a / b;
+    }
+
+    private void infoLogger(int a, int b, String op, int result) {
+        String strOp = String.format("%s %s %s = %s", a, op, b, result);
+        logger.info("Performed subtraction operation: " + strOp);
     }
 
 

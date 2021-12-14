@@ -87,4 +87,17 @@ public class JavaThree {
         maybePersonExists.ifPresent(p -> System.out.println(p.getFirstName()));
     }
 
+    public void ex7() {}
+
+    public void ex8() {}
+
+    public void ex9() throws CalculatorException {
+        var c = new Calculator();
+        c.calculate(2, 3, "add");
+        c.calculate(10, 6, "sub");
+        c.calculate(8, 8, "mul");
+        c.calculate(10, 2, "div");
+        c.calculate(10, 0, "div");
+    }
+
 }
