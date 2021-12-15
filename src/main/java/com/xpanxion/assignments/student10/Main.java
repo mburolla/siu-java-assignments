@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, CalculatorException, IOException {
         //JavaOne javaOne = new JavaOne();
         //javaOne.ex10();
-        JavaTwo javaTwo = new JavaTwo();
-        javaTwo.ex6();
-        //JavaThree javaThree = new JavaThree();
-        //javaThree.ex6();
+        //JavaTwo javaTwo = new JavaTwo();
+        //javaTwo.ex6();
+        JavaThree javaThree = new JavaThree();
+        javaThree.ex2();
     }
 }

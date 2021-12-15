@@ -1,10 +1,9 @@
 package Student10;
-
-import com.xpanxion.assignments.instructor.CalculatorException;
 import com.xpanxion.assignments.student10.Calculator;
+
+import com.xpanxion.assignments.student10.CalculatorException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.*;
 
 
 class CalculatorTest {
@@ -51,7 +50,7 @@ class CalculatorTest {
     @Test
     public void testDivision() {
         Calculator calc = new Calculator();
-        int answer = 0;
+        int answer = 1;
         int calcAnswer = 0;
         try {
             calcAnswer = calc.calculate(2, 2, "div");

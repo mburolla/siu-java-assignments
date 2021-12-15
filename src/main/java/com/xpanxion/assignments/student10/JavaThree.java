@@ -1,8 +1,6 @@
 package com.xpanxion.assignments.student10;
 
-
 import java.io.*;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 public class JavaThree {
@@ -13,16 +11,22 @@ public class JavaThree {
         try {
             var result = 10 / 0;
         }
-        catch (Exception e) {
-            System.out.println("Cannot divide by zero");
+        catch (ArithmeticException ae) {
+            System.out.println("Cannot divide by zero.");
         }
     }
 
-    public void ex2 () throws com.xpanxion.assignments.instructor.CalculatorException {
-        System.out.println("Student 10: ex 2");
 
-        var calculator = new CalculatorException();
-        var result = calculator.calculate(10, 0, "div"); // Catch this error.
+
+    public void ex2 () {
+        var calculator = new Calculator();
+
+        try {
+            var result = calculator.calculate(10, 0, "div");
+        }
+        catch (CalculatorException ce) {
+            System.out.println(ce.getMessage());
+        }
     }
 
     public void ex3 () {
