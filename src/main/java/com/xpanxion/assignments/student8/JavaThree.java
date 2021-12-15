@@ -71,7 +71,6 @@ public class JavaThree {
             );
             for (Person p : peopleList) {
                 String personStr = String.format("%s, %s %s \n", p.getId(), p.getFirstName(), p.getLastName());
-//                System.out.print(personStr);
                 bw.write(personStr);
                 }
             bw.close();
@@ -83,7 +82,6 @@ public class JavaThree {
     public void ex6() {
         var personRepo = new PersonRepository();
         Optional<Person> maybePersonExists = personRepo.getPerson(4);
-//        maybePersonExists.ifPresent(System.out::println);
         maybePersonExists.ifPresent(p -> System.out.println(p.getFirstName()));
     }
 

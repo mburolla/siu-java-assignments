@@ -14,7 +14,6 @@ public class Calculator {
 
     public Calculator() {
         this.history = new ArrayList<>();
-//        logger.info("Log some info.");
     }
 
     // Public Methods
@@ -26,19 +25,6 @@ public class Calculator {
     public int calculate(int a, int b, String operation) throws CalculatorException {
         int result = 0;
         String op = "";
-//        if (operation.equals("add")) {
-//            op = "+";
-//            result = add(a, b);
-//        } else if (operation.equals("sub")) {
-//            op = "-";
-//            result = sub(a, b);
-//        } else if (operation.equals("mul")) {
-//            op = "*";
-//            result = mul(a, b);
-//        } else if (operation.equals("div")) {
-//            op = "/";
-//            result = div(a, b);
-//        }
         switch (operation) {
             case "add" -> {
                 op = "+";
