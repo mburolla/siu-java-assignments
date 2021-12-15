@@ -3,6 +3,7 @@ package com.xpanxion.assignments.student4;
 
 import com.xpanxion.assignments.instructor.Cat;
 
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -76,7 +77,7 @@ public class JavaTwo {
     }
 
 
-    public void ex6() throws CalculatorException {
+    public void ex6() throws CalculatorException, IOException {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
         while (true) {
