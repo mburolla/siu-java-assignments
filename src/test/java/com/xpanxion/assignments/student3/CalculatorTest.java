@@ -15,7 +15,7 @@ class CalculatorTest {
         try {
             result = calculator.calculate(1, 2, "+");
         } catch (Exception exception) {
-            return;
+            System.out.println(exception);;
         }
         assertEquals(3, result, "should give 2");
     }
@@ -27,7 +27,7 @@ class CalculatorTest {
         try {
             result = calculator.calculate(1, 1, "-");
         }catch (Exception exception){
-            return;
+            System.out.println(exception);;
         }
         assertEquals(0, result, "should give 0");
     }
@@ -39,7 +39,7 @@ class CalculatorTest {
         try{
             result = calculator.calculate(2, 3, "*");
         }catch (Exception exception){
-            return;
+            System.out.println(exception);;
         }
         assertEquals(6, result, "should give 6");
     }
