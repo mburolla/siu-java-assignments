@@ -106,7 +106,7 @@ public class JavaTwo {
         System.out.println(formatString(p));
     }
 
-    public void ex6() {
+    public void ex6() throws CalculatorException {
         Calculator calculator = null;
         Scanner scanner = new Scanner(System.in);
 
@@ -135,7 +135,13 @@ public class JavaTwo {
                 System.out.print("Enter operation (add, sub, mul, div): ");
                 operation = scanner.next().toLowerCase();
                 calculator = new Calculator(firstNumberInt, secondNumber, operation);
-                calculator.performCalculations();
+
+                try {
+                    calculator.performCalculations();
+                } catch (CalculatorException ce) {
+                    ce.printStackTrace();
+                    throw ce;
+                }
 
                 var getResult = calculator.getResult();
                 System.out.print("Result: " + getResult + "\n");

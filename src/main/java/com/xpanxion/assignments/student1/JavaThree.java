@@ -24,14 +24,19 @@ public class JavaThree {
     public void ex1() {
         try {
             var result = 10/ 0;
-        } catch (Exception e) {
+        } catch (ArithmeticException e) {
             System.out.println("Cannot divide by zero.");
         }
     }
 
-    public void ex2() {
+    public void ex2() throws CalculatorException {
         var calculator = new Calculator(10, 0, "div");
-        calculator.performCalculations(); // Catch this error.
+
+        try {
+            calculator.performCalculations();
+        } catch (CalculatorException ce) {
+            ce.printStackTrace();// Catch this error
+        }
     }
 
     public void ex3() {

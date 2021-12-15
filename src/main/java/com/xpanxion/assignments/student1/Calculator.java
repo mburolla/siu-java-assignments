@@ -32,7 +32,7 @@ public class Calculator {
         return result;
     }
 
-    public void performCalculations() {
+    public void performCalculations() throws CalculatorException {
         switch (operation) {
             case "add" -> {
                 result = firstNum + secondNum;
@@ -47,15 +47,13 @@ public class Calculator {
                 history.add(firstNum + " * " + secondNum + " = " + result);
             }
             case "div" -> {
-                try {
-                    if (secondNum == 0) {
-                        logger.warn("Cannot divide by zero");
-                        throw new CalculatorException(firstNum, secondNum, "/");
-                    }
-                    result = firstNum / secondNum;
-                } catch(CalculatorException ignored) {
-                    //catch ignored
+                if (secondNum == 0) {
+                    logger.warn("Cannot divide by zero");
+                        throw new CalculatorException("cannot divide by zero: " + firstNum + " / " + secondNum);
                 }
+
+                result = firstNum / secondNum;
+
                 history.add(firstNum + " / " + secondNum + " = " + result);
             }
         }
