@@ -1,10 +1,16 @@
 package com.xpanxion.assignments.student7;
-
 import java.util.*;
+import org.apache.log4j.*;
+
 
 public class Calculator {
 
     private final List<String> history;
+    static final Logger logger = Logger.getLogger(Calculator.class);
+
+    ConsoleAppender consoleAppender = new ConsoleAppender();
+
+
 
     public Calculator () {
         history = new ArrayList<>();
@@ -18,9 +24,20 @@ public class Calculator {
         int result = 0;
         String resultString = Integer.toString(result);
 
-        if (num2 == 0 && operand.equalsIgnoreCase("div")) {
-            throw new CalculatorException("Cannot divide by zero: " + num1 + "/" + num2);
-        }
+        consoleAppender.setThreshold(Level.INFO);
+        consoleAppender.setLayout(new PatternLayout("%d [%p|%c|%C{1}] %m%n"));
+        consoleAppender.activateOptions();
+        Logger.getRootLogger().addAppender(consoleAppender);
+
+            try {
+                if (num2 == 0 && operand.equalsIgnoreCase("div")) {
+                    throw new CalculatorException("Cannot divide by zero: " + num1 + "/" + num2);
+                }
+            }
+             catch (CalculatorException e) {
+                logger.warn(e.getMessage(), e);
+            }
+
 
         switch (operand) {
             case "ADD" -> {
@@ -42,9 +59,11 @@ public class Calculator {
         }
         String calculation = String.format("%s %s %s = %s",num1, operator, num2, resultString);
         history.add(calculation);
+        logger.info("calculation: " + calculation);
         System.out.println("Result: " + result);
         return ("Result: " + result);
     }
+
 
     public List<String> getHistory() {
        return history;

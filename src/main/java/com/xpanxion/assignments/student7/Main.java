@@ -19,7 +19,7 @@ public class Main {
 //        javaTwo.ex2();
 //        javaTwo.ex3();
 //        javaTwo.ex5();
-//        javaTwo.ex6();
+        javaTwo.ex6();
 //        javaTwo.ex7();
 //        javaTwo.ex8();
 //        javaTwo.ex9();
@@ -33,6 +33,6 @@ public class Main {
 //        javaThree.ex4();
 //        javaThree.ex5();
 //        javaThree.ex6();
-        javaThree.ex8();
+//        javaThree.ex8();
     }
 }
