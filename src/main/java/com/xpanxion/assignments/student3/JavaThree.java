@@ -37,7 +37,7 @@ public class JavaThree {
 
                     System.out.println("Result: " + result);
                 } catch (CalculatorException calculatorException){
-                    return;
+                    System.out.println(calculatorException);;
                 }
             }
         }
@@ -63,7 +63,7 @@ public class JavaThree {
             while ((s = reader.readLine()) != null)
                 System.out.println(s);
         } catch (Exception exception){
-            return;
+            System.out.println(exception);;
         }
     }
 
@@ -83,7 +83,7 @@ public class JavaThree {
                 peopleArray.add(new Person(id, firstName, lastName));
             }
         } catch (Exception exception){
-            return;
+            System.out.println(exception);;
         }
 
         for (Person p: peopleArray){
@@ -107,7 +107,7 @@ public class JavaThree {
                 }
             }
         } catch (Exception exception){
-            return;
+            System.out.println(exception);;
         }
     }
 
