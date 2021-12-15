@@ -33,7 +33,7 @@ public class JavaThree {
         try {
             BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\e0m0bk0\\Desktop\\Test\\Input-1.txt"));
             String s;
-            while ((s = br.readLine()) != null) {           //BufferedReader returns null when reaches empty line in .txt so,
+            while ((s = br.readLine()) != null) {           //BufferedReader returns null when reaches empty line in .txt so
                 System.out.println(s);
             }
             br.close();
