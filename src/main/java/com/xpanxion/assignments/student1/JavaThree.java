@@ -26,6 +26,7 @@ public class JavaThree {
             var result = 10/ 0;
         } catch (ArithmeticException e) {
             System.out.println("Cannot divide by zero.");
+            e.printStackTrace();
         }
     }
 
