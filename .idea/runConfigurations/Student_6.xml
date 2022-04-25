@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Student 6" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="com.xpanxion.assignments.student6.Main" />
-    <module name="java-assignments" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

@@ -5,7 +5,7 @@ public class Main {
         JavaOne javaOne = new JavaOne();
 //        javaOne.ex1();
 //        javaOne.ex2();
-        javaOne.ex3();
+//        javaOne.ex3();
 //        javaOne.ex4();
 //        javaOne.ex5();
 //        javaOne.ex6();
@@ -25,6 +25,7 @@ public class Main {
 //        javaTwo.ex8();
 //        javaTwo.ex9();
 //        javaTwo.ex10();
+        javaTwo.ex11();
 
         JavaThree javaThree = new JavaThree();
 //        javaThree.ex1();

@@ -197,4 +197,12 @@ public class JavaTwo {
             TimeUnit.SECONDS.sleep(3);
         }
     }
+
+    public void ex11(){
+        System.out.println("hello");
+
+        
+
+
+    }
 }
