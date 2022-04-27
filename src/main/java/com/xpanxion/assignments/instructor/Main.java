@@ -25,14 +25,23 @@ public class Main {
 //        javaTwo.ex8();
 //        javaTwo.ex9();
 //        javaTwo.ex10();
+<<<<<<< HEAD
         javaTwo.ex11();
+=======
+//       javaTwo.ex11();
+//        javaTwo.ex12();
+//        javaTwo.ex13();
+//        javaTwo.ex14();
+//          javaTwo.ex15();
+
+>>>>>>> 96401083cc10f88c4aa7b3d46d568bbece432ebb
 
         JavaThree javaThree = new JavaThree();
 //        javaThree.ex1();
 //        javaThree.ex2();
 //        javaThree.ex3();
 //        javaThree.ex4();
-//        javaThree.ex5();
+        javaThree.ex5();
 //        javaThree.ex6();
 //        javaThree.ex7();
 //        javaThree.ex8();

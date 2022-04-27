@@ -1,5 +1,10 @@
 package com.xpanxion.assignments.instructor;
 
+import java.awt.*;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.text.NumberFormat;
 import java.util.stream.Collectors;
@@ -110,7 +115,7 @@ public class JavaTwo {
 
             System.out.print("Enter second number: ");
             var operand2 = scanner.nextLine();
-            if (operand1.equals("done")) {
+            if (operand2.equals("done")) {
                 break;
             }
 
@@ -123,9 +128,7 @@ public class JavaTwo {
         }
 
         // Print history.
-        for(String s: calculator.getHistory()) {
-            System.out.println(s);
-        }
+        calculator.getHistory().forEach(System.out::println);
     }
 
     /**
@@ -138,9 +141,7 @@ public class JavaTwo {
                 new Person(3, "Sue", "Anderson")
         );
 
-        var newPersonList = personList.stream().map(p -> {
-                return new Person(p.getId(), p.getFirstName(), "xxx");
-            }).collect(Collectors.toList());
+        var newPersonList = personList.stream().map(p -> new Person(p.getId(), p.getFirstName(), "xxx")).toList();
 
         for (Person p : newPersonList) {
             System.out.println(p);
@@ -198,11 +199,171 @@ public class JavaTwo {
         }
     }
 
+<<<<<<< HEAD
     public void ex11(){
         System.out.println("hello");
 
         
 
 
+=======
+    /**
+     * Tiny Auth
+     */
+    public void ex11() {
+        var hashMap = new HashMap<String, String>();
+
+        while (true) {
+            System.out.print("Action [add|login|done]: ");
+            Scanner scanner = new Scanner(System.in);
+            var inputString = scanner.nextLine().trim();
+
+            if (inputString.equals("add")) {
+                System.out.print("Enter username, password: ");
+                inputString = scanner.nextLine();
+                addUser(hashMap, inputString);
+            }
+            if (inputString.equals("login")) {
+                System.out.print("Enter username, password: ");
+                inputString = scanner.nextLine().trim();
+                if (isPasswordCorrect(hashMap, inputString))
+                    System.out.println("OK");
+                else
+                    System.out.println("Incorrect username or password");
+            }
+            if (inputString.equals("done")) {
+                break;
+            }
+        }
+    }
+
+    /**
+     * Tiny movie theater
+     */
+    public void ex12() {
+        float totalSales = 0F;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number rows: ");
+        var numRows = scanner.nextByte();
+        System.out.print("Enter number seats: ");
+        var numSeats = scanner.nextByte();
+        scanner.nextLine();
+
+        var theaterSeats = new String[numSeats * numRows];
+        Arrays.fill(theaterSeats, "0");
+
+        displayMovieTheater(theaterSeats, numSeats, numRows, totalSales);
+
+        while (true) {
+            System.out.print("Purchase seat (row, seat): ");
+            var inputString = scanner.nextLine();
+            if (inputString.equals("done")){
+                break;
+            }
+            var inputArray = inputString.split(",");
+            var rowNumber = Integer.parseInt(inputArray[0].trim());
+            var seatNumber = Integer.parseInt(inputArray[1].trim());
+            var index = ((rowNumber - 1) * numSeats) + (seatNumber - 1);
+            theaterSeats[index] = "X";
+            totalSales += rowNumber;
+            displayMovieTheater(theaterSeats, numSeats, numRows, totalSales);
+        }
+    }
+
+    /**
+     * Classic Polymorphism
+     */
+    public void ex13() {
+        var shapeList = new ArrayList<Shape>();
+        var s = new Square("red");
+        var c = new Circle("green");
+        shapeList.add(s);
+        shapeList.add(c);
+
+        for (Shape shape : shapeList) {
+            System.out.println(shape.draw());
+        }
+    }
+
+    /**
+     * MyPoint
+     */
+    public void ex14() {
+        var p1 = new Point(12,14);
+        var p2 = new Point(10,10);
+        System.out.println(p1.distance(p2));
+
+        var p3 = new MyPoint(12,14);
+        var p4 = new MyPoint(10,10);
+        System.out.println(p3.distance(p4));
+    }
+
+    public void ex15() {
+        System.out.println("hi");
+
+
+    }
+
+    //
+    // Private methods
+    //
+
+    private void displayMovieTheater(String[] theaterSeats, Byte numSeats, Byte numRows, float totalSales) {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        var display = ""; // TODO: Use StringBuilder
+        for (int i=0; i < numRows; i++) {
+            for (int k=0; k < numSeats; k++) {
+                var index = k + (i * numSeats);
+                display += theaterSeats[index];
+            }
+            display += "\n";
+        }
+        display += "Total sales: ";
+        display += formatter.format(totalSales);
+        System.out.println(display);
+    }
+
+    private void addUser(HashMap<String, String> hashMap, String inputString) {
+        var inputArray = inputString.split(",");
+        var userName = inputArray[0].trim();
+        var password = inputArray[1].trim();
+
+        var passwordHash = createHash(password);
+        hashMap.put(userName, passwordHash);
+    }
+
+    private boolean isPasswordCorrect(HashMap<String, String> hashMap, String inputString) {
+        var retval = false;
+
+        // Parse input.
+        var inputArray = inputString.split(",");
+        var userName = inputArray[0].trim();
+        var password = inputArray[1].trim();
+
+        // Compare password hashes.
+        if (hashMap.containsKey(userName)) {
+            var storedPasswordHash = hashMap.get(userName);
+            var thisPasswordHash = createHash(password);
+            if (storedPasswordHash.equals(thisPasswordHash)) {
+                retval = true;
+            }
+        }
+        return retval;
+    }
+
+    private String createHash(String inString) {
+        var retval = "";
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.reset();
+            digest.update(inString.getBytes(StandardCharsets.UTF_8));
+            retval = String.format("%040x", new BigInteger(1, digest.digest()));
+        }
+        catch (NoSuchAlgorithmException nsae) {
+            nsae.printStackTrace();
+        }
+        return retval;
+>>>>>>> 96401083cc10f88c4aa7b3d46d568bbece432ebb
     }
 }

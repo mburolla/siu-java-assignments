@@ -55,6 +55,10 @@ public class Calculator {
         return retval;
     }
 
+    //
+    // Accessors
+    //
+
     public List<String> getHistory() {
         return history;
     }
