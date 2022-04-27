@@ -40,7 +40,7 @@ Note: The array of ints must be converted to an ArrayList of type Integer first.
 Write a function with the following signature:
 
 ```java
-private static void double(ArrayList<Integer> numList)
+private static void doubleNumbers(ArrayList<Integer> numList)
 ```
 
 This function doubles every number in numList;
@@ -49,7 +49,7 @@ This function doubles every number in numList;
 Write a function with the following signature:
 
 ```java
-private static void createList(Integer maxNumber)
+private static ArrayList<Integer> createList(Integer maxNumber)
 ```
 
 This function returns an ArrayList of Integers no greater than `maxNumber`.
